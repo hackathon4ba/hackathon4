@@ -334,9 +334,9 @@ async function submitRegister() {
   height: 100vh;
   max-height: 100vh;
   display: grid;
-  align-items: center;
+  align-items: start;
   justify-items: center;
-  padding: 28px;
+  padding: 16px 28px 0;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -344,8 +344,8 @@ async function submitRegister() {
 .auth-layout {
   width: 100%;
   max-width: 1180px;
-  height: 100%;
-  max-height: 760px;
+  height: calc(100vh - 16px);
+  max-height: calc(100vh - 16px);
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.82fr);
   gap: 22px;
