@@ -10,6 +10,8 @@ useHead({
 })
 
 const route = useRoute()
+const auth = useRestaurantAuth()
+const restaurant = computed(() => auth.restaurant.value)
 
 const menuItems = [
   { label: 'Início', icon: 'lucide:home', to: '/' },
@@ -33,26 +35,31 @@ function isActive(path: string) {
 
   return route.path === path || route.path.startsWith(`${path}/`)
 }
+
+async function handleLogout() {
+  auth.logout()
+  await navigateTo('/')
+}
 </script>
 
 <template>
-  <div class="app-shell">
+  <div class="app-shell" :class="{ 'is-authenticated': auth.isAuthenticated.value }">
     <NuxtRouteAnnouncer />
 
-    <aside class="sidebar" aria-label="Navegação principal">
+    <aside v-if="auth.isAuthenticated.value" class="sidebar" aria-label="Navegação principal">
       <div class="brand">
         <div class="brand-mark">if</div>
         <div>
           <strong>iFood Copilot</strong>
-          <span>Meu Restaurante</span>
+          <span>{{ restaurant?.name || 'Restaurante' }}</span>
         </div>
       </div>
 
       <div class="store-status">
         <Icon name="lucide:check-circle-2" aria-hidden="true" />
         <div>
-          <strong>Loja aberta</strong>
-          <span>Dentro do horário programado</span>
+          <strong>{{ restaurant?.is_active ? 'Conta ativa' : 'Conta inativa' }}</strong>
+          <span>{{ restaurant?.cuisine_type || 'Restaurante autenticado' }}</span>
         </div>
       </div>
 
@@ -73,9 +80,12 @@ function isActive(path: string) {
       <div class="sidebar-user">
         <Icon name="lucide:user-round" aria-hidden="true" />
         <div>
-          <strong>gerente@restaurante.com</strong>
-          <span>Usuário logado</span>
+          <strong>{{ restaurant?.email }}</strong>
+          <span>{{ restaurant?.phone || 'Restaurante logado' }}</span>
         </div>
+        <button type="button" class="icon-button" aria-label="Sair" @click="handleLogout">
+          <Icon name="lucide:log-out" aria-hidden="true" />
+        </button>
       </div>
     </aside>
 
@@ -142,8 +152,12 @@ p {
 .app-shell {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 268px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   background: #ffffff;
+}
+
+.app-shell.is-authenticated {
+  grid-template-columns: 268px minmax(0, 1fr);
 }
 
 .sidebar {
@@ -255,6 +269,28 @@ p {
   border-top: 1px solid var(--color-gray-200);
 }
 
+.icon-button {
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--color-gray-700);
+}
+
+.icon-button:hover {
+  color: var(--color-red);
+  border-color: #f4a2a7;
+}
+
+.icon-button svg {
+  color: inherit;
+}
+
 .sidebar-user svg {
   width: 18px;
   height: 18px;
@@ -266,6 +302,10 @@ p {
   width: 100%;
   max-width: 1240px;
   padding: 40px 48px 56px;
+}
+
+.app-shell:not(.is-authenticated) .main-content {
+  max-width: 1440px;
 }
 
 .page-header {

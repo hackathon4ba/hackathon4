@@ -1,0 +1,1 @@
+sistema de gerenciamento de empresa para microempreendedores usando ia para previsao de faturamento e para controle de estoque(dependendo de quais produtos tao saindo dizer qual produto pode acabar faltando)

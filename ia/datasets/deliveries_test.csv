@@ -1,0 +1,1001 @@
+order_id,order_time,main_dish,order_price,restaurant_lat,restaurant_lng,customer_lat,customer_lng,delivery_neighborhood,weather,traffic_level,restaurant_busy_level,courier_name,courier_vehicle,customer_first_name,app_version
+DT04030,2026-02-14 12:43:24,classic_burger,39.26,-23.561684,-46.655981,-23.506635,-46.619218,Santana,cloudy,low,low,Carla,motorcycle,Carla,5.19.1
+DT04725,2026-04-01 09:49:25,smash_burger,25.31,-23.561684,-46.655981,-23.579918,-46.643379,Vila Mariana,cloudy,medium,low,Diego,motorcycle,Felipe,5.22.0
+DT01614,2026-02-25 22:41:55,carbonara_pasta,42.96,-23.561684,-46.655981,-23.577777,-46.678831,Itaim Bibi,cloudy,low,medium,Ana,motorcycle,Vanessa,5.18.0
+DT04254,2026-06-09 21:49:19,vegan_wrap,28.73,-23.561684,-46.655981,-23.528267,-46.676460,Perdizes,clear,low,medium,Igor,motorcycle,Felipe,5.18.0
+DT04368,2026-05-12 21:10:24,smash_burger,27.76,-23.561684,-46.655981,-23.538489,-46.674887,Perdizes,rain,medium,medium,Helena,car,Helena,6.0.0
+DT04758,2026-02-06 20:40:20,steak_plate,63.19,-23.561684,-46.655981,-23.562470,-46.644275,Bela Vista,clear,medium,medium,Carla,bike,Sofia,5.21.2
+DT04334,2026-04-05 12:49:37,pepperoni_pizza,52.85,-23.561684,-46.655981,-23.600227,-46.666449,Moema,clear,medium,medium,Diego,car,Ana,5.22.0
+DT00862,2026-02-01 20:26:55,classic_burger,31.91,-23.561684,-46.655981,-23.575699,-46.662003,Jardins,clear,low,high,Bruno,motorcycle,Natalia,5.20.0
+DT02069,2026-04-23 11:01:06,classic_burger,39.72,-23.561684,-46.655981,-23.529795,-46.679518,Perdizes,clear,low,low,Bruno,motorcycle,Vanessa,5.22.0
+DT00978,2026-05-13 18:30:40,acai_bowl,23.60,-23.561684,-46.655981,-23.599617,-46.667306,Moema,clear,high,low,Elisa,car,Yasmin,5.20.0
+DT01474,2026-05-03 18:49:36,smash_burger,29.75,-23.561684,-46.655981,-23.595702,-46.630598,Vila Mariana,clear,low,medium,Elisa,motorcycle,Julia,6.0.0
+DT04039,2026-03-16 18:07:17,carbonara_pasta,43.82,-23.561684,-46.655981,-23.596678,-46.722771,Morumbi,cloudy,high,low,Nina,motorcycle,Julia,5.21.2
+DT04759,2026-05-26 19:36:04,smash_burger,28.71,-23.561684,-46.655981,-23.648322,-46.714086,Santo Amaro,cloudy,high,medium,Felipe,car,Gabriela,5.19.1
+DT03553,2026-05-11 11:36:04,margherita_pizza,40.44,-23.561684,-46.655981,-23.529538,-46.660906,Perdizes,cloudy,low,medium,Elisa,bike,Gabriela,5.20.0
+DT02657,2026-01-24 21:05:43,classic_burger,35.22,-23.561684,-46.655981,-23.594146,-46.636541,Vila Mariana,cloudy,medium,high,Felipe,motorcycle,Mariana,5.20.0
+DT03660,2026-02-14 17:28:56,feijoada,32.52,-23.561684,-46.655981,-23.531398,-46.672933,Perdizes,storm,medium,medium,Felipe,car,Elisa,6.0.0
+DT04174,2026-04-16 23:40:39,acai_bowl,26.86,-23.561684,-46.655981,-23.558089,-46.640304,Bela Vista,clear,low,low,Marcos,car,Rafael,5.18.0
+DT02923,2026-01-02 18:21:30,classic_burger,33.13,-23.561684,-46.655981,-23.566545,-46.696554,Pinheiros,rain,medium,low,Julia,motorcycle,Julia,6.0.0
+DT04673,2026-02-21 08:30:19,mushroom_risotto,57.38,-23.561684,-46.655981,-23.552387,-46.652814,Bela Vista,clear,low,low,Bruno,walking,Diego,5.19.1
+DT04079,2026-02-11 15:48:16,grilled_chicken,37.49,-23.561684,-46.655981,-23.574925,-46.692259,Pinheiros,clear,low,low,Carla,motorcycle,Felipe,6.0.0
+DT01713,2026-01-02 19:24:00,smash_burger,32.37,-23.561684,-46.655981,-23.573324,-46.686537,Butanta,clear,medium,medium,Julia,motorcycle,Yasmin,5.22.0
+DT00591,2026-04-09 18:08:16,smash_burger,28.93,-23.561684,-46.655981,-23.609576,-46.653868,Moema,cloudy,medium,medium,Nina,motorcycle,Mariana,5.19.1
+DT03147,2026-03-04 14:29:42,smash_burger,28.92,-23.561684,-46.655981,-23.543125,-46.682885,Perdizes,rain,medium,low,Julia,motorcycle,Mariana,5.20.0
+DT04424,2026-04-14 19:12:03,carbonara_pasta,47.09,-23.561684,-46.655981,-23.559305,-46.685987,Pinheiros,clear,medium,medium,Ana,motorcycle,Carla,5.18.0
+DT01397,2026-05-24 18:53:23,classic_burger,32.12,-23.561684,-46.655981,-23.597743,-46.641068,Vila Mariana,clear,low,medium,Julia,motorcycle,Rafael,6.0.0
+DT01735,2026-01-07 14:11:51,grilled_chicken,40.63,-23.561684,-46.655981,-23.619119,-46.673510,Brooklin,clear,low,low,Gabriel,motorcycle,Lucas,5.18.0
+DT02461,2026-03-11 15:46:33,poke_bowl,51.75,-23.561684,-46.655981,-23.564936,-46.634612,Liberdade,clear,low,low,Nina,motorcycle,Carla,5.20.0
+DT00936,2026-02-11 11:02:42,ramen,43.02,-23.561684,-46.655981,-23.542634,-46.583330,Tatuape,clear,medium,low,Igor,bike,Julia,5.20.0
+DT00030,2026-02-22 20:40:37,bbq_ribs,62.12,-23.561684,-46.655981,-23.589191,-46.685266,Itaim Bibi,clear,medium,high,Ana,motorcycle,Otavio,5.21.2
+DT03443,2026-04-17 11:00:02,feijoada,43.26,-23.561684,-46.655981,-23.529698,-46.676077,Perdizes,clear,low,low,Julia,car,Otavio,5.21.2
+DT04691,2026-01-20 11:46:25,bbq_ribs,69.73,-23.561684,-46.655981,-23.557149,-46.629000,Liberdade,clear,low,low,Gabriel,bike,Natalia,6.0.0
+DT02237,2026-03-27 19:53:50,pepperoni_pizza,62.26,-23.561684,-46.655981,-23.551366,-46.658874,Consolacao,cloudy,high,medium,Bruno,motorcycle,Sofia,5.20.0
+DT03739,2026-03-25 12:46:33,vegan_wrap,30.39,-23.561684,-46.655981,-23.560315,-46.619580,Liberdade,clear,medium,low,Felipe,motorcycle,Julia,5.21.2
+DT03868,2026-03-10 12:45:43,bbq_ribs,72.86,-23.561684,-46.655981,-23.618317,-46.693208,Brooklin,cloudy,high,medium,Nina,motorcycle,Helena,5.22.0
+DT03079,2026-05-12 16:11:06,bbq_ribs,70.73,-23.561684,-46.655981,-23.580364,-46.678777,Itaim Bibi,cloudy,low,low,Ana,bike,Carla,5.21.2
+DT01005,2026-05-07 17:52:22,margherita_pizza,41.18,-23.561684,-46.655981,-23.577225,-46.657682,Jardins,cloudy,low,low,Ana,motorcycle,Sofia,5.19.1
+DT03613,2026-03-15 20:09:04,sushi_combo,67.47,-23.561684,-46.655981,-23.614639,-46.687947,Brooklin,cloudy,medium,high,Nina,motorcycle,Natalia,6.0.0
+DT02872,2026-03-01 21:07:08,poke_bowl,49.01,-23.561684,-46.655981,-23.560941,-46.656298,Bela Vista,clear,low,medium,Julia,bike,Vanessa,5.20.0
+DT03183,2026-06-05 18:07:31,poke_bowl,50.83,-23.561684,-46.655981,-23.559960,-46.638215,Bela Vista,clear,medium,low,Igor,motorcycle,Natalia,5.18.0
+DT04276,2026-04-04 21:19:19,smash_burger,31.13,-23.561684,-46.655981,-23.498540,-46.629201,Santana,rain,high,medium,Nina,motorcycle,Carla,5.18.0
+DT03433,2026-04-24 09:27:44,classic_burger,31.64,-23.561684,-46.655981,-23.538329,-46.651780,Consolacao,clear,medium,low,Gabriel,motorcycle,Diego,5.21.2
+DT02336,2026-05-08 14:28:42,feijoada,38.76,-23.561684,-46.655981,-23.572075,-46.713777,Butanta,clear,low,low,Igor,motorcycle,Julia,5.22.0
+DT02765,2026-06-11 11:35:27,classic_burger,34.92,-23.561684,-46.655981,-23.607153,-46.670769,Moema,clear,low,low,Helena,car,Rafael,5.20.0
+DT01861,2026-01-28 08:02:13,smash_burger,30.50,-23.561684,-46.655981,-23.524169,-46.725987,Lapa,storm,high,low,Helena,car,Elisa,5.19.1
+DT01248,2026-05-31 11:22:54,grilled_chicken,39.67,-23.561684,-46.655981,-23.561802,-46.695417,Pinheiros,clear,low,low,Diego,motorcycle,Helena,5.20.0
+DT01156,2026-02-13 14:40:26,classic_burger,31.56,-23.561684,-46.655981,-23.604316,-46.722318,Morumbi,rain,low,low,Elisa,motorcycle,Natalia,5.19.1
+DT02313,2026-04-22 18:18:11,grilled_chicken,42.75,-23.561684,-46.655981,-23.598757,-46.634380,Vila Mariana,clear,medium,low,Nina,motorcycle,Igor,5.18.0
+DT04456,2026-04-18 20:29:19,steak_plate,63.41,-23.561684,-46.655981,-23.560020,-46.684879,Pinheiros,clear,medium,medium,Marcos,motorcycle,Elisa,6.0.0
+DT04001,2026-01-23 19:21:01,sushi_combo,64.40,-23.561684,-46.655981,-23.556262,-46.646175,Bela Vista,storm,high,medium,Nina,motorcycle,Sofia,5.22.0
+DT04909,2026-02-12 21:32:27,margherita_pizza,45.06,-23.561684,-46.655981,-23.566475,-46.696031,Pinheiros,rain,medium,medium,Carla,car,Otavio,5.19.1
+DT00851,2026-03-02 20:05:25,ramen,46.88,-23.561684,-46.655981,-23.611870,-46.727443,Morumbi,clear,medium,low,Nina,motorcycle,Julia,5.18.0
+DT03072,2026-02-26 20:59:41,caesar_salad,32.15,-23.561684,-46.655981,-23.561399,-46.634761,Bela Vista,storm,high,medium,Elisa,bike,Julia,5.22.0
+DT00966,2026-01-25 23:25:26,acai_bowl,24.77,-23.561684,-46.655981,-23.559657,-46.695947,Pinheiros,cloudy,low,low,Ana,motorcycle,Vanessa,5.18.0
+DT01530,2026-01-09 10:44:57,grilled_chicken,37.73,-23.561684,-46.655981,-23.616973,-46.696477,Brooklin,clear,low,low,Julia,motorcycle,Gabriela,5.20.0
+DT02073,2026-01-30 22:15:41,steak_plate,68.73,-23.561684,-46.655981,-23.649211,-46.731418,Santo Amaro,clear,low,medium,Helena,motorcycle,Elisa,5.18.0
+DT01370,2026-04-19 15:28:05,feijoada,42.86,-23.561684,-46.655981,-23.581536,-46.628598,Vila Mariana,clear,low,low,Elisa,motorcycle,Carla,5.22.0
+DT04286,2026-05-13 13:08:15,smash_burger,32.59,-23.561684,-46.655981,-23.548521,-46.661784,Consolacao,rain,high,low,Diego,car,Carla,5.22.0
+DT03389,2026-04-18 22:05:48,pepperoni_pizza,41.79,-23.561684,-46.655981,-23.619676,-46.681214,Brooklin,cloudy,low,medium,Nina,motorcycle,Helena,6.0.0
+DT00183,2026-03-28 22:12:14,bbq_ribs,73.63,-23.561684,-46.655981,-23.564398,-46.695891,Pinheiros,rain,low,medium,Marcos,motorcycle,Paula,5.18.0
+DT00681,2026-05-27 18:04:01,margherita_pizza,43.06,-23.561684,-46.655981,-23.598460,-46.661778,Moema,clear,medium,low,Julia,motorcycle,Lucas,6.0.0
+DT00327,2026-06-02 18:47:54,classic_burger,33.97,-23.561684,-46.655981,-23.497274,-46.619766,Santana,clear,medium,medium,Carla,motorcycle,Bruno,5.20.0
+DT03123,2026-03-17 09:01:46,margherita_pizza,49.60,-23.561684,-46.655981,-23.573992,-46.717614,Butanta,clear,medium,low,Nina,bike,Mariana,6.0.0
+DT00484,2026-02-04 19:58:29,grilled_chicken,31.10,-23.561684,-46.655981,-23.590759,-46.620883,Vila Mariana,clear,medium,medium,Ana,motorcycle,Natalia,5.19.1
+DT02892,2026-01-05 18:18:01,classic_burger,33.77,-23.561684,-46.655981,-23.577249,-46.677938,Jardins,clear,medium,low,Bruno,motorcycle,Igor,6.0.0
+DT00776,2026-04-08 20:02:58,classic_burger,40.87,-23.561684,-46.655981,-23.563191,-46.667115,Bela Vista,clear,medium,medium,Marcos,motorcycle,Vanessa,5.21.2
+DT01841,2026-01-02 13:19:08,sushi_combo,72.60,-23.561684,-46.655981,-23.599394,-46.723071,Morumbi,rain,high,medium,Marcos,motorcycle,Sofia,5.21.2
+DT03543,2026-01-15 12:20:04,grilled_chicken,41.96,-23.561684,-46.655981,-23.606357,-46.710909,Morumbi,clear,medium,medium,Igor,bike,Ana,5.19.1
+DT03261,2026-05-30 19:35:08,margherita_pizza,48.78,-23.561684,-46.655981,-23.571169,-46.662416,Jardins,cloudy,medium,medium,Bruno,motorcycle,Gabriela,5.19.1
+DT02920,2026-01-13 20:34:24,smash_burger,29.03,-23.561684,-46.655981,-23.567632,-46.628070,Liberdade,clear,medium,medium,Gabriel,motorcycle,Rafael,5.19.1
+DT04592,2026-02-19 21:14:27,acai_bowl,23.42,-23.561684,-46.655981,-23.567183,-46.674633,Bela Vista,clear,medium,medium,Elisa,motorcycle,Ana,5.19.1
+DT02219,2026-04-15 19:56:21,smash_burger,28.10,-23.561684,-46.655981,-23.544390,-46.629256,Consolacao,clear,high,medium,Gabriel,motorcycle,Diego,5.18.0
+DT00412,2026-04-24 18:43:31,acai_bowl,26.79,-23.561684,-46.655981,-23.571192,-46.682013,Pinheiros,rain,high,low,Ana,motorcycle,Paula,5.20.0
+DT02663,2026-05-22 13:24:07,smash_burger,24.64,-23.561684,-46.655981,-23.557883,-46.643437,Liberdade,rain,high,low,Gabriel,car,Igor,5.18.0
+DT00378,2026-04-26 18:59:45,smash_burger,29.40,-23.561684,-46.655981,-23.576737,-46.718899,Butanta,rain,medium,medium,Ana,bike,Mariana,5.20.0
+DT00481,2026-06-09 18:56:36,poke_bowl,51.49,-23.561684,-46.655981,-23.563298,-46.671189,Jardins,clear,medium,low,Felipe,walking,Rafael,5.22.0
+DT04296,2026-01-30 14:37:52,carbonara_pasta,41.80,-23.561684,-46.655981,-23.543364,-46.657265,Consolacao,clear,low,low,Diego,bike,Otavio,5.21.2
+DT03423,2026-01-14 14:49:35,classic_burger,34.01,-23.561684,-46.655981,-23.645109,-46.705123,Santo Amaro,clear,low,low,Julia,motorcycle,Igor,5.19.1
+DT01394,2026-02-24 18:46:38,sushi_combo,63.01,-23.561684,-46.655981,-23.562709,-46.663850,Consolacao,rain,high,medium,Helena,bike,Felipe,5.22.0
+DT00202,2026-04-29 23:39:54,smash_burger,28.64,-23.561684,-46.655981,-23.526325,-46.705010,Lapa,rain,low,low,Ana,car,Ana,5.18.0
+DT04407,2026-06-10 17:45:07,sushi_combo,72.89,-23.561684,-46.655981,-23.558696,-46.650134,Liberdade,rain,low,low,Igor,motorcycle,Ana,6.0.0
+DT00735,2026-05-01 18:04:23,smash_burger,28.98,-23.561684,-46.655981,-23.563189,-46.638487,Liberdade,cloudy,high,medium,Julia,car,Gabriela,5.18.0
+DT01697,2026-04-29 22:40:29,poke_bowl,55.16,-23.561684,-46.655981,-23.604654,-46.655596,Moema,cloudy,low,low,Ana,motorcycle,Mariana,5.18.0
+DT01162,2026-01-10 21:47:58,carbonara_pasta,41.66,-23.561684,-46.655981,-23.581612,-46.675520,Itaim Bibi,cloudy,medium,medium,Felipe,motorcycle,Diego,5.19.1
+DT04606,2026-06-08 11:27:37,classic_burger,37.24,-23.561684,-46.655981,-23.530904,-46.709107,Lapa,clear,low,low,Marcos,motorcycle,Helena,5.18.0
+DT04508,2026-03-22 14:10:43,feijoada,42.72,-23.561684,-46.655981,-23.617817,-46.683420,Brooklin,rain,low,low,Carla,motorcycle,Otavio,5.21.2
+DT03298,2026-04-16 23:11:50,smash_burger,31.15,-23.561684,-46.655981,-23.556593,-46.661220,Bela Vista,clear,low,low,Julia,motorcycle,Otavio,5.19.1
+DT04382,2026-02-18 12:17:20,margherita_pizza,38.63,-23.561684,-46.655981,-23.583721,-46.638978,Vila Mariana,clear,medium,medium,Diego,motorcycle,Mariana,6.0.0
+DT04396,2026-06-13 10:59:02,caesar_salad,28.11,-23.561684,-46.655981,-23.568638,-46.671060,Jardins,clear,low,low,Marcos,motorcycle,Elisa,5.22.0
+DT01393,2026-01-14 20:39:15,smash_burger,29.16,-23.561684,-46.655981,-23.566947,-46.658646,Bela Vista,storm,high,medium,Marcos,motorcycle,Julia,6.0.0
+DT03823,2026-02-27 13:42:37,smash_burger,29.67,-23.561684,-46.655981,-23.563662,-46.695112,Pinheiros,cloudy,medium,medium,Marcos,motorcycle,Diego,5.20.0
+DT03812,2026-04-29 13:46:11,grilled_chicken,35.50,-23.561684,-46.655981,-23.582603,-46.632922,Vila Mariana,cloudy,medium,low,Elisa,car,Gabriela,5.18.0
+DT00519,2026-01-14 09:21:27,acai_bowl,20.64,-23.561684,-46.655981,-23.575852,-46.685065,Itaim Bibi,cloudy,medium,low,Helena,bike,Felipe,5.20.0
+DT04284,2026-03-07 23:17:29,margherita_pizza,43.37,-23.561684,-46.655981,-23.564133,-46.661245,Bela Vista,clear,low,medium,Carla,bike,Diego,5.22.0
+DT03939,2026-04-02 13:10:37,classic_burger,33.92,-23.561684,-46.655981,-23.559267,-46.667494,Jardins,clear,medium,medium,Elisa,motorcycle,Sofia,5.19.1
+DT02060,2026-06-02 19:40:44,carbonara_pasta,50.21,-23.561684,-46.655981,-23.558223,-46.654563,Bela Vista,clear,high,medium,Marcos,bike,Julia,5.22.0
+DT00751,2026-01-15 21:49:29,caesar_salad,25.58,-23.561684,-46.655981,-23.655983,-46.708811,Santo Amaro,cloudy,low,medium,Elisa,car,Helena,6.0.0
+DT01391,2026-04-12 19:44:42,poke_bowl,52.48,-23.561684,-46.655981,-23.595121,-46.673940,Itaim Bibi,clear,medium,medium,Elisa,motorcycle,Carla,6.0.0
+DT04005,2026-04-11 08:27:13,acai_bowl,24.83,-23.561684,-46.655981,-23.581587,-46.682651,Itaim Bibi,cloudy,low,low,Diego,motorcycle,Lucas,5.18.0
+DT00661,2026-02-04 19:02:01,ramen,46.47,-23.561684,-46.655981,-23.531638,-46.674192,Perdizes,clear,medium,medium,Nina,motorcycle,Sofia,6.0.0
+DT02664,2026-02-23 21:56:41,classic_burger,33.84,-23.561684,-46.655981,-23.605233,-46.671563,Moema,cloudy,medium,medium,Diego,motorcycle,Rafael,5.20.0
+DT04386,2026-04-11 12:03:33,sushi_combo,72.58,-23.561684,-46.655981,-23.570360,-46.639431,Liberdade,clear,low,medium,Bruno,car,Natalia,6.0.0
+DT04874,2026-05-21 20:17:10,smash_burger,26.55,-23.561684,-46.655981,-23.550465,-46.568522,Tatuape,clear,medium,medium,Bruno,motorcycle,Mariana,5.18.0
+DT04252,2026-02-09 20:26:44,pepperoni_pizza,48.23,-23.561684,-46.655981,-23.554228,-46.680043,Consolacao,rain,high,medium,Gabriel,motorcycle,Paula,5.19.1
+DT01285,2026-04-18 18:43:48,bbq_ribs,82.97,-23.561684,-46.655981,-23.526447,-46.712180,Lapa,clear,low,medium,Julia,motorcycle,Paula,5.18.0
+DT04486,2026-02-16 17:03:38,grilled_chicken,34.44,-23.561684,-46.655981,-23.518008,-46.699619,Lapa,rain,low,low,Gabriel,car,Vanessa,6.0.0
+DT04162,2026-03-14 14:08:40,mushroom_risotto,55.42,-23.561684,-46.655981,-23.562923,-46.661711,Bela Vista,clear,low,medium,Elisa,motorcycle,Rafael,6.0.0
+DT01700,2026-06-14 20:31:55,classic_burger,35.13,-23.561684,-46.655981,-23.612853,-46.667496,Moema,cloudy,medium,medium,Marcos,car,Diego,5.22.0
+DT00318,2026-06-14 14:57:42,grilled_chicken,37.96,-23.561684,-46.655981,-23.562545,-46.694535,Pinheiros,cloudy,low,low,Carla,motorcycle,Igor,5.21.2
+DT02551,2026-04-02 19:43:04,caesar_salad,28.74,-23.561684,-46.655981,-23.572594,-46.674827,Jardins,storm,high,medium,Ana,motorcycle,Diego,5.19.1
+DT04184,2026-05-12 13:27:11,bbq_ribs,67.41,-23.561684,-46.655981,-23.563049,-46.643167,Bela Vista,clear,medium,medium,Felipe,motorcycle,Natalia,5.19.1
+DT03689,2026-05-03 20:15:20,classic_burger,33.97,-23.561684,-46.655981,-23.543881,-46.676010,Perdizes,rain,medium,medium,Ana,motorcycle,Igor,5.18.0
+DT00427,2026-06-13 20:36:07,sushi_combo,67.49,-23.561684,-46.655981,-23.529106,-46.683376,Perdizes,clear,medium,high,Helena,car,Ana,5.20.0
+DT01176,2026-06-08 22:44:06,grilled_chicken,36.71,-23.561684,-46.655981,-23.585454,-46.635754,Vila Mariana,clear,low,low,Ana,motorcycle,Otavio,5.18.0
+DT01921,2026-01-15 20:18:00,smash_burger,31.12,-23.561684,-46.655981,-23.533363,-46.682514,Perdizes,cloudy,high,medium,Gabriel,motorcycle,Gabriela,5.18.0
+DT03678,2026-04-17 19:34:22,poke_bowl,48.19,-23.561684,-46.655981,-23.557431,-46.651466,Bela Vista,cloudy,medium,medium,Marcos,walking,Igor,5.20.0
+DT03194,2026-05-20 11:00:02,mushroom_risotto,49.96,-23.561684,-46.655981,-23.549350,-46.693664,Pinheiros,clear,low,medium,Marcos,motorcycle,Paula,5.22.0
+DT03866,2026-05-30 11:24:29,steak_plate,67.26,-23.561684,-46.655981,-23.585222,-46.639278,Vila Mariana,clear,medium,low,Igor,car,Lucas,5.19.1
+DT01503,2026-02-02 18:32:11,smash_burger,29.24,-23.561684,-46.655981,-23.537423,-46.571228,Tatuape,rain,high,low,Gabriel,motorcycle,Mariana,5.22.0
+DT04877,2026-06-08 13:22:08,grilled_chicken,38.14,-23.561684,-46.655981,-23.568377,-46.662186,Jardins,clear,medium,medium,Felipe,motorcycle,Paula,5.18.0
+DT02288,2026-05-20 23:43:18,margherita_pizza,44.07,-23.561684,-46.655981,-23.588034,-46.685293,Itaim Bibi,clear,low,low,Bruno,motorcycle,Elisa,5.18.0
+DT00043,2026-01-21 22:53:05,steak_plate,70.00,-23.561684,-46.655981,-23.589103,-46.685132,Itaim Bibi,clear,low,medium,Helena,motorcycle,Gabriela,5.22.0
+DT02794,2026-01-17 19:47:36,classic_burger,30.68,-23.561684,-46.655981,-23.558513,-46.633696,Liberdade,clear,low,medium,Elisa,motorcycle,Thiago,5.20.0
+DT04983,2026-04-06 19:14:36,ramen,42.19,-23.561684,-46.655981,-23.602856,-46.669899,Moema,clear,medium,medium,Gabriel,bike,Lucas,5.20.0
+DT00311,2026-06-13 19:31:39,sushi_combo,66.35,-23.561684,-46.655981,-23.513463,-46.635934,Santana,clear,low,high,Helena,motorcycle,Bruno,6.0.0
+DT02485,2026-01-29 12:59:32,caesar_salad,31.18,-23.561684,-46.655981,-23.540040,-46.567985,Tatuape,clear,medium,medium,Nina,motorcycle,Helena,6.0.0
+DT02066,2026-04-10 19:49:54,pepperoni_pizza,61.51,-23.561684,-46.655981,-23.568626,-46.687698,Pinheiros,cloudy,high,low,Carla,bike,Bruno,5.20.0
+DT04451,2026-05-17 20:21:11,smash_burger,29.10,-23.561684,-46.655981,-23.577291,-46.669613,Jardins,clear,medium,high,Diego,motorcycle,Mariana,5.20.0
+DT00417,2026-06-09 19:01:15,pepperoni_pizza,46.74,-23.561684,-46.655981,-23.522721,-46.670759,Perdizes,cloudy,medium,low,Bruno,motorcycle,Gabriela,5.20.0
+DT00566,2026-03-04 21:46:26,smash_burger,25.38,-23.561684,-46.655981,-23.568749,-46.705196,Butanta,clear,low,low,Diego,motorcycle,Igor,5.21.2
+DT00592,2026-02-09 18:44:39,sushi_combo,74.03,-23.561684,-46.655981,-23.560214,-46.718806,Butanta,rain,high,medium,Bruno,bike,Otavio,5.22.0
+DT00457,2026-05-16 18:10:51,sushi_combo,65.31,-23.561684,-46.655981,-23.543786,-46.649880,Consolacao,cloudy,low,medium,Julia,motorcycle,Otavio,5.18.0
+DT04352,2026-03-08 10:20:20,smash_burger,29.63,-23.561684,-46.655981,-23.607621,-46.654363,Moema,rain,low,low,Diego,bike,Carla,5.18.0
+DT01588,2026-05-25 08:28:24,steak_plate,64.91,-23.561684,-46.655981,-23.498283,-46.628066,Santana,clear,low,low,Marcos,motorcycle,Helena,5.20.0
+DT04870,2026-05-12 13:46:49,steak_plate,58.82,-23.561684,-46.655981,-23.658399,-46.717749,Santo Amaro,clear,medium,medium,Bruno,motorcycle,Mariana,5.21.2
+DT04625,2026-02-20 21:34:09,caesar_salad,29.83,-23.561684,-46.655981,-23.552293,-46.682548,Pinheiros,cloudy,low,medium,Elisa,bike,Sofia,5.19.1
+DT02270,2026-03-05 18:54:57,steak_plate,67.04,-23.561684,-46.655981,-23.576927,-46.677131,Jardins,clear,medium,low,Gabriel,bike,Elisa,5.19.1
+DT02856,2026-04-19 22:42:35,classic_burger,33.61,-23.561684,-46.655981,-23.570852,-46.676998,Itaim Bibi,rain,low,medium,Diego,motorcycle,Vanessa,5.22.0
+DT00228,2026-03-07 19:14:36,smash_burger,29.40,-23.561684,-46.655981,-23.553483,-46.652840,Bela Vista,cloudy,medium,medium,Gabriel,bike,Carla,5.20.0
+DT04345,2026-04-01 10:26:53,pepperoni_pizza,48.96,-23.561684,-46.655981,-23.562505,-46.672405,Pinheiros,clear,low,low,Bruno,car,Elisa,5.22.0
+DT01686,2026-02-11 14:09:25,feijoada,43.30,-23.561684,-46.655981,-23.596969,-46.631623,Vila Mariana,rain,low,low,Elisa,car,Sofia,5.22.0
+DT03846,2026-04-17 14:37:48,feijoada,42.38,-23.561684,-46.655981,-23.558554,-46.642205,Liberdade,clear,low,low,Nina,bike,Igor,6.0.0
+DT01972,2026-04-03 16:31:26,acai_bowl,27.91,-23.561684,-46.655981,-23.570993,-46.678070,Jardins,clear,low,low,Diego,bike,Yasmin,6.0.0
+DT01668,2026-01-07 19:28:40,vegan_wrap,29.77,-23.561684,-46.655981,-23.572528,-46.698524,Pinheiros,cloudy,medium,medium,Julia,motorcycle,Carla,5.19.1
+DT01726,2026-05-26 11:38:14,caesar_salad,32.97,-23.561684,-46.655981,-23.585444,-46.626640,Vila Mariana,clear,low,medium,Ana,car,Natalia,5.18.0
+DT02373,2026-04-02 12:26:26,sushi_combo,76.13,-23.561684,-46.655981,-23.600327,-46.639900,Vila Mariana,clear,medium,medium,Diego,motorcycle,Julia,6.0.0
+DT00432,2026-05-10 12:22:01,smash_burger,26.22,-23.561684,-46.655981,-23.529308,-46.678647,Perdizes,rain,medium,low,Carla,motorcycle,Otavio,5.22.0
+DT02246,2026-03-20 11:42:49,feijoada,41.34,-23.561684,-46.655981,-23.560446,-46.659686,Bela Vista,cloudy,low,medium,Igor,bike,Thiago,5.22.0
+DT00815,2026-05-06 19:45:21,grilled_chicken,39.99,-23.561684,-46.655981,-23.574646,-46.655915,Jardins,cloudy,medium,medium,Diego,motorcycle,Felipe,5.18.0
+DT02353,2026-04-10 13:09:39,classic_burger,37.94,-23.561684,-46.655981,-23.588640,-46.714372,Morumbi,cloudy,medium,low,Bruno,motorcycle,Natalia,6.0.0
+DT03018,2026-05-05 18:53:21,mushroom_risotto,58.21,-23.561684,-46.655981,-23.575338,-46.669227,Jardins,clear,high,medium,Gabriel,motorcycle,Carla,5.20.0
+DT00344,2026-01-15 19:29:14,classic_burger,33.58,-23.561684,-46.655981,-23.622173,-46.691381,Brooklin,cloudy,medium,medium,Igor,motorcycle,Diego,5.19.1
+DT01037,2026-03-29 14:50:56,carbonara_pasta,40.84,-23.561684,-46.655981,-23.551456,-46.633683,Liberdade,rain,low,low,Bruno,bike,Mariana,5.21.2
+DT04551,2026-03-17 20:32:53,smash_burger,27.26,-23.561684,-46.655981,-23.506456,-46.630960,Santana,cloudy,medium,low,Helena,motorcycle,Vanessa,6.0.0
+DT01979,2026-06-07 13:20:55,acai_bowl,23.02,-23.561684,-46.655981,-23.572842,-46.679515,Itaim Bibi,cloudy,low,low,Diego,motorcycle,Sofia,5.20.0
+DT01289,2026-01-16 13:10:18,grilled_chicken,39.77,-23.561684,-46.655981,-23.528645,-46.662502,Perdizes,clear,medium,medium,Felipe,bike,Carla,5.18.0
+DT03583,2026-05-13 19:17:14,acai_bowl,25.22,-23.561684,-46.655981,-23.575051,-46.688924,Itaim Bibi,clear,medium,medium,Marcos,bike,Yasmin,6.0.0
+DT03442,2026-02-21 15:14:32,grilled_chicken,39.15,-23.561684,-46.655981,-23.600608,-46.664662,Moema,rain,low,low,Carla,motorcycle,Julia,5.22.0
+DT04006,2026-03-04 19:34:48,margherita_pizza,44.68,-23.561684,-46.655981,-23.589996,-46.640192,Vila Mariana,cloudy,medium,medium,Felipe,motorcycle,Ana,5.22.0
+DT03757,2026-04-15 14:19:50,grilled_chicken,35.92,-23.561684,-46.655981,-23.568271,-46.708531,Butanta,rain,low,low,Elisa,motorcycle,Yasmin,5.20.0
+DT02957,2026-03-20 18:04:10,sushi_combo,71.02,-23.561684,-46.655981,-23.550684,-46.665064,Consolacao,clear,high,medium,Elisa,bike,Otavio,6.0.0
+DT01075,2026-02-23 21:20:57,feijoada,45.59,-23.561684,-46.655981,-23.557838,-46.638627,Liberdade,clear,low,medium,Gabriel,motorcycle,Felipe,5.20.0
+DT01641,2026-06-15 19:41:59,caesar_salad,34.00,-23.561684,-46.655981,-23.562901,-46.654697,Bela Vista,cloudy,medium,low,Ana,walking,Igor,5.18.0
+DT00355,2026-01-06 19:41:54,sushi_combo,70.10,-23.561684,-46.655981,-23.544492,-46.656595,Consolacao,rain,high,medium,Nina,motorcycle,Natalia,5.18.0
+DT03557,2026-01-08 12:16:53,ramen,44.95,-23.561684,-46.655981,-23.561928,-46.700308,Butanta,clear,medium,medium,Nina,motorcycle,Igor,5.21.2
+DT01765,2026-02-27 09:43:28,smash_burger,30.61,-23.561684,-46.655981,-23.563828,-46.645787,Bela Vista,cloudy,medium,low,Bruno,motorcycle,Igor,5.18.0
+DT03945,2026-01-24 13:58:45,classic_burger,33.28,-23.561684,-46.655981,-23.585618,-46.685128,Itaim Bibi,cloudy,medium,medium,Igor,motorcycle,Julia,5.18.0
+DT01691,2026-02-10 17:14:33,steak_plate,60.88,-23.561684,-46.655981,-23.605586,-46.685813,Brooklin,rain,medium,low,Julia,motorcycle,Otavio,5.19.1
+DT03189,2026-04-05 14:30:10,smash_burger,29.74,-23.561684,-46.655981,-23.561543,-46.707196,Butanta,cloudy,low,low,Bruno,bike,Gabriela,5.22.0
+DT04484,2026-01-28 17:03:21,smash_burger,29.26,-23.561684,-46.655981,-23.532389,-46.667714,Perdizes,rain,low,low,Julia,bike,Julia,5.18.0
+DT02887,2026-03-03 22:03:06,vegan_wrap,28.84,-23.561684,-46.655981,-23.616253,-46.692276,Brooklin,rain,low,low,Gabriel,motorcycle,Diego,5.18.0
+DT04443,2026-05-20 18:14:58,vegan_wrap,28.85,-23.561684,-46.655981,-23.531471,-46.577628,Tatuape,rain,high,medium,Ana,car,Mariana,5.18.0
+DT03341,2026-06-13 08:38:06,poke_bowl,51.33,-23.561684,-46.655981,-23.583333,-46.688798,Itaim Bibi,clear,low,low,Igor,car,Helena,5.20.0
+DT02070,2026-01-10 18:26:55,ramen,40.14,-23.561684,-46.655981,-23.613159,-46.695908,Brooklin,cloudy,low,medium,Elisa,car,Julia,5.21.2
+DT01000,2026-06-06 20:03:22,poke_bowl,43.08,-23.561684,-46.655981,-23.562001,-46.653516,Consolacao,clear,medium,high,Marcos,motorcycle,Vanessa,5.22.0
+DT00498,2026-05-27 18:09:33,acai_bowl,24.99,-23.561684,-46.655981,-23.538280,-46.594336,Tatuape,clear,medium,medium,Helena,motorcycle,Helena,6.0.0
+DT00413,2026-01-16 23:24:51,pepperoni_pizza,45.70,-23.561684,-46.655981,-23.576182,-46.725002,Butanta,clear,low,low,Elisa,motorcycle,Vanessa,6.0.0
+DT01858,2026-03-15 18:07:51,margherita_pizza,44.64,-23.561684,-46.655981,-23.599197,-46.666856,Moema,clear,low,medium,Bruno,motorcycle,Ana,5.18.0
+DT02692,2026-01-28 18:20:46,poke_bowl,55.00,-23.561684,-46.655981,-23.557801,-46.664252,Bela Vista,clear,high,low,Diego,motorcycle,Lucas,5.19.1
+DT02779,2026-04-26 18:58:00,pepperoni_pizza,53.01,-23.561684,-46.655981,-23.558799,-46.647405,Consolacao,rain,low,medium,Carla,car,Carla,5.18.0
+DT02635,2026-01-24 21:41:45,carbonara_pasta,45.29,-23.561684,-46.655981,-23.600914,-46.712189,Morumbi,storm,high,medium,Carla,car,Ana,6.0.0
+DT00281,2026-03-13 16:25:22,smash_burger,27.01,-23.561684,-46.655981,-23.601094,-46.675386,Moema,clear,low,low,Carla,bike,Thiago,5.18.0
+DT04526,2026-01-26 13:20:11,pepperoni_pizza,45.67,-23.561684,-46.655981,-23.546592,-46.585788,Tatuape,rain,high,medium,Gabriel,motorcycle,Sofia,6.0.0
+DT02419,2026-05-03 12:50:27,sushi_combo,71.99,-23.561684,-46.655981,-23.610995,-46.692049,Brooklin,clear,low,medium,Felipe,motorcycle,Carla,5.22.0
+DT00252,2026-06-14 14:36:19,margherita_pizza,47.56,-23.561684,-46.655981,-23.564251,-46.655023,Jardins,clear,low,low,Felipe,motorcycle,Paula,5.21.2
+DT01312,2026-02-16 14:15:45,classic_burger,31.93,-23.561684,-46.655981,-23.587427,-46.691156,Itaim Bibi,clear,low,low,Nina,motorcycle,Natalia,5.22.0
+DT04575,2026-05-13 22:41:58,acai_bowl,23.72,-23.561684,-46.655981,-23.591794,-46.676595,Itaim Bibi,rain,low,medium,Elisa,motorcycle,Elisa,5.19.1
+DT03019,2026-01-20 18:36:25,carbonara_pasta,39.59,-23.561684,-46.655981,-23.555518,-46.658353,Consolacao,cloudy,medium,medium,Diego,bike,Felipe,6.0.0
+DT01451,2026-03-27 22:10:06,carbonara_pasta,43.28,-23.561684,-46.655981,-23.569461,-46.674720,Jardins,rain,low,low,Felipe,bike,Rafael,5.18.0
+DT00650,2026-03-29 21:49:48,feijoada,42.98,-23.561684,-46.655981,-23.571343,-46.651732,Bela Vista,storm,high,high,Gabriel,motorcycle,Ana,6.0.0
+DT00195,2026-03-02 17:42:55,classic_burger,38.25,-23.561684,-46.655981,-23.560131,-46.674256,Jardins,clear,low,low,Nina,bike,Otavio,5.18.0
+DT04713,2026-01-12 11:24:43,classic_burger,35.78,-23.561684,-46.655981,-23.507806,-46.621253,Santana,rain,low,low,Marcos,motorcycle,Paula,5.19.1
+DT02333,2026-05-18 20:05:42,pepperoni_pizza,49.21,-23.561684,-46.655981,-23.526271,-46.705465,Lapa,rain,high,medium,Julia,motorcycle,Paula,5.21.2
+DT03703,2026-06-12 20:46:31,classic_burger,33.21,-23.561684,-46.655981,-23.569109,-46.671770,Jardins,clear,medium,medium,Helena,motorcycle,Lucas,5.20.0
+DT03300,2026-04-09 21:03:57,vegan_wrap,28.27,-23.561684,-46.655981,-23.613619,-46.697965,Brooklin,clear,medium,medium,Nina,bike,Elisa,5.19.1
+DT02404,2026-01-14 19:38:52,carbonara_pasta,42.68,-23.561684,-46.655981,-23.554348,-46.649359,Bela Vista,clear,medium,medium,Carla,car,Rafael,5.21.2
+DT00567,2026-01-06 15:03:36,poke_bowl,55.65,-23.561684,-46.655981,-23.551885,-46.651938,Consolacao,cloudy,low,low,Marcos,bike,Paula,5.19.1
+DT02966,2026-05-10 21:36:18,classic_burger,31.13,-23.561684,-46.655981,-23.555402,-46.627707,Liberdade,clear,medium,medium,Marcos,motorcycle,Natalia,5.18.0
+DT04905,2026-05-30 20:25:28,smash_burger,28.63,-23.561684,-46.655981,-23.549056,-46.643218,Consolacao,clear,medium,medium,Diego,motorcycle,Yasmin,5.21.2
+DT04496,2026-04-20 20:26:52,classic_burger,34.22,-23.561684,-46.655981,-23.619209,-46.683825,Brooklin,clear,medium,medium,Nina,motorcycle,Paula,5.22.0
+DT03767,2026-06-04 18:30:16,caesar_salad,32.72,-23.561684,-46.655981,-23.597279,-46.622166,Vila Mariana,clear,high,low,Bruno,motorcycle,Thiago,6.0.0
+DT03457,2026-02-06 23:09:49,smash_burger,30.87,-23.561684,-46.655981,-23.556988,-46.636066,Liberdade,clear,low,low,Bruno,motorcycle,Thiago,5.22.0
+DT02159,2026-01-22 20:09:25,smash_burger,28.46,-23.561684,-46.655981,-23.546941,-46.649905,Consolacao,clear,medium,low,Nina,motorcycle,Mariana,5.22.0
+DT02770,2026-01-17 09:35:12,grilled_chicken,39.11,-23.561684,-46.655981,-23.568273,-46.663271,Jardins,clear,low,low,Marcos,bike,Lucas,5.22.0
+DT00304,2026-02-03 20:14:55,caesar_salad,26.71,-23.561684,-46.655981,-23.593427,-46.680747,Itaim Bibi,clear,medium,medium,Julia,motorcycle,Julia,5.20.0
+DT04535,2026-01-21 19:31:12,smash_burger,27.06,-23.561684,-46.655981,-23.577304,-46.697062,Butanta,cloudy,medium,medium,Felipe,motorcycle,Gabriela,5.22.0
+DT02688,2026-04-08 09:02:44,poke_bowl,52.17,-23.561684,-46.655981,-23.535544,-46.666942,Perdizes,clear,low,low,Igor,motorcycle,Vanessa,5.22.0
+DT03870,2026-05-03 19:21:46,ramen,50.72,-23.561684,-46.655981,-23.567213,-46.633866,Liberdade,cloudy,medium,medium,Elisa,bike,Rafael,6.0.0
+DT02033,2026-03-13 08:19:41,smash_burger,29.88,-23.561684,-46.655981,-23.583077,-46.696525,Pinheiros,clear,medium,low,Bruno,motorcycle,Sofia,5.18.0
+DT02205,2026-04-06 19:42:56,classic_burger,31.11,-23.561684,-46.655981,-23.583002,-46.636566,Vila Mariana,clear,high,low,Carla,car,Sofia,6.0.0
+DT03589,2026-01-13 21:50:41,smash_burger,26.92,-23.561684,-46.655981,-23.574264,-46.641757,Liberdade,clear,low,medium,Gabriel,motorcycle,Thiago,6.0.0
+DT00683,2026-01-11 09:28:33,mushroom_risotto,49.01,-23.561684,-46.655981,-23.527271,-46.583240,Tatuape,cloudy,low,medium,Diego,motorcycle,Rafael,6.0.0
+DT00894,2026-05-16 09:45:54,sushi_combo,59.93,-23.561684,-46.655981,-23.532253,-46.667437,Perdizes,clear,low,medium,Carla,car,Elisa,5.21.2
+DT01640,2026-01-31 14:38:11,grilled_chicken,38.62,-23.561684,-46.655981,-23.560207,-46.657260,Bela Vista,cloudy,low,low,Ana,motorcycle,Elisa,5.21.2
+DT01350,2026-06-02 13:37:06,classic_burger,35.25,-23.561684,-46.655981,-23.601640,-46.669673,Moema,clear,medium,low,Julia,motorcycle,Julia,5.19.1
+DT00774,2026-01-07 21:16:50,ramen,51.97,-23.561684,-46.655981,-23.601466,-46.636888,Vila Mariana,cloudy,low,medium,Helena,motorcycle,Yasmin,6.0.0
+DT01208,2026-05-23 20:48:33,pepperoni_pizza,51.05,-23.561684,-46.655981,-23.553191,-46.667369,Consolacao,clear,medium,medium,Helena,motorcycle,Yasmin,5.19.1
+DT04751,2026-05-17 14:45:23,margherita_pizza,41.86,-23.561684,-46.655981,-23.589558,-46.630230,Vila Mariana,cloudy,low,low,Marcos,bike,Thiago,5.21.2
+DT00112,2026-04-26 09:48:31,carbonara_pasta,50.62,-23.561684,-46.655981,-23.554854,-46.690368,Pinheiros,clear,low,low,Igor,motorcycle,Diego,6.0.0
+DT00991,2026-05-29 22:09:59,smash_burger,30.06,-23.561684,-46.655981,-23.603669,-46.730937,Morumbi,clear,low,low,Carla,car,Igor,5.18.0
+DT00385,2026-03-24 21:41:42,margherita_pizza,52.17,-23.561684,-46.655981,-23.595656,-46.704345,Morumbi,clear,low,low,Helena,car,Gabriela,5.19.1
+DT03113,2026-03-31 22:37:36,classic_burger,38.22,-23.561684,-46.655981,-23.538876,-46.673005,Perdizes,rain,low,low,Nina,motorcycle,Helena,5.22.0
+DT03098,2026-01-24 22:46:37,smash_burger,28.35,-23.561684,-46.655981,-23.557819,-46.650580,Consolacao,rain,low,medium,Carla,car,Carla,6.0.0
+DT03027,2026-06-02 14:15:04,margherita_pizza,44.33,-23.561684,-46.655981,-23.570160,-46.665895,Jardins,cloudy,low,low,Bruno,bike,Diego,5.20.0
+DT03761,2026-05-23 20:59:52,acai_bowl,24.67,-23.561684,-46.655981,-23.593325,-46.734616,Morumbi,cloudy,medium,medium,Ana,motorcycle,Ana,5.21.2
+DT03563,2026-04-27 21:02:07,margherita_pizza,46.23,-23.561684,-46.655981,-23.643344,-46.703049,Santo Amaro,clear,low,medium,Julia,motorcycle,Felipe,5.21.2
+DT00132,2026-01-04 18:13:51,acai_bowl,24.82,-23.561684,-46.655981,-23.549110,-46.653578,Consolacao,cloudy,medium,medium,Carla,motorcycle,Vanessa,6.0.0
+DT04920,2026-02-20 11:10:44,sushi_combo,57.09,-23.561684,-46.655981,-23.586550,-46.633394,Vila Mariana,rain,medium,medium,Igor,motorcycle,Carla,5.21.2
+DT03649,2026-05-12 19:19:13,grilled_chicken,38.19,-23.561684,-46.655981,-23.579300,-46.706684,Butanta,cloudy,medium,medium,Igor,motorcycle,Paula,5.22.0
+DT01482,2026-03-29 19:31:38,mushroom_risotto,57.38,-23.561684,-46.655981,-23.567214,-46.710887,Butanta,rain,medium,medium,Elisa,motorcycle,Vanessa,5.22.0
+DT02626,2026-01-01 13:47:52,feijoada,45.43,-23.561684,-46.655981,-23.529866,-46.706076,Lapa,cloudy,medium,medium,Igor,motorcycle,Ana,6.0.0
+DT02931,2026-01-23 20:14:16,vegan_wrap,29.23,-23.561684,-46.655981,-23.571567,-46.670389,Jardins,cloudy,high,medium,Bruno,motorcycle,Gabriela,5.19.1
+DT02016,2026-02-14 22:47:52,ramen,48.80,-23.561684,-46.655981,-23.596869,-46.661081,Moema,clear,low,medium,Bruno,car,Lucas,5.19.1
+DT03329,2026-06-13 23:55:19,grilled_chicken,31.74,-23.561684,-46.655981,-23.575229,-46.686479,Pinheiros,clear,low,low,Carla,motorcycle,Ana,5.21.2
+DT04521,2026-05-22 18:11:40,smash_burger,30.02,-23.561684,-46.655981,-23.528296,-46.717541,Lapa,clear,medium,low,Carla,motorcycle,Natalia,5.19.1
+DT03436,2026-04-08 19:59:46,margherita_pizza,47.79,-23.561684,-46.655981,-23.566970,-46.693007,Pinheiros,rain,high,medium,Gabriel,motorcycle,Mariana,5.19.1
+DT01797,2026-01-02 12:36:58,smash_burger,29.39,-23.561684,-46.655981,-23.561929,-46.694255,Pinheiros,rain,high,medium,Julia,motorcycle,Carla,5.21.2
+DT02965,2026-05-05 18:33:34,caesar_salad,29.06,-23.561684,-46.655981,-23.499880,-46.622062,Santana,clear,medium,medium,Helena,car,Natalia,5.20.0
+DT01345,2026-05-23 12:28:31,sushi_combo,82.34,-23.561684,-46.655981,-23.568982,-46.647642,Bela Vista,cloudy,low,medium,Diego,walking,Natalia,5.22.0
+DT02210,2026-04-12 23:42:49,feijoada,43.32,-23.561684,-46.655981,-23.599755,-46.648798,Moema,clear,low,medium,Diego,motorcycle,Igor,5.20.0
+DT04922,2026-04-03 23:16:59,sushi_combo,64.36,-23.561684,-46.655981,-23.582671,-46.687219,Itaim Bibi,rain,low,low,Elisa,motorcycle,Elisa,5.20.0
+DT01201,2026-05-25 18:13:15,pepperoni_pizza,49.62,-23.561684,-46.655981,-23.573986,-46.667005,Jardins,rain,high,low,Felipe,motorcycle,Elisa,5.18.0
+DT02980,2026-02-08 12:20:15,steak_plate,70.52,-23.561684,-46.655981,-23.566752,-46.658332,Jardins,cloudy,low,medium,Carla,motorcycle,Ana,6.0.0
+DT04981,2026-04-29 12:09:14,ramen,41.26,-23.561684,-46.655981,-23.571799,-46.650555,Jardins,clear,medium,low,Nina,bike,Elisa,6.0.0
+DT03319,2026-03-19 20:40:37,margherita_pizza,44.58,-23.561684,-46.655981,-23.550761,-46.630808,Liberdade,cloudy,medium,medium,Gabriel,motorcycle,Julia,5.19.1
+DT01053,2026-05-01 21:54:10,grilled_chicken,36.23,-23.561684,-46.655981,-23.625860,-46.691596,Brooklin,rain,medium,medium,Helena,car,Vanessa,6.0.0
+DT02174,2026-01-21 20:53:06,carbonara_pasta,42.60,-23.561684,-46.655981,-23.554360,-46.640727,Liberdade,clear,high,medium,Diego,bike,Lucas,5.22.0
+DT00841,2026-06-08 13:29:40,sushi_combo,66.06,-23.561684,-46.655981,-23.548183,-46.655957,Bela Vista,storm,high,medium,Marcos,car,Thiago,6.0.0
+DT00850,2026-03-20 22:31:54,grilled_chicken,32.60,-23.561684,-46.655981,-23.582964,-46.693316,Itaim Bibi,clear,low,low,Elisa,car,Lucas,5.20.0
+DT01011,2026-05-30 15:55:31,pepperoni_pizza,50.70,-23.561684,-46.655981,-23.554519,-46.649265,Bela Vista,rain,medium,low,Felipe,car,Sofia,5.18.0
+DT02766,2026-01-16 18:22:41,pepperoni_pizza,51.14,-23.561684,-46.655981,-23.600634,-46.634577,Vila Mariana,rain,high,medium,Diego,motorcycle,Elisa,6.0.0
+DT01263,2026-05-18 20:57:43,vegan_wrap,28.65,-23.561684,-46.655981,-23.616087,-46.692287,Brooklin,clear,medium,medium,Diego,car,Yasmin,5.18.0
+DT02257,2026-04-29 09:00:02,ramen,50.26,-23.561684,-46.655981,-23.545222,-46.571136,Tatuape,clear,medium,low,Igor,bike,Thiago,5.21.2
+DT00812,2026-03-02 11:16:55,grilled_chicken,36.63,-23.561684,-46.655981,-23.560947,-46.650816,Bela Vista,clear,medium,low,Diego,car,Bruno,5.18.0
+DT04695,2026-04-08 14:38:18,sushi_combo,65.25,-23.561684,-46.655981,-23.589525,-46.645515,Vila Mariana,clear,low,low,Ana,bike,Julia,5.18.0
+DT00514,2026-01-16 15:19:26,classic_burger,33.18,-23.561684,-46.655981,-23.554058,-46.661502,Bela Vista,cloudy,low,low,Bruno,motorcycle,Rafael,5.22.0
+DT04849,2026-05-31 18:43:00,mushroom_risotto,45.50,-23.561684,-46.655981,-23.553198,-46.641482,Bela Vista,cloudy,low,medium,Igor,car,Otavio,5.22.0
+DT00917,2026-05-03 12:27:52,pepperoni_pizza,51.43,-23.561684,-46.655981,-23.573589,-46.671893,Itaim Bibi,clear,medium,low,Diego,motorcycle,Felipe,6.0.0
+DT03383,2026-03-03 18:41:46,smash_burger,28.29,-23.561684,-46.655981,-23.534043,-46.668517,Perdizes,clear,medium,low,Ana,motorcycle,Julia,5.22.0
+DT03125,2026-04-22 21:46:41,feijoada,42.43,-23.561684,-46.655981,-23.605917,-46.667880,Moema,rain,medium,high,Bruno,motorcycle,Gabriela,5.20.0
+DT02800,2026-05-25 11:01:45,classic_burger,34.16,-23.561684,-46.655981,-23.544912,-46.581631,Tatuape,rain,low,medium,Ana,car,Elisa,5.20.0
+DT02506,2026-05-15 11:42:59,pepperoni_pizza,47.69,-23.561684,-46.655981,-23.569411,-46.697829,Pinheiros,cloudy,low,medium,Felipe,bike,Thiago,5.21.2
+DT01448,2026-03-02 14:34:48,classic_burger,32.50,-23.561684,-46.655981,-23.564742,-46.653049,Bela Vista,cloudy,low,low,Felipe,motorcycle,Diego,6.0.0
+DT00766,2026-05-26 18:19:59,smash_burger,29.54,-23.561684,-46.655981,-23.593492,-46.673999,Itaim Bibi,clear,high,low,Carla,motorcycle,Rafael,5.22.0
+DT02857,2026-03-26 15:35:18,poke_bowl,50.43,-23.561684,-46.655981,-23.556795,-46.635229,Bela Vista,clear,low,low,Marcos,car,Yasmin,5.18.0
+DT03568,2026-01-22 21:37:31,feijoada,40.49,-23.561684,-46.655981,-23.588184,-46.624391,Vila Mariana,clear,low,high,Carla,motorcycle,Rafael,5.22.0
+DT01235,2026-06-10 19:55:33,margherita_pizza,44.98,-23.561684,-46.655981,-23.542500,-46.669777,Perdizes,rain,medium,medium,Marcos,motorcycle,Igor,5.22.0
+DT04637,2026-06-13 18:06:27,vegan_wrap,31.67,-23.561684,-46.655981,-23.565863,-46.641956,Bela Vista,clear,low,medium,Ana,motorcycle,Paula,5.20.0
+DT03322,2026-06-13 18:44:23,poke_bowl,46.72,-23.561684,-46.655981,-23.538391,-46.669473,Perdizes,clear,low,medium,Helena,bike,Carla,5.19.1
+DT02891,2026-02-08 19:26:56,feijoada,35.33,-23.561684,-46.655981,-23.591285,-46.627568,Vila Mariana,cloudy,medium,medium,Igor,motorcycle,Mariana,5.20.0
+DT04090,2026-04-09 21:02:25,carbonara_pasta,42.64,-23.561684,-46.655981,-23.501442,-46.624439,Santana,clear,low,medium,Marcos,car,Carla,5.18.0
+DT03078,2026-02-21 19:34:51,smash_burger,28.61,-23.561684,-46.655981,-23.611243,-46.699698,Brooklin,clear,medium,medium,Bruno,motorcycle,Diego,6.0.0
+DT00615,2026-06-12 18:38:43,pepperoni_pizza,60.99,-23.561684,-46.655981,-23.588213,-46.635395,Vila Mariana,clear,medium,medium,Felipe,motorcycle,Thiago,5.18.0
+DT00396,2026-01-16 20:10:54,bbq_ribs,71.05,-23.561684,-46.655981,-23.534840,-46.661670,Perdizes,clear,medium,medium,Carla,bike,Thiago,5.21.2
+DT00764,2026-06-04 19:08:21,classic_burger,35.80,-23.561684,-46.655981,-23.537073,-46.661013,Bela Vista,cloudy,medium,medium,Nina,motorcycle,Helena,5.22.0
+DT00478,2026-03-06 23:15:00,pepperoni_pizza,57.32,-23.561684,-46.655981,-23.554246,-46.646759,Bela Vista,cloudy,low,low,Ana,motorcycle,Paula,6.0.0
+DT04566,2026-04-01 19:00:21,poke_bowl,46.20,-23.561684,-46.655981,-23.507567,-46.620206,Santana,clear,medium,medium,Elisa,motorcycle,Gabriela,5.21.2
+DT03391,2026-05-31 12:20:12,smash_burger,24.58,-23.561684,-46.655981,-23.531145,-46.697115,Lapa,clear,low,medium,Helena,motorcycle,Elisa,5.18.0
+DT03940,2026-04-25 21:17:55,caesar_salad,31.94,-23.561684,-46.655981,-23.546015,-46.660910,Consolacao,clear,medium,medium,Igor,motorcycle,Natalia,5.18.0
+DT02432,2026-03-24 19:04:44,sushi_combo,68.98,-23.561684,-46.655981,-23.559946,-46.651955,Bela Vista,rain,medium,medium,Ana,motorcycle,Igor,5.18.0
+DT02286,2026-05-03 17:49:37,carbonara_pasta,47.56,-23.561684,-46.655981,-23.530070,-46.706065,Lapa,clear,low,low,Ana,motorcycle,Otavio,5.22.0
+DT01573,2026-02-11 13:46:17,feijoada,40.61,-23.561684,-46.655981,-23.544534,-46.658931,Consolacao,cloudy,medium,medium,Bruno,motorcycle,Lucas,5.19.1
+DT00431,2026-03-06 21:47:24,grilled_chicken,38.56,-23.561684,-46.655981,-23.616623,-46.690831,Brooklin,clear,low,medium,Helena,motorcycle,Thiago,5.21.2
+DT02240,2026-03-28 21:27:40,sushi_combo,62.73,-23.561684,-46.655981,-23.543185,-46.655909,Consolacao,cloudy,low,high,Julia,bike,Sofia,5.20.0
+DT03779,2026-06-07 21:56:56,mushroom_risotto,52.84,-23.561684,-46.655981,-23.571319,-46.686642,Pinheiros,clear,medium,high,Nina,motorcycle,Paula,6.0.0
+DT01786,2026-02-04 12:47:07,smash_burger,25.47,-23.561684,-46.655981,-23.573156,-46.675406,Itaim Bibi,rain,medium,medium,Marcos,bike,Mariana,5.21.2
+DT01433,2026-06-10 20:33:29,acai_bowl,26.08,-23.561684,-46.655981,-23.499599,-46.619038,Santana,clear,medium,medium,Marcos,motorcycle,Ana,5.22.0
+DT04775,2026-05-12 20:54:15,steak_plate,66.47,-23.561684,-46.655981,-23.614890,-46.697103,Brooklin,cloudy,medium,high,Carla,motorcycle,Sofia,5.21.2
+DT03397,2026-06-13 18:47:44,steak_plate,67.17,-23.561684,-46.655981,-23.552118,-46.653952,Consolacao,rain,low,medium,Marcos,bike,Diego,5.21.2
+DT03106,2026-05-03 20:32:56,margherita_pizza,47.24,-23.561684,-46.655981,-23.593741,-46.681259,Itaim Bibi,clear,medium,high,Nina,car,Gabriela,5.21.2
+DT00693,2026-05-09 10:42:33,vegan_wrap,29.07,-23.561684,-46.655981,-23.582395,-46.632486,Vila Mariana,clear,low,low,Elisa,motorcycle,Paula,5.20.0
+DT04574,2026-05-24 16:20:46,feijoada,42.36,-23.561684,-46.655981,-23.614986,-46.690923,Brooklin,cloudy,low,low,Nina,motorcycle,Yasmin,5.18.0
+DT02653,2026-03-11 12:24:16,margherita_pizza,41.12,-23.561684,-46.655981,-23.551883,-46.685354,Pinheiros,rain,high,medium,Felipe,motorcycle,Yasmin,6.0.0
+DT03788,2026-06-10 20:21:15,smash_burger,30.62,-23.561684,-46.655981,-23.538534,-46.682452,Perdizes,clear,high,medium,Julia,motorcycle,Bruno,5.19.1
+DT00562,2026-02-02 18:57:45,carbonara_pasta,48.73,-23.561684,-46.655981,-23.609714,-46.661877,Moema,cloudy,medium,low,Felipe,motorcycle,Diego,5.22.0
+DT01179,2026-02-11 11:15:50,acai_bowl,26.50,-23.561684,-46.655981,-23.531907,-46.684441,Perdizes,clear,low,low,Gabriel,car,Vanessa,5.20.0
+DT00150,2026-05-26 19:53:24,mushroom_risotto,55.62,-23.561684,-46.655981,-23.598224,-46.617614,Vila Mariana,cloudy,medium,medium,Felipe,motorcycle,Gabriela,6.0.0
+DT02598,2026-05-30 20:59:32,vegan_wrap,30.60,-23.561684,-46.655981,-23.563004,-46.660650,Jardins,clear,low,medium,Ana,bike,Thiago,5.19.1
+DT01996,2026-03-29 21:56:17,classic_burger,31.85,-23.561684,-46.655981,-23.601968,-46.717129,Morumbi,cloudy,low,medium,Igor,motorcycle,Carla,6.0.0
+DT03671,2026-02-02 16:33:58,mushroom_risotto,50.09,-23.561684,-46.655981,-23.610899,-46.696206,Brooklin,rain,medium,medium,Ana,bike,Bruno,5.20.0
+DT00060,2026-02-02 20:21:44,grilled_chicken,40.08,-23.561684,-46.655981,-23.501092,-46.619334,Santana,cloudy,high,medium,Julia,motorcycle,Paula,6.0.0
+DT02414,2026-05-22 14:11:00,grilled_chicken,43.23,-23.561684,-46.655981,-23.546170,-46.652653,Bela Vista,clear,low,low,Elisa,motorcycle,Paula,6.0.0
+DT01170,2026-01-29 12:27:04,ramen,48.62,-23.561684,-46.655981,-23.577784,-46.636635,Vila Mariana,clear,high,medium,Ana,motorcycle,Mariana,5.20.0
+DT00492,2026-03-20 21:46:22,sushi_combo,70.72,-23.561684,-46.655981,-23.549014,-46.661040,Bela Vista,clear,low,high,Helena,motorcycle,Diego,6.0.0
+DT03511,2026-04-23 22:39:52,carbonara_pasta,49.80,-23.561684,-46.655981,-23.552198,-46.637257,Liberdade,clear,low,low,Felipe,bike,Lucas,5.21.2
+DT02147,2026-06-06 19:38:55,acai_bowl,21.34,-23.561684,-46.655981,-23.552462,-46.632565,Liberdade,cloudy,low,medium,Diego,bike,Lucas,5.20.0
+DT00564,2026-02-07 13:10:31,carbonara_pasta,45.40,-23.561684,-46.655981,-23.528143,-46.678813,Perdizes,rain,medium,medium,Helena,bike,Elisa,5.21.2
+DT03348,2026-04-12 13:27:31,pepperoni_pizza,47.97,-23.561684,-46.655981,-23.538968,-46.712751,Lapa,clear,low,medium,Diego,motorcycle,Diego,6.0.0
+DT01953,2026-01-05 18:34:24,classic_burger,35.24,-23.561684,-46.655981,-23.652128,-46.714791,Santo Amaro,rain,high,low,Ana,motorcycle,Thiago,5.22.0
+DT01013,2026-03-29 14:19:08,pepperoni_pizza,50.80,-23.561684,-46.655981,-23.585462,-46.664631,Itaim Bibi,cloudy,low,low,Gabriel,car,Carla,5.22.0
+DT01820,2026-05-02 20:32:50,acai_bowl,26.37,-23.561684,-46.655981,-23.536100,-46.671993,Perdizes,clear,medium,medium,Nina,motorcycle,Rafael,5.21.2
+DT00415,2026-06-07 11:11:25,grilled_chicken,35.31,-23.561684,-46.655981,-23.563874,-46.641628,Bela Vista,clear,low,low,Gabriel,motorcycle,Gabriela,5.19.1
+DT04580,2026-02-21 14:47:45,carbonara_pasta,42.20,-23.561684,-46.655981,-23.575554,-46.670956,Jardins,clear,low,low,Ana,car,Thiago,5.21.2
+DT02399,2026-06-05 20:54:38,vegan_wrap,27.65,-23.561684,-46.655981,-23.511412,-46.622309,Santana,rain,high,low,Elisa,car,Natalia,5.22.0
+DT04422,2026-03-26 12:50:33,caesar_salad,31.07,-23.561684,-46.655981,-23.544834,-46.663450,Perdizes,rain,high,medium,Marcos,car,Yasmin,5.22.0
+DT00442,2026-03-25 21:14:33,pepperoni_pizza,52.32,-23.561684,-46.655981,-23.613915,-46.656509,Moema,cloudy,low,medium,Nina,car,Gabriela,6.0.0
+DT02539,2026-02-20 21:26:16,mushroom_risotto,51.20,-23.561684,-46.655981,-23.546405,-46.644439,Consolacao,clear,low,medium,Igor,car,Rafael,5.18.0
+DT00040,2026-02-18 19:27:52,classic_burger,33.30,-23.561684,-46.655981,-23.574682,-46.710498,Butanta,clear,medium,medium,Julia,motorcycle,Felipe,5.21.2
+DT01254,2026-04-30 20:08:01,grilled_chicken,38.82,-23.561684,-46.655981,-23.575882,-46.708779,Butanta,rain,high,medium,Gabriel,car,Julia,5.19.1
+DT04685,2026-03-07 18:11:38,margherita_pizza,47.47,-23.561684,-46.655981,-23.531028,-46.678483,Perdizes,cloudy,low,medium,Ana,motorcycle,Elisa,6.0.0
+DT01378,2026-04-03 21:20:26,caesar_salad,28.86,-23.561684,-46.655981,-23.559325,-46.661506,Consolacao,clear,medium,medium,Ana,bike,Sofia,5.18.0
+DT01604,2026-04-25 20:03:15,smash_burger,28.32,-23.561684,-46.655981,-23.572233,-46.654763,Bela Vista,clear,low,high,Elisa,bike,Lucas,5.18.0
+DT01633,2026-03-25 19:40:25,grilled_chicken,40.74,-23.561684,-46.655981,-23.560188,-46.660596,Consolacao,clear,medium,medium,Diego,walking,Julia,5.19.1
+DT00049,2026-01-23 19:13:36,feijoada,38.71,-23.561684,-46.655981,-23.609839,-46.663753,Moema,cloudy,medium,medium,Carla,motorcycle,Lucas,5.21.2
+DT03453,2026-03-28 14:47:21,poke_bowl,48.13,-23.561684,-46.655981,-23.553511,-46.651845,Consolacao,storm,medium,low,Carla,motorcycle,Igor,5.20.0
+DT04104,2026-06-05 10:42:03,classic_burger,27.43,-23.561684,-46.655981,-23.605871,-46.730779,Morumbi,clear,low,low,Felipe,motorcycle,Igor,5.22.0
+DT01408,2026-01-20 22:31:21,classic_burger,34.23,-23.561684,-46.655981,-23.561709,-46.657189,Jardins,rain,low,low,Bruno,bike,Lucas,5.21.2
+DT03766,2026-01-26 13:29:32,smash_burger,29.34,-23.561684,-46.655981,-23.571208,-46.659535,Jardins,clear,high,medium,Nina,car,Otavio,5.21.2
+DT01485,2026-05-26 18:17:37,classic_burger,34.10,-23.561684,-46.655981,-23.560354,-46.680684,Pinheiros,clear,medium,medium,Bruno,motorcycle,Natalia,5.18.0
+DT02342,2026-06-07 17:12:23,sushi_combo,70.49,-23.561684,-46.655981,-23.575178,-46.657969,Bela Vista,clear,low,medium,Marcos,motorcycle,Yasmin,5.19.1
+DT00136,2026-03-11 11:32:35,poke_bowl,51.17,-23.561684,-46.655981,-23.607082,-46.721263,Morumbi,rain,medium,low,Diego,motorcycle,Sofia,5.19.1
+DT00579,2026-04-02 13:48:09,margherita_pizza,50.99,-23.561684,-46.655981,-23.521410,-46.715997,Lapa,cloudy,high,medium,Marcos,motorcycle,Julia,5.18.0
+DT03238,2026-01-11 14:39:16,pepperoni_pizza,48.59,-23.561684,-46.655981,-23.588655,-46.683714,Itaim Bibi,clear,low,low,Felipe,motorcycle,Gabriela,5.20.0
+DT01780,2026-04-08 18:52:00,poke_bowl,48.00,-23.561684,-46.655981,-23.565392,-46.680622,Pinheiros,storm,high,low,Diego,motorcycle,Sofia,5.21.2
+DT02230,2026-03-25 21:23:07,smash_burger,24.24,-23.561684,-46.655981,-23.594844,-46.628506,Vila Mariana,clear,low,medium,Bruno,motorcycle,Igor,5.18.0
+DT04163,2026-03-19 11:36:06,vegan_wrap,29.54,-23.561684,-46.655981,-23.532374,-46.700283,Lapa,cloudy,low,low,Igor,bike,Bruno,5.18.0
+DT00695,2026-06-08 23:13:15,acai_bowl,25.92,-23.561684,-46.655981,-23.562896,-46.664878,Bela Vista,clear,low,low,Felipe,walking,Sofia,5.18.0
+DT04347,2026-04-11 08:09:11,feijoada,39.74,-23.561684,-46.655981,-23.568317,-46.642054,Bela Vista,clear,low,low,Julia,bike,Otavio,5.19.1
+DT02523,2026-01-24 12:05:24,vegan_wrap,29.80,-23.561684,-46.655981,-23.582741,-46.624496,Vila Mariana,cloudy,low,medium,Igor,motorcycle,Yasmin,6.0.0
+DT04677,2026-04-12 11:31:26,steak_plate,62.35,-23.561684,-46.655981,-23.566995,-46.634884,Bela Vista,clear,low,medium,Julia,motorcycle,Yasmin,5.19.1
+DT04258,2026-02-15 18:18:45,poke_bowl,44.28,-23.561684,-46.655981,-23.557615,-46.662462,Consolacao,clear,low,medium,Elisa,bike,Mariana,5.22.0
+DT01130,2026-05-13 08:23:42,margherita_pizza,45.27,-23.561684,-46.655981,-23.550828,-46.632347,Liberdade,clear,medium,low,Nina,bike,Helena,5.22.0
+DT03736,2026-02-06 15:52:56,feijoada,43.83,-23.561684,-46.655981,-23.494611,-46.614113,Santana,clear,low,low,Julia,motorcycle,Helena,6.0.0
+DT03566,2026-01-28 12:54:17,sushi_combo,74.32,-23.561684,-46.655981,-23.595874,-46.709025,Morumbi,rain,medium,medium,Helena,car,Mariana,5.20.0
+DT01001,2026-05-10 19:16:43,bbq_ribs,74.45,-23.561684,-46.655981,-23.572964,-46.655904,Bela Vista,rain,medium,high,Felipe,motorcycle,Gabriela,5.20.0
+DT00162,2026-04-15 13:24:30,smash_burger,27.56,-23.561684,-46.655981,-23.568937,-46.631737,Liberdade,clear,medium,medium,Marcos,motorcycle,Thiago,5.22.0
+DT02847,2026-04-18 20:35:39,carbonara_pasta,40.84,-23.561684,-46.655981,-23.566152,-46.668969,Jardins,rain,high,medium,Felipe,motorcycle,Natalia,5.18.0
+DT03410,2026-04-05 20:52:18,smash_burger,27.51,-23.561684,-46.655981,-23.591106,-46.639920,Vila Mariana,clear,low,high,Marcos,car,Natalia,5.20.0
+DT03642,2026-06-06 12:09:50,grilled_chicken,39.00,-23.561684,-46.655981,-23.592849,-46.659250,Moema,cloudy,low,medium,Nina,bike,Carla,5.21.2
+DT00217,2026-02-20 08:39:15,classic_burger,35.40,-23.561684,-46.655981,-23.540304,-46.646863,Consolacao,clear,medium,low,Carla,car,Otavio,6.0.0
+DT04057,2026-03-28 23:23:04,ramen,47.14,-23.561684,-46.655981,-23.564812,-46.662671,Bela Vista,clear,low,low,Bruno,bike,Carla,5.19.1
+DT04149,2026-02-14 11:06:03,sushi_combo,73.36,-23.561684,-46.655981,-23.567569,-46.669496,Bela Vista,clear,low,medium,Helena,bike,Vanessa,6.0.0
+DT04573,2026-01-28 11:14:47,smash_burger,22.62,-23.561684,-46.655981,-23.593494,-46.636436,Vila Mariana,cloudy,low,low,Bruno,motorcycle,Elisa,5.21.2
+DT04244,2026-03-26 09:41:16,classic_burger,35.30,-23.561684,-46.655981,-23.500120,-46.630555,Santana,rain,medium,low,Gabriel,motorcycle,Mariana,6.0.0
+DT02228,2026-04-14 18:22:28,caesar_salad,30.32,-23.561684,-46.655981,-23.566024,-46.654964,Consolacao,clear,high,low,Igor,walking,Lucas,6.0.0
+DT02004,2026-04-19 16:21:17,sushi_combo,64.74,-23.561684,-46.655981,-23.551557,-46.648854,Consolacao,clear,low,medium,Bruno,bike,Otavio,5.19.1
+DT01092,2026-02-27 12:00:30,smash_burger,30.05,-23.561684,-46.655981,-23.611428,-46.682450,Brooklin,cloudy,medium,medium,Marcos,motorcycle,Vanessa,5.18.0
+DT02764,2026-04-19 10:31:43,vegan_wrap,25.35,-23.561684,-46.655981,-23.545730,-46.630634,Liberdade,clear,low,low,Igor,motorcycle,Carla,6.0.0
+DT00500,2026-02-14 18:11:00,margherita_pizza,47.83,-23.561684,-46.655981,-23.547990,-46.667279,Consolacao,storm,medium,low,Bruno,car,Felipe,5.19.1
+DT00765,2026-05-12 21:13:10,acai_bowl,27.28,-23.561684,-46.655981,-23.601571,-46.666105,Moema,cloudy,low,medium,Bruno,motorcycle,Bruno,5.20.0
+DT04950,2026-05-04 13:59:04,pepperoni_pizza,48.35,-23.561684,-46.655981,-23.566469,-46.692927,Pinheiros,cloudy,medium,medium,Julia,motorcycle,Sofia,6.0.0
+DT02844,2026-05-12 17:10:33,mushroom_risotto,54.56,-23.561684,-46.655981,-23.618974,-46.691549,Brooklin,clear,low,low,Elisa,car,Ana,5.20.0
+DT04189,2026-02-27 20:36:01,sushi_combo,64.73,-23.561684,-46.655981,-23.531332,-46.676271,Perdizes,clear,medium,medium,Marcos,motorcycle,Julia,5.19.1
+DT04480,2026-05-25 13:31:41,margherita_pizza,45.11,-23.561684,-46.655981,-23.572567,-46.684594,Pinheiros,clear,medium,medium,Marcos,motorcycle,Paula,5.20.0
+DT02936,2026-01-13 21:31:01,caesar_salad,26.59,-23.561684,-46.655981,-23.544314,-46.633967,Consolacao,cloudy,low,medium,Felipe,motorcycle,Otavio,5.19.1
+DT01064,2026-03-11 13:29:26,acai_bowl,26.25,-23.561684,-46.655981,-23.549012,-46.655892,Consolacao,clear,medium,medium,Diego,motorcycle,Otavio,5.19.1
+DT03466,2026-04-22 21:16:02,margherita_pizza,51.83,-23.561684,-46.655981,-23.569473,-46.685302,Pinheiros,clear,low,low,Carla,motorcycle,Paula,5.19.1
+DT00177,2026-03-02 11:03:16,classic_burger,34.19,-23.561684,-46.655981,-23.569791,-46.674792,Pinheiros,rain,medium,low,Gabriel,motorcycle,Diego,5.18.0
+DT03937,2026-02-07 16:21:09,vegan_wrap,31.30,-23.561684,-46.655981,-23.555217,-46.619971,Liberdade,cloudy,low,low,Helena,bike,Mariana,6.0.0
+DT00246,2026-05-11 08:39:30,smash_burger,29.56,-23.561684,-46.655981,-23.543893,-46.650652,Consolacao,cloudy,medium,low,Ana,motorcycle,Igor,5.19.1
+DT01678,2026-03-17 13:16:47,caesar_salad,29.41,-23.561684,-46.655981,-23.526834,-46.697880,Lapa,rain,high,low,Elisa,motorcycle,Gabriela,5.20.0
+DT03883,2026-06-07 19:03:15,pepperoni_pizza,42.78,-23.561684,-46.655981,-23.568019,-46.669481,Jardins,clear,medium,medium,Bruno,motorcycle,Igor,5.19.1
+DT04153,2026-05-27 18:58:20,feijoada,40.77,-23.561684,-46.655981,-23.574370,-46.688157,Itaim Bibi,rain,high,low,Felipe,bike,Igor,6.0.0
+DT00036,2026-03-24 09:08:18,feijoada,50.36,-23.561684,-46.655981,-23.624812,-46.688439,Brooklin,clear,medium,low,Carla,motorcycle,Felipe,5.20.0
+DT02723,2026-06-09 08:57:07,smash_burger,29.91,-23.561684,-46.655981,-23.579102,-46.694523,Itaim Bibi,clear,low,low,Marcos,motorcycle,Felipe,5.22.0
+DT04438,2026-06-07 22:57:27,bbq_ribs,72.97,-23.561684,-46.655981,-23.586947,-46.679126,Itaim Bibi,clear,low,medium,Felipe,car,Diego,5.22.0
+DT03544,2026-02-16 19:54:23,grilled_chicken,34.41,-23.561684,-46.655981,-23.654373,-46.704539,Santo Amaro,clear,medium,medium,Diego,bike,Rafael,5.21.2
+DT00160,2026-05-18 23:36:36,margherita_pizza,55.81,-23.561684,-46.655981,-23.616867,-46.695162,Brooklin,rain,low,low,Felipe,motorcycle,Otavio,5.20.0
+DT00551,2026-06-08 21:05:54,margherita_pizza,44.94,-23.561684,-46.655981,-23.563197,-46.663037,Consolacao,clear,medium,low,Helena,motorcycle,Lucas,5.19.1
+DT03439,2026-04-19 21:25:50,carbonara_pasta,44.21,-23.561684,-46.655981,-23.613746,-46.683136,Brooklin,cloudy,medium,medium,Carla,motorcycle,Thiago,5.20.0
+DT04644,2026-04-26 19:20:45,steak_plate,75.41,-23.561684,-46.655981,-23.555930,-46.658498,Bela Vista,clear,medium,high,Igor,bike,Thiago,5.21.2
+DT00601,2026-04-22 20:36:49,pepperoni_pizza,55.27,-23.561684,-46.655981,-23.520467,-46.700040,Lapa,clear,medium,medium,Bruno,motorcycle,Diego,5.22.0
+DT04769,2026-01-26 10:39:23,ramen,44.86,-23.561684,-46.655981,-23.623036,-46.699500,Brooklin,cloudy,low,low,Julia,bike,Felipe,5.18.0
+DT00451,2026-05-19 13:38:44,pepperoni_pizza,42.41,-23.561684,-46.655981,-23.545740,-46.668276,Consolacao,cloudy,medium,medium,Nina,bike,Elisa,6.0.0
+DT04112,2026-02-06 10:14:36,classic_burger,37.45,-23.561684,-46.655981,-23.564313,-46.673394,Jardins,clear,low,low,Marcos,car,Felipe,6.0.0
+DT04004,2026-03-10 19:37:51,grilled_chicken,38.67,-23.561684,-46.655981,-23.526414,-46.659617,Perdizes,rain,high,medium,Bruno,bike,Julia,5.22.0
+DT03303,2026-04-16 19:29:06,pepperoni_pizza,56.40,-23.561684,-46.655981,-23.554583,-46.644764,Consolacao,cloudy,medium,medium,Marcos,bike,Mariana,5.19.1
+DT00201,2026-05-10 21:33:51,margherita_pizza,46.33,-23.561684,-46.655981,-23.547976,-46.656895,Consolacao,clear,medium,medium,Gabriel,motorcycle,Natalia,5.22.0
+DT00641,2026-03-09 17:55:44,ramen,49.87,-23.561684,-46.655981,-23.550174,-46.671444,Perdizes,storm,medium,low,Nina,motorcycle,Lucas,5.19.1
+DT04272,2026-04-24 16:25:06,smash_burger,23.10,-23.561684,-46.655981,-23.597462,-46.683153,Moema,cloudy,low,low,Igor,motorcycle,Rafael,6.0.0
+DT03733,2026-06-04 23:46:28,margherita_pizza,40.69,-23.561684,-46.655981,-23.600564,-46.723982,Morumbi,clear,low,low,Felipe,motorcycle,Gabriela,5.21.2
+DT03973,2026-01-13 20:01:21,sushi_combo,58.81,-23.561684,-46.655981,-23.565005,-46.660274,Bela Vista,rain,high,medium,Elisa,bike,Gabriela,5.20.0
+DT02303,2026-02-10 18:51:23,pepperoni_pizza,53.01,-23.561684,-46.655981,-23.597088,-46.663686,Moema,cloudy,medium,low,Bruno,motorcycle,Rafael,5.20.0
+DT03094,2026-01-10 19:09:14,ramen,42.23,-23.561684,-46.655981,-23.606392,-46.671917,Moema,clear,low,medium,Marcos,motorcycle,Gabriela,5.22.0
+DT02832,2026-06-10 18:24:27,classic_burger,31.02,-23.561684,-46.655981,-23.599248,-46.653480,Moema,cloudy,high,low,Igor,motorcycle,Carla,5.18.0
+DT01006,2026-05-27 20:03:20,margherita_pizza,48.45,-23.561684,-46.655981,-23.574846,-46.689196,Pinheiros,clear,medium,low,Carla,motorcycle,Gabriela,6.0.0
+DT02514,2026-05-09 22:26:53,pepperoni_pizza,54.71,-23.561684,-46.655981,-23.598526,-46.674647,Moema,clear,low,low,Diego,car,Lucas,5.21.2
+DT00218,2026-02-26 20:12:54,carbonara_pasta,43.79,-23.561684,-46.655981,-23.568514,-46.649776,Liberdade,clear,high,medium,Helena,motorcycle,Elisa,6.0.0
+DT00279,2026-02-05 13:09:18,sushi_combo,59.65,-23.561684,-46.655981,-23.569586,-46.659529,Jardins,clear,medium,medium,Helena,car,Diego,5.20.0
+DT01602,2026-04-10 12:08:19,sushi_combo,57.62,-23.561684,-46.655981,-23.595208,-46.718590,Morumbi,clear,medium,medium,Ana,motorcycle,Felipe,6.0.0
+DT02145,2026-05-05 17:14:13,steak_plate,71.27,-23.561684,-46.655981,-23.540701,-46.660209,Perdizes,clear,low,medium,Gabriel,bike,Diego,5.18.0
+DT03034,2026-01-20 15:24:34,ramen,52.11,-23.561684,-46.655981,-23.551548,-46.662191,Bela Vista,clear,low,low,Carla,walking,Felipe,6.0.0
+DT03230,2026-05-10 13:15:48,smash_burger,28.32,-23.561684,-46.655981,-23.562184,-46.662744,Bela Vista,clear,medium,medium,Helena,motorcycle,Lucas,5.22.0
+DT03201,2026-06-10 11:23:31,vegan_wrap,29.44,-23.561684,-46.655981,-23.496171,-46.616921,Santana,clear,medium,low,Bruno,motorcycle,Vanessa,5.19.1
+DT04645,2026-05-15 11:30:19,margherita_pizza,43.89,-23.561684,-46.655981,-23.561804,-46.656639,Bela Vista,clear,low,low,Carla,walking,Rafael,5.22.0
+DT02702,2026-03-03 13:08:22,vegan_wrap,33.57,-23.561684,-46.655981,-23.543443,-46.631846,Liberdade,rain,high,medium,Elisa,bike,Rafael,5.21.2
+DT02022,2026-01-10 23:20:07,classic_burger,36.33,-23.561684,-46.655981,-23.549373,-46.671783,Consolacao,clear,low,medium,Bruno,bike,Helena,5.20.0
+DT04630,2026-04-17 19:27:02,pepperoni_pizza,53.58,-23.561684,-46.655981,-23.577021,-46.668675,Jardins,clear,high,medium,Felipe,motorcycle,Thiago,5.18.0
+DT04135,2026-02-27 13:37:10,ramen,48.15,-23.561684,-46.655981,-23.608253,-46.689228,Brooklin,clear,medium,medium,Igor,car,Rafael,5.20.0
+DT03021,2026-04-02 18:57:16,feijoada,43.69,-23.561684,-46.655981,-23.592845,-46.714235,Morumbi,rain,high,low,Marcos,bike,Rafael,5.20.0
+DT02990,2026-01-22 14:40:58,margherita_pizza,50.97,-23.561684,-46.655981,-23.568824,-46.665498,Jardins,clear,low,low,Ana,walking,Otavio,5.20.0
+DT04603,2026-05-30 11:02:10,carbonara_pasta,45.20,-23.561684,-46.655981,-23.610036,-46.664656,Moema,rain,medium,low,Julia,bike,Diego,5.19.1
+DT04348,2026-04-03 18:24:16,steak_plate,63.05,-23.561684,-46.655981,-23.587403,-46.630283,Vila Mariana,cloudy,medium,low,Gabriel,motorcycle,Julia,6.0.0
+DT02110,2026-03-31 10:16:04,caesar_salad,33.14,-23.561684,-46.655981,-23.552779,-46.648324,Consolacao,rain,low,low,Felipe,bike,Lucas,5.18.0
+DT04872,2026-01-14 20:08:07,acai_bowl,25.78,-23.561684,-46.655981,-23.550894,-46.630979,Liberdade,cloudy,medium,low,Julia,bike,Julia,5.22.0
+DT01172,2026-03-01 11:17:00,carbonara_pasta,52.16,-23.561684,-46.655981,-23.599308,-46.722492,Morumbi,rain,medium,medium,Elisa,motorcycle,Mariana,5.20.0
+DT04363,2026-03-03 18:29:41,carbonara_pasta,48.76,-23.561684,-46.655981,-23.597207,-46.662826,Moema,storm,high,low,Igor,motorcycle,Felipe,5.20.0
+DT04809,2026-03-07 19:13:02,smash_burger,24.11,-23.561684,-46.655981,-23.580735,-46.680680,Itaim Bibi,clear,low,medium,Diego,motorcycle,Igor,5.20.0
+DT00166,2026-05-02 14:51:34,carbonara_pasta,46.57,-23.561684,-46.655981,-23.545519,-46.651617,Consolacao,clear,low,low,Bruno,bike,Rafael,5.22.0
+DT00667,2026-03-14 13:50:33,steak_plate,63.67,-23.561684,-46.655981,-23.603484,-46.673008,Moema,clear,low,medium,Helena,motorcycle,Diego,6.0.0
+DT04980,2026-03-03 14:41:36,grilled_chicken,32.36,-23.561684,-46.655981,-23.568369,-46.669471,Jardins,clear,low,low,Igor,walking,Ana,5.18.0
+DT01879,2026-04-05 23:27:18,acai_bowl,26.23,-23.561684,-46.655981,-23.594174,-46.676504,Itaim Bibi,cloudy,low,medium,Igor,bike,Elisa,5.19.1
+DT00398,2026-02-09 11:31:44,grilled_chicken,33.85,-23.561684,-46.655981,-23.548109,-46.650498,Consolacao,clear,low,low,Julia,motorcycle,Lucas,6.0.0
+DT03857,2026-05-16 18:56:17,carbonara_pasta,43.01,-23.561684,-46.655981,-23.587168,-46.682155,Itaim Bibi,cloudy,low,low,Gabriel,motorcycle,Helena,5.20.0
+DT04563,2026-05-12 14:36:10,feijoada,46.54,-23.561684,-46.655981,-23.588051,-46.629532,Vila Mariana,clear,low,low,Felipe,motorcycle,Helena,6.0.0
+DT02027,2026-04-29 08:29:29,carbonara_pasta,40.83,-23.561684,-46.655981,-23.617012,-46.664501,Moema,cloudy,medium,low,Carla,car,Bruno,5.19.1
+DT01134,2026-03-30 15:51:34,ramen,44.56,-23.561684,-46.655981,-23.542723,-46.647947,Consolacao,clear,low,low,Gabriel,bike,Natalia,5.21.2
+DT00819,2026-02-28 18:35:46,feijoada,48.02,-23.561684,-46.655981,-23.617232,-46.681176,Brooklin,cloudy,medium,high,Bruno,motorcycle,Rafael,6.0.0
+DT01626,2026-03-14 21:21:01,caesar_salad,31.03,-23.561684,-46.655981,-23.616051,-46.677887,Brooklin,storm,medium,medium,Gabriel,motorcycle,Vanessa,6.0.0
+DT02330,2026-01-17 19:17:59,smash_burger,28.58,-23.561684,-46.655981,-23.586193,-46.682526,Itaim Bibi,storm,high,medium,Ana,car,Helena,6.0.0
+DT02161,2026-03-02 21:52:18,poke_bowl,49.94,-23.561684,-46.655981,-23.555636,-46.681682,Pinheiros,clear,low,medium,Felipe,motorcycle,Rafael,5.21.2
+DT03197,2026-04-13 21:31:43,grilled_chicken,38.61,-23.561684,-46.655981,-23.551212,-46.657986,Consolacao,clear,medium,medium,Helena,motorcycle,Helena,5.20.0
+DT01068,2026-01-10 19:03:59,caesar_salad,31.49,-23.561684,-46.655981,-23.561255,-46.642723,Bela Vista,cloudy,low,medium,Julia,motorcycle,Ana,5.22.0
+DT01612,2026-05-21 14:33:29,mushroom_risotto,55.72,-23.561684,-46.655981,-23.583303,-46.705637,Itaim Bibi,rain,low,low,Ana,motorcycle,Helena,6.0.0
+DT01008,2026-03-11 17:15:05,margherita_pizza,47.02,-23.561684,-46.655981,-23.591016,-46.636340,Vila Mariana,rain,low,low,Diego,motorcycle,Diego,5.19.1
+DT03855,2026-03-21 20:16:27,mushroom_risotto,56.70,-23.561684,-46.655981,-23.560871,-46.657480,Bela Vista,clear,medium,high,Nina,motorcycle,Diego,5.19.1
+DT01767,2026-01-07 13:28:39,pepperoni_pizza,52.49,-23.561684,-46.655981,-23.562570,-46.648342,Consolacao,cloudy,high,medium,Nina,bike,Bruno,6.0.0
+DT01966,2026-04-24 15:35:28,sushi_combo,69.23,-23.561684,-46.655981,-23.554258,-46.651469,Bela Vista,clear,low,low,Diego,bike,Bruno,5.20.0
+DT04977,2026-05-18 21:41:38,steak_plate,56.66,-23.561684,-46.655981,-23.558625,-46.642472,Liberdade,clear,low,medium,Elisa,bike,Gabriela,5.19.1
+DT04160,2026-04-27 09:31:23,carbonara_pasta,39.50,-23.561684,-46.655981,-23.513589,-46.629092,Santana,rain,medium,low,Julia,motorcycle,Igor,5.19.1
+DT04105,2026-03-22 18:09:11,smash_burger,27.63,-23.561684,-46.655981,-23.586891,-46.673416,Itaim Bibi,clear,low,low,Helena,motorcycle,Mariana,5.20.0
+DT00459,2026-05-14 22:03:05,classic_burger,30.66,-23.561684,-46.655981,-23.561038,-46.652981,Consolacao,clear,low,medium,Diego,walking,Yasmin,6.0.0
+DT01589,2026-04-02 17:38:22,grilled_chicken,37.57,-23.561684,-46.655981,-23.583834,-46.630888,Vila Mariana,clear,low,low,Gabriel,car,Vanessa,5.22.0
+DT04031,2026-01-09 09:37:03,vegan_wrap,25.99,-23.561684,-46.655981,-23.568749,-46.700125,Pinheiros,clear,medium,low,Elisa,motorcycle,Natalia,5.21.2
+DT03081,2026-03-10 21:57:23,bbq_ribs,76.15,-23.561684,-46.655981,-23.595603,-46.626081,Vila Mariana,rain,medium,high,Elisa,motorcycle,Helena,5.20.0
+DT01784,2026-01-05 14:08:16,bbq_ribs,81.59,-23.561684,-46.655981,-23.565483,-46.641815,Bela Vista,cloudy,low,low,Bruno,bike,Igor,5.21.2
+DT01174,2026-05-16 14:45:53,acai_bowl,26.79,-23.561684,-46.655981,-23.571714,-46.703122,Butanta,rain,low,low,Gabriel,motorcycle,Ana,5.22.0
+DT02790,2026-05-02 13:53:31,ramen,47.98,-23.561684,-46.655981,-23.574299,-46.658180,Jardins,cloudy,medium,low,Carla,motorcycle,Felipe,5.19.1
+DT00761,2026-05-14 19:07:37,carbonara_pasta,39.69,-23.561684,-46.655981,-23.565729,-46.697222,Pinheiros,cloudy,medium,medium,Gabriel,car,Julia,5.21.2
+DT00058,2026-04-23 21:47:15,classic_burger,26.62,-23.561684,-46.655981,-23.558803,-46.634609,Liberdade,clear,low,low,Nina,motorcycle,Thiago,5.21.2
+DT00421,2026-05-29 19:54:33,acai_bowl,28.71,-23.561684,-46.655981,-23.539023,-46.667168,Perdizes,clear,high,medium,Carla,car,Elisa,5.18.0
+DT02401,2026-04-29 13:58:51,sushi_combo,82.44,-23.561684,-46.655981,-23.538632,-46.672304,Perdizes,cloudy,high,medium,Marcos,bike,Mariana,5.19.1
+DT02902,2026-04-17 21:06:18,carbonara_pasta,42.80,-23.561684,-46.655981,-23.586011,-46.643206,Vila Mariana,clear,low,medium,Diego,bike,Lucas,5.18.0
+DT04391,2026-05-27 19:56:21,grilled_chicken,41.62,-23.561684,-46.655981,-23.573258,-46.651110,Bela Vista,cloudy,medium,medium,Diego,motorcycle,Vanessa,5.19.1
+DT01740,2026-02-17 13:26:27,pepperoni_pizza,50.59,-23.561684,-46.655981,-23.557617,-46.689294,Pinheiros,cloudy,medium,medium,Diego,bike,Gabriela,5.21.2
+DT03392,2026-03-25 20:34:10,smash_burger,25.89,-23.561684,-46.655981,-23.535201,-46.581346,Tatuape,clear,high,low,Carla,car,Otavio,6.0.0
+DT00343,2026-02-21 14:45:25,carbonara_pasta,48.49,-23.561684,-46.655981,-23.569659,-46.640477,Bela Vista,clear,low,low,Ana,bike,Felipe,5.21.2
+DT02648,2026-04-11 18:02:21,margherita_pizza,41.19,-23.561684,-46.655981,-23.553279,-46.650910,Consolacao,cloudy,low,medium,Elisa,walking,Mariana,5.21.2
+DT01231,2026-01-02 14:53:39,bbq_ribs,71.77,-23.561684,-46.655981,-23.589846,-46.721206,Morumbi,rain,low,low,Diego,car,Rafael,5.18.0
+DT02676,2026-02-08 20:59:39,margherita_pizza,43.44,-23.561684,-46.655981,-23.592631,-46.687802,Itaim Bibi,clear,low,medium,Ana,motorcycle,Otavio,6.0.0
+DT00863,2026-03-03 11:03:25,mushroom_risotto,47.52,-23.561684,-46.655981,-23.579698,-46.719353,Butanta,cloudy,low,medium,Elisa,motorcycle,Sofia,5.19.1
+DT01838,2026-01-05 18:41:34,ramen,44.39,-23.561684,-46.655981,-23.528197,-46.662791,Perdizes,clear,medium,low,Igor,motorcycle,Julia,6.0.0
+DT03451,2026-02-06 12:31:38,classic_burger,34.67,-23.561684,-46.655981,-23.592544,-46.634677,Vila Mariana,rain,medium,medium,Carla,car,Bruno,5.20.0
+DT00980,2026-05-03 19:11:10,steak_plate,73.48,-23.561684,-46.655981,-23.591352,-46.639329,Vila Mariana,clear,medium,medium,Julia,bike,Natalia,5.21.2
+DT02059,2026-01-11 11:14:31,mushroom_risotto,55.56,-23.561684,-46.655981,-23.571622,-46.652708,Bela Vista,clear,low,medium,Diego,bike,Sofia,5.22.0
+DT01804,2026-02-18 22:48:03,poke_bowl,48.15,-23.561684,-46.655981,-23.568420,-46.682209,Pinheiros,clear,low,low,Marcos,motorcycle,Felipe,6.0.0
+DT03555,2026-04-28 17:29:38,ramen,40.89,-23.561684,-46.655981,-23.548461,-46.657455,Consolacao,rain,low,low,Igor,motorcycle,Elisa,5.19.1
+DT01004,2026-06-07 13:53:53,poke_bowl,46.65,-23.561684,-46.655981,-23.581100,-46.680923,Jardins,clear,low,medium,Carla,bike,Julia,5.21.2
+DT01619,2026-01-17 19:31:51,smash_burger,27.85,-23.561684,-46.655981,-23.586791,-46.636407,Vila Mariana,clear,low,high,Helena,motorcycle,Sofia,5.20.0
+DT01114,2026-03-20 21:36:02,pepperoni_pizza,52.25,-23.561684,-46.655981,-23.584309,-46.636531,Vila Mariana,storm,high,medium,Helena,motorcycle,Lucas,5.18.0
+DT04620,2026-02-02 22:23:40,carbonara_pasta,44.97,-23.561684,-46.655981,-23.658471,-46.715013,Santo Amaro,storm,medium,medium,Felipe,motorcycle,Yasmin,5.21.2
+DT04738,2026-04-23 20:43:30,margherita_pizza,47.76,-23.561684,-46.655981,-23.593408,-46.703252,Morumbi,clear,medium,medium,Nina,motorcycle,Carla,5.22.0
+DT03904,2026-01-11 14:09:07,pepperoni_pizza,48.29,-23.561684,-46.655981,-23.562573,-46.673320,Jardins,clear,low,low,Carla,motorcycle,Lucas,6.0.0
+DT01087,2026-01-17 18:52:34,bbq_ribs,65.47,-23.561684,-46.655981,-23.569376,-46.629179,Liberdade,rain,medium,high,Marcos,bike,Felipe,5.18.0
+DT03286,2026-06-15 08:15:25,feijoada,43.82,-23.561684,-46.655981,-23.644547,-46.720688,Santo Amaro,cloudy,medium,low,Ana,bike,Gabriela,5.19.1
+DT04815,2026-03-12 14:09:04,margherita_pizza,45.06,-23.561684,-46.655981,-23.578146,-46.678292,Itaim Bibi,clear,low,low,Helena,motorcycle,Mariana,5.22.0
+DT04634,2026-03-20 19:04:04,grilled_chicken,39.90,-23.561684,-46.655981,-23.508976,-46.630667,Santana,rain,high,low,Igor,motorcycle,Ana,5.19.1
+DT01055,2026-04-26 09:42:46,carbonara_pasta,42.71,-23.561684,-46.655981,-23.656096,-46.709280,Santo Amaro,clear,low,low,Carla,motorcycle,Otavio,5.18.0
+DT01992,2026-02-02 18:37:46,steak_plate,63.41,-23.561684,-46.655981,-23.559877,-46.660835,Consolacao,cloudy,medium,low,Helena,motorcycle,Mariana,5.19.1
+DT02105,2026-04-15 15:12:03,pepperoni_pizza,46.72,-23.561684,-46.655981,-23.543416,-46.575791,Tatuape,cloudy,low,low,Julia,motorcycle,Natalia,5.21.2
+DT01085,2026-05-26 18:58:48,ramen,54.00,-23.561684,-46.655981,-23.572770,-46.674221,Jardins,clear,medium,low,Helena,motorcycle,Julia,6.0.0
+DT04190,2026-04-19 14:58:26,pepperoni_pizza,49.96,-23.561684,-46.655981,-23.586561,-46.639161,Vila Mariana,clear,low,low,Ana,motorcycle,Felipe,5.21.2
+DT03708,2026-03-28 11:24:57,margherita_pizza,38.20,-23.561684,-46.655981,-23.592316,-46.665045,Moema,storm,medium,medium,Diego,motorcycle,Helena,5.21.2
+DT04003,2026-04-20 10:41:43,smash_burger,25.09,-23.561684,-46.655981,-23.608048,-46.658899,Moema,cloudy,low,low,Carla,bike,Vanessa,5.20.0
+DT02812,2026-03-18 14:35:13,carbonara_pasta,45.21,-23.561684,-46.655981,-23.546365,-46.658006,Consolacao,clear,low,low,Ana,motorcycle,Thiago,5.19.1
+DT01743,2026-05-04 22:05:44,margherita_pizza,52.87,-23.561684,-46.655981,-23.579137,-46.683249,Jardins,clear,low,low,Ana,motorcycle,Otavio,5.18.0
+DT04676,2026-02-12 19:49:09,smash_burger,27.80,-23.561684,-46.655981,-23.551438,-46.652208,Bela Vista,clear,medium,low,Diego,motorcycle,Julia,5.18.0
+DT03330,2026-05-20 22:25:25,carbonara_pasta,40.28,-23.561684,-46.655981,-23.544097,-46.659189,Consolacao,clear,low,low,Marcos,motorcycle,Elisa,5.22.0
+DT04753,2026-04-14 14:09:20,sushi_combo,65.15,-23.561684,-46.655981,-23.626498,-46.676322,Brooklin,cloudy,low,medium,Diego,bike,Paula,5.22.0
+DT03570,2026-01-04 20:09:26,carbonara_pasta,42.23,-23.561684,-46.655981,-23.533629,-46.670259,Perdizes,rain,high,medium,Gabriel,bike,Helena,5.18.0
+DT02317,2026-04-06 16:31:37,grilled_chicken,38.65,-23.561684,-46.655981,-23.620955,-46.689806,Brooklin,storm,low,low,Igor,motorcycle,Rafael,5.18.0
+DT02746,2026-06-02 14:30:49,vegan_wrap,25.27,-23.561684,-46.655981,-23.555522,-46.664577,Consolacao,cloudy,low,low,Nina,bike,Felipe,5.18.0
+DT00216,2026-03-26 17:49:58,poke_bowl,43.12,-23.561684,-46.655981,-23.547715,-46.662661,Consolacao,storm,low,low,Diego,bike,Bruno,5.22.0
+DT02768,2026-06-07 23:42:27,carbonara_pasta,47.10,-23.561684,-46.655981,-23.557393,-46.628478,Liberdade,cloudy,low,medium,Diego,motorcycle,Rafael,5.18.0
+DT00545,2026-02-09 08:42:02,carbonara_pasta,43.63,-23.561684,-46.655981,-23.605768,-46.668627,Moema,rain,high,low,Diego,motorcycle,Bruno,5.18.0
+DT00668,2026-05-14 14:01:15,acai_bowl,24.82,-23.561684,-46.655981,-23.589675,-46.651287,Vila Mariana,clear,low,low,Nina,motorcycle,Vanessa,5.21.2
+DT03455,2026-05-07 20:08:31,carbonara_pasta,45.43,-23.561684,-46.655981,-23.585533,-46.681725,Itaim Bibi,cloudy,medium,medium,Marcos,motorcycle,Yasmin,5.21.2
+DT03149,2026-05-18 19:18:18,pepperoni_pizza,46.83,-23.561684,-46.655981,-23.564845,-46.665036,Jardins,cloudy,high,low,Gabriel,motorcycle,Rafael,5.20.0
+DT00352,2026-02-08 23:19:07,steak_plate,62.86,-23.561684,-46.655981,-23.584272,-46.674562,Itaim Bibi,clear,low,low,Nina,bike,Thiago,5.22.0
+DT01065,2026-06-04 14:04:11,smash_burger,26.49,-23.561684,-46.655981,-23.612456,-46.691253,Brooklin,clear,low,low,Carla,motorcycle,Thiago,5.19.1
+DT02728,2026-05-31 11:33:52,margherita_pizza,55.01,-23.561684,-46.655981,-23.570008,-46.663573,Jardins,cloudy,low,low,Julia,bike,Elisa,5.19.1
+DT00754,2026-03-20 11:40:53,classic_burger,32.47,-23.561684,-46.655981,-23.557211,-46.696852,Pinheiros,cloudy,low,medium,Julia,car,Vanessa,6.0.0
+DT03910,2026-03-06 18:50:32,poke_bowl,53.72,-23.561684,-46.655981,-23.530820,-46.708958,Lapa,cloudy,medium,low,Bruno,car,Diego,5.22.0
+DT02540,2026-03-07 10:04:50,steak_plate,60.45,-23.561684,-46.655981,-23.552371,-46.664395,Consolacao,rain,low,low,Felipe,walking,Sofia,5.22.0
+DT04607,2026-01-21 20:37:39,sushi_combo,67.44,-23.561684,-46.655981,-23.657120,-46.711228,Santo Amaro,rain,medium,medium,Helena,motorcycle,Igor,5.22.0
+DT02824,2026-03-07 13:26:10,feijoada,47.45,-23.561684,-46.655981,-23.560501,-46.643015,Bela Vista,storm,high,medium,Julia,motorcycle,Bruno,6.0.0
+DT00254,2026-03-03 23:55:16,acai_bowl,25.57,-23.561684,-46.655981,-23.600746,-46.724205,Morumbi,cloudy,low,low,Julia,motorcycle,Yasmin,6.0.0
+DT04102,2026-01-17 21:13:21,grilled_chicken,40.89,-23.561684,-46.655981,-23.567333,-46.659252,Jardins,rain,medium,medium,Elisa,bike,Carla,5.22.0
+DT00134,2026-03-25 21:50:06,classic_burger,34.34,-23.561684,-46.655981,-23.538160,-46.670564,Perdizes,clear,low,medium,Gabriel,bike,Carla,6.0.0
+DT00204,2026-03-09 17:28:02,sushi_combo,61.47,-23.561684,-46.655981,-23.582498,-46.685417,Itaim Bibi,rain,low,low,Ana,motorcycle,Igor,5.22.0
+DT01906,2026-04-23 18:26:03,pepperoni_pizza,55.81,-23.561684,-46.655981,-23.595502,-46.686546,Itaim Bibi,clear,medium,low,Carla,car,Mariana,5.21.2
+DT04251,2026-03-28 16:31:47,mushroom_risotto,50.35,-23.561684,-46.655981,-23.545336,-46.664934,Consolacao,cloudy,low,medium,Marcos,motorcycle,Lucas,5.20.0
+DT00741,2026-05-18 13:32:09,poke_bowl,49.01,-23.561684,-46.655981,-23.567396,-46.651540,Jardins,cloudy,medium,low,Julia,motorcycle,Vanessa,5.20.0
+DT02726,2026-01-05 22:27:48,poke_bowl,54.33,-23.561684,-46.655981,-23.624595,-46.692306,Brooklin,cloudy,low,low,Elisa,motorcycle,Mariana,5.22.0
+DT03726,2026-03-19 18:16:52,feijoada,41.54,-23.561684,-46.655981,-23.565270,-46.661300,Jardins,clear,medium,medium,Felipe,car,Vanessa,5.19.1
+DT01544,2026-03-29 20:00:01,caesar_salad,30.21,-23.561684,-46.655981,-23.538160,-46.712025,Lapa,cloudy,medium,medium,Felipe,motorcycle,Julia,5.18.0
+DT04869,2026-04-14 10:28:08,classic_burger,36.91,-23.561684,-46.655981,-23.560971,-46.667573,Jardins,cloudy,low,low,Helena,bike,Vanessa,5.19.1
+DT00990,2026-03-13 18:22:15,pepperoni_pizza,48.87,-23.561684,-46.655981,-23.568245,-46.701937,Pinheiros,cloudy,medium,medium,Felipe,motorcycle,Gabriela,5.21.2
+DT03659,2026-03-12 19:14:20,smash_burger,29.48,-23.561684,-46.655981,-23.552962,-46.670936,Jardins,clear,medium,medium,Bruno,motorcycle,Bruno,5.19.1
+DT04662,2026-04-22 14:04:55,acai_bowl,29.06,-23.561684,-46.655981,-23.533552,-46.703776,Lapa,clear,low,low,Julia,motorcycle,Igor,5.19.1
+DT01899,2026-01-14 15:38:49,carbonara_pasta,38.33,-23.561684,-46.655981,-23.558362,-46.719854,Butanta,clear,low,low,Igor,motorcycle,Igor,5.19.1
+DT02113,2026-03-24 18:18:49,caesar_salad,31.95,-23.561684,-46.655981,-23.555018,-46.645308,Bela Vista,cloudy,medium,medium,Diego,bike,Gabriela,5.22.0
+DT01796,2026-01-04 16:57:28,feijoada,36.19,-23.561684,-46.655981,-23.611629,-46.669530,Moema,clear,low,medium,Marcos,motorcycle,Carla,5.20.0
+DT03403,2026-06-01 14:37:15,steak_plate,66.56,-23.561684,-46.655981,-23.571387,-46.674306,Pinheiros,clear,low,low,Felipe,bike,Ana,5.22.0
+DT04008,2026-01-09 20:18:11,smash_burger,25.11,-23.561684,-46.655981,-23.539115,-46.653647,Consolacao,cloudy,high,low,Felipe,bike,Felipe,5.20.0
+DT04344,2026-03-04 10:13:09,sushi_combo,64.22,-23.561684,-46.655981,-23.563940,-46.633211,Liberdade,clear,low,low,Gabriel,motorcycle,Rafael,6.0.0
+DT03665,2026-03-28 18:15:29,smash_burger,28.02,-23.561684,-46.655981,-23.585819,-46.677089,Itaim Bibi,clear,low,medium,Felipe,bike,Yasmin,5.21.2
+DT03586,2026-05-01 19:43:37,ramen,41.39,-23.561684,-46.655981,-23.548231,-46.658341,Consolacao,rain,high,low,Igor,motorcycle,Vanessa,5.18.0
+DT02369,2026-03-21 13:47:03,steak_plate,62.60,-23.561684,-46.655981,-23.573428,-46.678299,Jardins,cloudy,low,medium,Elisa,bike,Natalia,5.18.0
+DT00887,2026-03-28 20:05:03,margherita_pizza,42.62,-23.561684,-46.655981,-23.612686,-46.671951,Moema,clear,low,high,Helena,motorcycle,Rafael,5.20.0
+DT03285,2026-01-01 12:22:04,classic_burger,30.79,-23.561684,-46.655981,-23.541570,-46.566709,Tatuape,cloudy,medium,medium,Julia,motorcycle,Mariana,5.20.0
+DT03269,2026-03-12 14:03:53,caesar_salad,30.26,-23.561684,-46.655981,-23.534838,-46.669344,Perdizes,rain,medium,low,Nina,bike,Ana,5.18.0
+DT01609,2026-02-28 22:15:31,grilled_chicken,39.09,-23.561684,-46.655981,-23.549628,-46.654820,Consolacao,cloudy,low,low,Carla,bike,Diego,6.0.0
+DT00301,2026-02-02 18:03:13,carbonara_pasta,39.94,-23.561684,-46.655981,-23.547718,-46.659132,Consolacao,storm,high,low,Felipe,motorcycle,Ana,5.21.2
+DT03476,2026-01-14 12:30:17,grilled_chicken,39.98,-23.561684,-46.655981,-23.557012,-46.629151,Liberdade,cloudy,medium,medium,Ana,car,Igor,5.19.1
+DT04032,2026-03-27 21:52:07,ramen,51.65,-23.561684,-46.655981,-23.587934,-46.625142,Vila Mariana,cloudy,medium,low,Igor,car,Thiago,6.0.0
+DT00107,2026-04-02 11:11:44,smash_burger,22.89,-23.561684,-46.655981,-23.555221,-46.636703,Consolacao,clear,low,low,Marcos,motorcycle,Thiago,6.0.0
+DT02381,2026-03-12 08:13:42,classic_burger,35.15,-23.561684,-46.655981,-23.560754,-46.672099,Jardins,clear,medium,low,Bruno,car,Helena,5.19.1
+DT02545,2026-05-02 20:01:09,carbonara_pasta,41.13,-23.561684,-46.655981,-23.592427,-46.631446,Vila Mariana,clear,medium,medium,Julia,motorcycle,Yasmin,6.0.0
+DT00251,2026-04-24 18:16:45,classic_burger,38.98,-23.561684,-46.655981,-23.579265,-46.659207,Jardins,clear,high,low,Nina,motorcycle,Elisa,5.18.0
+DT04308,2026-02-20 12:48:03,poke_bowl,44.80,-23.561684,-46.655981,-23.568872,-46.706723,Pinheiros,clear,medium,medium,Elisa,motorcycle,Mariana,5.22.0
+DT04373,2026-02-13 13:01:35,sushi_combo,78.59,-23.561684,-46.655981,-23.575551,-46.673165,Itaim Bibi,cloudy,medium,medium,Gabriel,bike,Helena,5.22.0
+DT02932,2026-05-24 20:00:51,feijoada,37.45,-23.561684,-46.655981,-23.501669,-46.623919,Santana,clear,medium,high,Carla,motorcycle,Igor,5.18.0
+DT04159,2026-03-15 11:38:16,feijoada,43.64,-23.561684,-46.655981,-23.564208,-46.721005,Butanta,rain,low,low,Marcos,car,Thiago,5.22.0
+DT03083,2026-05-30 22:49:54,feijoada,37.15,-23.561684,-46.655981,-23.594211,-46.643437,Vila Mariana,rain,low,high,Diego,car,Sofia,5.22.0
+DT04340,2026-01-09 22:37:52,margherita_pizza,45.03,-23.561684,-46.655981,-23.619319,-46.699228,Brooklin,cloudy,low,low,Ana,motorcycle,Rafael,5.18.0
+DT03215,2026-02-06 21:00:01,feijoada,39.42,-23.561684,-46.655981,-23.560741,-46.656753,Bela Vista,cloudy,medium,medium,Nina,motorcycle,Helena,5.21.2
+DT00919,2026-05-08 10:17:44,margherita_pizza,46.75,-23.561684,-46.655981,-23.508318,-46.608364,Santana,clear,low,low,Elisa,motorcycle,Natalia,5.20.0
+DT00472,2026-04-06 09:54:49,smash_burger,28.29,-23.561684,-46.655981,-23.552930,-46.677879,Pinheiros,cloudy,medium,low,Elisa,motorcycle,Julia,5.21.2
+DT03929,2026-06-10 11:23:34,feijoada,40.83,-23.561684,-46.655981,-23.557537,-46.653881,Bela Vista,clear,low,medium,Ana,bike,Julia,5.22.0
+DT04440,2026-01-11 18:32:43,pepperoni_pizza,58.96,-23.561684,-46.655981,-23.498801,-46.638905,Santana,cloudy,low,low,Julia,motorcycle,Carla,5.19.1
+DT03979,2026-04-01 21:54:13,carbonara_pasta,45.88,-23.561684,-46.655981,-23.559852,-46.643639,Bela Vista,clear,low,medium,Carla,motorcycle,Sofia,5.18.0
+DT00544,2026-02-07 21:35:12,classic_burger,30.95,-23.561684,-46.655981,-23.542668,-46.665461,Consolacao,rain,high,medium,Igor,motorcycle,Thiago,6.0.0
+DT04923,2026-03-19 21:12:45,margherita_pizza,47.38,-23.561684,-46.655981,-23.558820,-46.644010,Bela Vista,rain,medium,medium,Igor,motorcycle,Vanessa,5.18.0
+DT03195,2026-02-10 20:55:04,classic_burger,34.61,-23.561684,-46.655981,-23.561894,-46.703246,Butanta,cloudy,medium,low,Bruno,motorcycle,Rafael,5.20.0
+DT00250,2026-02-02 21:18:23,steak_plate,58.28,-23.561684,-46.655981,-23.586207,-46.622458,Vila Mariana,cloudy,medium,medium,Helena,bike,Gabriela,5.20.0
+DT01525,2026-05-06 20:46:00,smash_burger,28.26,-23.561684,-46.655981,-23.553922,-46.655506,Bela Vista,cloudy,medium,medium,Elisa,bike,Bruno,6.0.0
+DT03025,2026-01-31 21:46:30,carbonara_pasta,50.39,-23.561684,-46.655981,-23.598595,-46.616934,Vila Mariana,clear,medium,medium,Diego,motorcycle,Yasmin,5.19.1
+DT01956,2026-05-23 09:54:08,acai_bowl,26.73,-23.561684,-46.655981,-23.593222,-46.626915,Vila Mariana,clear,low,low,Carla,motorcycle,Yasmin,5.21.2
+DT03769,2026-01-08 19:25:01,feijoada,45.11,-23.561684,-46.655981,-23.558122,-46.668321,Jardins,clear,medium,medium,Gabriel,walking,Felipe,5.18.0
+DT02737,2026-05-09 21:54:55,mushroom_risotto,59.48,-23.561684,-46.655981,-23.581003,-46.712684,Butanta,clear,medium,high,Bruno,car,Felipe,5.18.0
+DT00320,2026-03-02 13:11:42,grilled_chicken,37.24,-23.561684,-46.655981,-23.605265,-46.720015,Morumbi,clear,medium,medium,Nina,motorcycle,Thiago,5.19.1
+DT03068,2026-04-13 21:42:55,smash_burger,25.28,-23.561684,-46.655981,-23.600441,-46.722381,Morumbi,clear,low,medium,Bruno,motorcycle,Julia,5.20.0
+DT01659,2026-02-17 14:21:56,classic_burger,32.51,-23.561684,-46.655981,-23.615190,-46.671737,Moema,cloudy,low,low,Bruno,motorcycle,Bruno,5.22.0
+DT00692,2026-04-19 11:53:04,carbonara_pasta,48.14,-23.561684,-46.655981,-23.546829,-46.661060,Perdizes,cloudy,medium,low,Ana,motorcycle,Natalia,5.21.2
+DT03030,2026-02-13 18:54:42,classic_burger,31.45,-23.561684,-46.655981,-23.568199,-46.672961,Jardins,rain,medium,low,Marcos,motorcycle,Sofia,5.22.0
+DT04324,2026-04-20 21:20:33,grilled_chicken,35.36,-23.561684,-46.655981,-23.528128,-46.704214,Lapa,cloudy,low,low,Diego,motorcycle,Ana,5.21.2
+DT03305,2026-02-03 21:10:57,grilled_chicken,41.80,-23.561684,-46.655981,-23.568060,-46.646922,Vila Mariana,clear,low,medium,Julia,bike,Gabriela,5.19.1
+DT00508,2026-04-22 13:58:08,sushi_combo,61.39,-23.561684,-46.655981,-23.608047,-46.675462,Moema,clear,medium,medium,Diego,motorcycle,Rafael,5.19.1
+DT03980,2026-03-17 19:34:10,caesar_salad,31.11,-23.561684,-46.655981,-23.579083,-46.631762,Vila Mariana,cloudy,medium,low,Bruno,car,Gabriela,5.22.0
+DT00157,2026-02-28 15:54:56,ramen,45.36,-23.561684,-46.655981,-23.573440,-46.664862,Jardins,clear,low,low,Diego,walking,Elisa,5.22.0
+DT01744,2026-05-20 14:52:06,classic_burger,33.35,-23.561684,-46.655981,-23.588257,-46.681517,Itaim Bibi,clear,low,low,Igor,motorcycle,Vanessa,5.21.2
+DT01834,2026-03-06 08:17:50,classic_burger,32.47,-23.561684,-46.655981,-23.571934,-46.674058,Jardins,clear,medium,low,Felipe,motorcycle,Yasmin,5.21.2
+DT01710,2026-01-24 10:43:06,margherita_pizza,41.01,-23.561684,-46.655981,-23.597378,-46.728734,Morumbi,clear,low,low,Helena,car,Carla,5.20.0
+DT00810,2026-03-31 09:33:13,grilled_chicken,42.38,-23.561684,-46.655981,-23.555187,-46.654851,Consolacao,clear,medium,low,Julia,motorcycle,Carla,5.22.0
+DT03074,2026-02-01 13:15:30,carbonara_pasta,48.59,-23.561684,-46.655981,-23.559143,-46.643821,Liberdade,clear,medium,medium,Julia,motorcycle,Vanessa,5.21.2
+DT04692,2026-03-10 22:34:58,pepperoni_pizza,45.37,-23.561684,-46.655981,-23.618886,-46.686212,Brooklin,clear,low,medium,Felipe,bike,Thiago,5.21.2
+DT02405,2026-02-11 17:21:04,pepperoni_pizza,48.33,-23.561684,-46.655981,-23.558120,-46.640675,Consolacao,rain,medium,low,Carla,motorcycle,Natalia,5.18.0
+DT01790,2026-05-25 13:25:50,pepperoni_pizza,53.73,-23.561684,-46.655981,-23.601335,-46.663531,Moema,cloudy,medium,low,Nina,motorcycle,Paula,6.0.0
+DT03227,2026-05-21 13:35:31,feijoada,37.96,-23.561684,-46.655981,-23.569179,-46.702281,Pinheiros,rain,high,medium,Bruno,motorcycle,Julia,5.21.2
+DT02983,2026-03-25 21:56:31,grilled_chicken,30.72,-23.561684,-46.655981,-23.537849,-46.683379,Perdizes,rain,medium,low,Elisa,motorcycle,Bruno,5.18.0
+DT04142,2026-03-09 20:09:34,ramen,51.97,-23.561684,-46.655981,-23.567167,-46.654993,Bela Vista,clear,medium,medium,Felipe,bike,Lucas,5.18.0
+DT04499,2026-02-13 15:33:09,sushi_combo,62.30,-23.561684,-46.655981,-23.575263,-46.696829,Pinheiros,rain,medium,medium,Nina,motorcycle,Otavio,5.18.0
+DT03682,2026-03-30 21:08:00,grilled_chicken,38.19,-23.561684,-46.655981,-23.572257,-46.687571,Pinheiros,cloudy,low,medium,Diego,car,Otavio,5.22.0
+DT03080,2026-03-23 13:47:37,margherita_pizza,41.76,-23.561684,-46.655981,-23.580201,-46.704218,Butanta,cloudy,medium,low,Igor,car,Thiago,5.21.2
+DT02834,2026-04-01 11:46:06,smash_burger,28.05,-23.561684,-46.655981,-23.559228,-46.644465,Bela Vista,clear,low,low,Julia,motorcycle,Thiago,6.0.0
+DT03135,2026-01-18 19:22:50,classic_burger,38.54,-23.561684,-46.655981,-23.570361,-46.694531,Pinheiros,clear,medium,medium,Gabriel,car,Elisa,5.19.1
+DT01224,2026-04-13 14:13:33,poke_bowl,49.68,-23.561684,-46.655981,-23.588200,-46.641651,Vila Mariana,clear,low,low,Marcos,motorcycle,Yasmin,5.19.1
+DT03674,2026-02-18 19:04:21,sushi_combo,60.62,-23.561684,-46.655981,-23.553491,-46.633445,Bela Vista,clear,high,medium,Diego,motorcycle,Paula,5.20.0
+DT02799,2026-01-01 11:33:18,smash_burger,26.50,-23.561684,-46.655981,-23.566423,-46.677077,Jardins,cloudy,low,low,Julia,motorcycle,Lucas,5.21.2
+DT03367,2026-05-23 18:00:45,pepperoni_pizza,47.24,-23.561684,-46.655981,-23.535360,-46.671193,Perdizes,clear,medium,medium,Elisa,motorcycle,Julia,6.0.0
+DT04745,2026-06-02 14:16:23,feijoada,50.58,-23.561684,-46.655981,-23.656409,-46.716527,Santo Amaro,clear,low,low,Marcos,car,Rafael,5.20.0
+DT04882,2026-01-13 20:45:00,sushi_combo,65.23,-23.561684,-46.655981,-23.545944,-46.660350,Consolacao,cloudy,medium,high,Gabriel,motorcycle,Diego,5.21.2
+DT00612,2026-03-31 23:22:11,margherita_pizza,50.64,-23.561684,-46.655981,-23.574156,-46.672324,Jardins,clear,low,low,Marcos,motorcycle,Yasmin,6.0.0
+DT03445,2026-03-20 16:02:23,margherita_pizza,42.38,-23.561684,-46.655981,-23.567094,-46.692530,Pinheiros,clear,low,low,Igor,motorcycle,Elisa,5.19.1
+DT02480,2026-04-17 23:45:34,carbonara_pasta,38.51,-23.561684,-46.655981,-23.537755,-46.715741,Lapa,cloudy,low,low,Helena,car,Mariana,6.0.0
+DT02211,2026-05-03 20:02:02,poke_bowl,45.67,-23.561684,-46.655981,-23.534621,-46.674188,Perdizes,clear,medium,medium,Gabriel,motorcycle,Helena,5.22.0
+DT03350,2026-01-13 08:07:38,poke_bowl,52.73,-23.561684,-46.655981,-23.550151,-46.654457,Consolacao,cloudy,low,low,Bruno,bike,Yasmin,5.18.0
+DT04354,2026-04-29 21:51:02,vegan_wrap,29.55,-23.561684,-46.655981,-23.536276,-46.670893,Perdizes,cloudy,medium,medium,Bruno,motorcycle,Otavio,6.0.0
+DT00388,2026-04-28 12:36:48,smash_burger,30.48,-23.561684,-46.655981,-23.612304,-46.677401,Moema,cloudy,high,low,Marcos,motorcycle,Elisa,5.20.0
+DT04206,2026-02-04 20:34:41,steak_plate,65.97,-23.561684,-46.655981,-23.552880,-46.654456,Consolacao,storm,high,medium,Carla,walking,Elisa,5.19.1
+DT02002,2026-03-05 17:35:59,margherita_pizza,46.08,-23.561684,-46.655981,-23.571529,-46.709318,Butanta,clear,low,low,Marcos,motorcycle,Rafael,5.22.0
+DT01927,2026-03-26 10:18:51,smash_burger,26.97,-23.561684,-46.655981,-23.581941,-46.629126,Vila Mariana,storm,medium,low,Helena,car,Carla,5.21.2
+DT02474,2026-05-20 20:32:12,classic_burger,36.26,-23.561684,-46.655981,-23.604116,-46.727113,Morumbi,clear,high,low,Carla,motorcycle,Lucas,5.21.2
+DT02346,2026-04-08 20:38:07,carbonara_pasta,50.86,-23.561684,-46.655981,-23.564072,-46.661598,Jardins,cloudy,high,low,Diego,motorcycle,Sofia,5.18.0
+DT04731,2026-02-07 19:26:32,smash_burger,28.88,-23.561684,-46.655981,-23.602727,-46.727871,Morumbi,clear,medium,medium,Ana,motorcycle,Vanessa,5.18.0
+DT01867,2026-05-06 11:31:33,ramen,42.55,-23.561684,-46.655981,-23.569259,-46.637962,Liberdade,rain,medium,low,Helena,car,Vanessa,5.20.0
+DT03052,2026-05-31 14:40:44,mushroom_risotto,57.00,-23.561684,-46.655981,-23.534044,-46.670991,Perdizes,clear,low,low,Felipe,motorcycle,Gabriela,5.21.2
+DT00115,2026-04-19 21:07:44,carbonara_pasta,46.91,-23.561684,-46.655981,-23.564580,-46.700636,Pinheiros,clear,medium,high,Ana,car,Felipe,5.18.0
+DT00680,2026-03-21 18:35:34,feijoada,41.78,-23.561684,-46.655981,-23.591021,-46.643162,Vila Mariana,storm,medium,medium,Helena,car,Yasmin,5.18.0
+DT04972,2026-02-14 21:38:56,classic_burger,31.15,-23.561684,-46.655981,-23.558137,-46.628838,Liberdade,cloudy,medium,medium,Julia,motorcycle,Vanessa,5.22.0
+DT03713,2026-06-07 13:34:03,classic_burger,36.94,-23.561684,-46.655981,-23.567392,-46.675916,Jardins,clear,low,low,Helena,motorcycle,Igor,5.19.1
+DT00822,2026-01-02 14:51:34,grilled_chicken,36.52,-23.561684,-46.655981,-23.538387,-46.682937,Perdizes,cloudy,low,low,Nina,bike,Helena,5.20.0
+DT01502,2026-02-04 14:54:27,sushi_combo,61.30,-23.561684,-46.655981,-23.587662,-46.622817,Vila Mariana,rain,medium,low,Carla,car,Paula,5.21.2
+DT04895,2026-05-08 21:56:28,smash_burger,26.29,-23.561684,-46.655981,-23.560179,-46.663032,Consolacao,cloudy,low,medium,Marcos,bike,Diego,5.22.0
+DT00123,2026-06-07 14:44:50,classic_burger,35.64,-23.561684,-46.655981,-23.612669,-46.664482,Moema,clear,low,low,Diego,car,Sofia,5.22.0
+DT03746,2026-02-03 20:45:24,classic_burger,37.73,-23.561684,-46.655981,-23.567470,-46.667520,Jardins,rain,high,low,Diego,motorcycle,Rafael,6.0.0
+DT00447,2026-01-06 18:53:58,steak_plate,61.59,-23.561684,-46.655981,-23.613374,-46.666653,Moema,rain,high,medium,Elisa,car,Natalia,6.0.0
+DT03635,2026-01-28 22:01:59,pepperoni_pizza,49.41,-23.561684,-46.655981,-23.616074,-46.684583,Brooklin,clear,low,medium,Felipe,motorcycle,Igor,6.0.0
+DT04674,2026-03-06 13:32:14,ramen,52.81,-23.561684,-46.655981,-23.536727,-46.699075,Lapa,rain,medium,low,Diego,motorcycle,Gabriela,5.19.1
+DT01357,2026-04-04 19:45:03,classic_burger,33.70,-23.561684,-46.655981,-23.573861,-46.718649,Butanta,clear,medium,medium,Marcos,motorcycle,Rafael,6.0.0
+DT02007,2026-04-29 21:48:32,smash_burger,27.61,-23.561684,-46.655981,-23.617930,-46.668934,Brooklin,cloudy,low,medium,Julia,motorcycle,Helena,5.22.0
+DT04070,2026-03-22 14:32:38,grilled_chicken,36.27,-23.561684,-46.655981,-23.589697,-46.731141,Morumbi,rain,medium,low,Julia,motorcycle,Igor,5.19.1
+DT00116,2026-01-13 16:48:40,margherita_pizza,45.02,-23.561684,-46.655981,-23.565228,-46.659394,Bela Vista,cloudy,low,low,Marcos,walking,Vanessa,5.21.2
+DT01492,2026-04-17 20:44:41,classic_burger,31.75,-23.561684,-46.655981,-23.562639,-46.652691,Bela Vista,clear,medium,medium,Helena,motorcycle,Helena,5.21.2
+DT04271,2026-06-12 11:29:03,acai_bowl,25.59,-23.561684,-46.655981,-23.541122,-46.675800,Perdizes,clear,low,low,Felipe,motorcycle,Paula,5.19.1
+DT01561,2026-04-12 12:11:04,poke_bowl,48.39,-23.561684,-46.655981,-23.569439,-46.642045,Bela Vista,clear,low,medium,Ana,car,Bruno,5.19.1
+DT03728,2026-02-06 19:55:46,poke_bowl,54.51,-23.561684,-46.655981,-23.525083,-46.715449,Lapa,cloudy,medium,medium,Elisa,bike,Igor,6.0.0
+DT02280,2026-04-17 19:10:38,grilled_chicken,39.64,-23.561684,-46.655981,-23.570810,-46.683840,Pinheiros,clear,medium,medium,Carla,bike,Thiago,5.18.0
+DT00042,2026-05-09 14:47:29,sushi_combo,70.98,-23.561684,-46.655981,-23.580736,-46.718631,Butanta,clear,low,low,Nina,motorcycle,Mariana,5.20.0
+DT04311,2026-01-24 19:56:18,smash_burger,30.33,-23.561684,-46.655981,-23.556046,-46.649222,Bela Vista,clear,medium,medium,Bruno,walking,Julia,5.22.0
+DT04132,2026-06-14 21:16:21,acai_bowl,22.28,-23.561684,-46.655981,-23.530097,-46.704478,Lapa,clear,medium,medium,Marcos,car,Thiago,5.19.1
+DT02470,2026-01-02 18:07:32,sushi_combo,64.26,-23.561684,-46.655981,-23.533668,-46.666902,Perdizes,clear,high,medium,Elisa,motorcycle,Yasmin,5.22.0
+DT04569,2026-02-13 19:46:59,ramen,47.29,-23.561684,-46.655981,-23.562925,-46.643643,Liberdade,cloudy,medium,medium,Marcos,motorcycle,Diego,5.21.2
+DT00416,2026-04-19 21:25:47,caesar_salad,32.46,-23.561684,-46.655981,-23.552308,-46.649834,Consolacao,cloudy,medium,high,Marcos,motorcycle,Elisa,5.20.0
+DT03438,2026-03-02 20:52:58,carbonara_pasta,51.71,-23.561684,-46.655981,-23.575293,-46.656204,Jardins,clear,medium,medium,Felipe,motorcycle,Yasmin,5.18.0
+DT01141,2026-02-20 18:16:21,mushroom_risotto,53.93,-23.561684,-46.655981,-23.560901,-46.674705,Jardins,clear,medium,low,Nina,bike,Julia,5.22.0
+DT00027,2026-05-23 17:39:37,mushroom_risotto,54.97,-23.561684,-46.655981,-23.600972,-46.673150,Moema,rain,low,low,Ana,motorcycle,Igor,5.20.0
+DT03104,2026-01-01 19:26:47,margherita_pizza,46.33,-23.561684,-46.655981,-23.548116,-46.627774,Liberdade,cloudy,high,medium,Ana,bike,Sofia,5.18.0
+DT01950,2026-05-02 20:56:05,sushi_combo,78.96,-23.561684,-46.655981,-23.563280,-46.635797,Liberdade,cloudy,medium,medium,Marcos,motorcycle,Rafael,5.21.2
+DT02382,2026-04-27 14:48:24,bbq_ribs,73.48,-23.561684,-46.655981,-23.523964,-46.705837,Lapa,cloudy,low,low,Nina,car,Rafael,6.0.0
+DT02613,2026-02-15 15:30:22,steak_plate,71.97,-23.561684,-46.655981,-23.596584,-46.624398,Vila Mariana,clear,low,medium,Elisa,motorcycle,Otavio,5.22.0
+DT00153,2026-01-13 18:25:30,margherita_pizza,44.23,-23.561684,-46.655981,-23.595925,-46.722819,Morumbi,rain,high,medium,Elisa,motorcycle,Vanessa,5.18.0
+DT02730,2026-01-09 09:20:53,ramen,49.21,-23.561684,-46.655981,-23.533754,-46.672965,Perdizes,clear,medium,low,Marcos,motorcycle,Julia,5.20.0
+DT04715,2026-05-22 11:32:22,feijoada,39.69,-23.561684,-46.655981,-23.570185,-46.716266,Butanta,cloudy,low,medium,Felipe,motorcycle,Felipe,5.21.2
+DT04383,2026-01-19 11:05:38,margherita_pizza,50.46,-23.561684,-46.655981,-23.534656,-46.642243,Consolacao,rain,medium,low,Gabriel,motorcycle,Lucas,5.20.0
+DT03347,2026-06-05 16:19:13,carbonara_pasta,44.02,-23.561684,-46.655981,-23.538565,-46.685535,Perdizes,clear,low,low,Diego,motorcycle,Diego,5.18.0
+DT02622,2026-05-14 18:41:27,smash_burger,28.39,-23.561684,-46.655981,-23.510460,-46.616968,Santana,clear,high,low,Bruno,car,Natalia,5.18.0
+DT04405,2026-06-13 14:13:38,pepperoni_pizza,47.97,-23.561684,-46.655981,-23.571941,-46.704691,Pinheiros,cloudy,low,low,Nina,motorcycle,Lucas,5.19.1
+DT03859,2026-06-15 13:41:17,smash_burger,26.83,-23.561684,-46.655981,-23.576170,-46.634089,Vila Mariana,clear,medium,low,Elisa,motorcycle,Carla,5.19.1
+DT00381,2026-02-08 23:08:35,caesar_salad,32.89,-23.561684,-46.655981,-23.524423,-46.673616,Perdizes,cloudy,low,medium,Helena,motorcycle,Rafael,5.21.2
+DT00901,2026-05-30 14:55:45,caesar_salad,31.23,-23.561684,-46.655981,-23.547119,-46.663670,Consolacao,clear,low,low,Felipe,motorcycle,Thiago,5.22.0
+DT00438,2026-02-06 21:05:08,classic_burger,36.14,-23.561684,-46.655981,-23.527053,-46.705244,Lapa,clear,low,medium,Elisa,car,Ana,5.21.2
+DT01875,2026-05-22 13:45:16,sushi_combo,63.40,-23.561684,-46.655981,-23.576096,-46.675226,Itaim Bibi,clear,medium,high,Ana,car,Otavio,5.21.2
+DT00017,2026-06-06 12:02:22,smash_burger,27.74,-23.561684,-46.655981,-23.582321,-46.675236,Itaim Bibi,clear,low,medium,Diego,motorcycle,Sofia,6.0.0
+DT04694,2026-03-31 19:59:03,pepperoni_pizza,51.24,-23.561684,-46.655981,-23.617494,-46.668263,Brooklin,cloudy,medium,medium,Diego,bike,Sofia,5.18.0
+DT03727,2026-03-02 15:36:25,steak_plate,62.67,-23.561684,-46.655981,-23.585111,-46.632566,Vila Mariana,cloudy,low,medium,Elisa,motorcycle,Rafael,5.20.0
+DT03829,2026-04-26 20:03:14,ramen,40.87,-23.561684,-46.655981,-23.593845,-46.639194,Vila Mariana,rain,medium,medium,Gabriel,motorcycle,Thiago,6.0.0
+DT01450,2026-01-18 21:21:56,bbq_ribs,73.90,-23.561684,-46.655981,-23.561027,-46.715156,Butanta,clear,medium,high,Nina,bike,Ana,5.22.0
+DT02096,2026-01-17 08:23:58,carbonara_pasta,37.27,-23.561684,-46.655981,-23.572516,-46.699108,Pinheiros,cloudy,low,low,Ana,car,Carla,5.18.0
+DT04362,2026-05-09 19:34:54,mushroom_risotto,61.73,-23.561684,-46.655981,-23.562535,-46.625605,Liberdade,clear,medium,medium,Felipe,bike,Natalia,5.21.2
+DT04748,2026-04-08 17:09:43,vegan_wrap,28.56,-23.561684,-46.655981,-23.554509,-46.649793,Consolacao,clear,low,low,Ana,motorcycle,Diego,6.0.0
+DT03848,2026-05-16 20:56:09,classic_burger,36.64,-23.561684,-46.655981,-23.573698,-46.709405,Butanta,cloudy,medium,medium,Bruno,car,Helena,5.19.1
+DT02600,2026-04-08 21:14:51,margherita_pizza,48.51,-23.561684,-46.655981,-23.575309,-46.680592,Itaim Bibi,clear,medium,medium,Nina,car,Julia,5.20.0
+DT01472,2026-05-28 09:41:57,classic_burger,34.09,-23.561684,-46.655981,-23.532050,-46.674161,Perdizes,clear,low,low,Diego,motorcycle,Diego,5.20.0
+DT01255,2026-05-30 12:55:38,mushroom_risotto,62.99,-23.561684,-46.655981,-23.568870,-46.669083,Jardins,cloudy,medium,high,Ana,motorcycle,Carla,5.20.0
+DT04982,2026-05-23 08:12:04,acai_bowl,21.38,-23.561684,-46.655981,-23.580364,-46.628410,Vila Mariana,clear,low,low,Felipe,bike,Mariana,5.22.0
+DT04327,2026-02-08 11:17:22,carbonara_pasta,41.72,-23.561684,-46.655981,-23.555126,-46.662048,Bela Vista,cloudy,low,low,Helena,motorcycle,Sofia,5.19.1
+DT00648,2026-04-10 14:55:37,sushi_combo,71.65,-23.561684,-46.655981,-23.500812,-46.624692,Santana,clear,low,low,Diego,motorcycle,Ana,5.21.2
+DT04780,2026-02-04 13:25:25,sushi_combo,66.94,-23.561684,-46.655981,-23.618124,-46.673203,Brooklin,clear,medium,high,Felipe,car,Carla,5.20.0
+DT04893,2026-04-18 15:45:48,feijoada,43.29,-23.561684,-46.655981,-23.570478,-46.660916,Jardins,rain,low,medium,Nina,motorcycle,Rafael,5.18.0
+DT03584,2026-04-13 19:58:39,bbq_ribs,67.62,-23.561684,-46.655981,-23.572628,-46.648307,Bela Vista,cloudy,medium,medium,Marcos,bike,Carla,5.22.0
+DT03266,2026-05-26 20:51:34,steak_plate,69.90,-23.561684,-46.655981,-23.582215,-46.690234,Itaim Bibi,clear,medium,medium,Diego,motorcycle,Paula,5.21.2
+DT01616,2026-02-23 21:17:26,smash_burger,28.68,-23.561684,-46.655981,-23.558025,-46.650201,Bela Vista,cloudy,low,medium,Felipe,car,Elisa,5.18.0
+DT00940,2026-05-25 21:59:21,smash_burger,31.95,-23.561684,-46.655981,-23.552184,-46.694777,Pinheiros,clear,low,low,Diego,motorcycle,Mariana,6.0.0
+DT04329,2026-03-20 13:45:05,feijoada,38.58,-23.561684,-46.655981,-23.558717,-46.672288,Jardins,cloudy,medium,medium,Gabriel,motorcycle,Gabriela,5.18.0
+DT03942,2026-04-15 21:12:55,feijoada,42.05,-23.561684,-46.655981,-23.589403,-46.625871,Vila Mariana,cloudy,low,medium,Elisa,car,Igor,5.22.0
+DT01874,2026-03-27 18:01:26,feijoada,40.47,-23.561684,-46.655981,-23.560940,-46.662923,Bela Vista,clear,medium,medium,Carla,walking,Bruno,5.20.0
+DT00119,2026-01-31 18:25:02,mushroom_risotto,49.39,-23.561684,-46.655981,-23.551004,-46.649823,Liberdade,cloudy,medium,medium,Helena,bike,Otavio,5.20.0
+DT03529,2026-04-18 11:06:07,smash_burger,26.11,-23.561684,-46.655981,-23.558829,-46.706306,Pinheiros,cloudy,low,low,Elisa,motorcycle,Ana,5.20.0
+DT04716,2026-02-06 12:56:45,feijoada,43.21,-23.561684,-46.655981,-23.559286,-46.654570,Bela Vista,clear,medium,medium,Ana,motorcycle,Vanessa,5.21.2
+DT03128,2026-05-09 11:42:14,ramen,50.89,-23.561684,-46.655981,-23.616599,-46.680553,Brooklin,rain,medium,medium,Diego,car,Gabriela,5.18.0
+DT04665,2026-05-01 12:23:37,margherita_pizza,47.18,-23.561684,-46.655981,-23.531430,-46.577155,Tatuape,clear,high,medium,Felipe,car,Sofia,5.20.0
+DT01246,2026-05-15 13:26:56,acai_bowl,25.66,-23.561684,-46.655981,-23.594921,-46.631459,Vila Mariana,clear,medium,medium,Nina,motorcycle,Vanessa,5.22.0
+DT02829,2026-04-26 19:09:09,ramen,40.51,-23.561684,-46.655981,-23.564399,-46.683165,Jardins,clear,low,medium,Felipe,motorcycle,Helena,5.21.2
+DT02655,2026-03-10 14:55:31,margherita_pizza,48.22,-23.561684,-46.655981,-23.500903,-46.629436,Santana,cloudy,low,low,Ana,motorcycle,Bruno,5.19.1
+DT02975,2026-05-09 19:09:33,bbq_ribs,75.15,-23.561684,-46.655981,-23.560790,-46.631369,Liberdade,rain,medium,high,Elisa,bike,Ana,5.19.1
+DT03208,2026-04-15 18:00:01,classic_burger,36.80,-23.561684,-46.655981,-23.554062,-46.650566,Bela Vista,clear,high,medium,Helena,walking,Sofia,5.18.0
+DT02948,2026-06-01 11:03:09,smash_burger,24.89,-23.561684,-46.655981,-23.497073,-46.612836,Santana,storm,high,low,Julia,motorcycle,Otavio,5.20.0
+DT02918,2026-04-27 16:10:34,feijoada,38.65,-23.561684,-46.655981,-23.575756,-46.674414,Itaim Bibi,clear,low,low,Helena,motorcycle,Helena,5.20.0
+DT02914,2026-03-25 15:26:51,poke_bowl,44.27,-23.561684,-46.655981,-23.597957,-46.633058,Vila Mariana,storm,medium,low,Bruno,motorcycle,Mariana,5.22.0
+DT01764,2026-04-11 11:26:09,grilled_chicken,40.22,-23.561684,-46.655981,-23.567403,-46.685389,Pinheiros,clear,low,low,Carla,motorcycle,Elisa,5.19.1
+DT00986,2026-01-08 14:39:32,vegan_wrap,31.83,-23.561684,-46.655981,-23.601953,-46.647706,Moema,clear,low,low,Igor,motorcycle,Igor,5.19.1
+DT01734,2026-01-21 08:53:41,poke_bowl,47.17,-23.561684,-46.655981,-23.607570,-46.665278,Moema,clear,medium,low,Julia,motorcycle,Diego,6.0.0
+DT00673,2026-06-10 11:09:55,poke_bowl,50.24,-23.561684,-46.655981,-23.548949,-46.664855,Consolacao,cloudy,medium,medium,Gabriel,motorcycle,Mariana,5.19.1
+DT01849,2026-06-07 13:40:03,caesar_salad,31.79,-23.561684,-46.655981,-23.520548,-46.693775,Lapa,clear,low,medium,Bruno,motorcycle,Vanessa,5.20.0
+DT00507,2026-06-07 13:56:11,classic_burger,33.21,-23.561684,-46.655981,-23.585356,-46.686889,Itaim Bibi,cloudy,low,medium,Diego,car,Sofia,5.20.0
+DT04091,2026-02-02 11:27:54,mushroom_risotto,58.90,-23.561684,-46.655981,-23.578306,-46.681895,Jardins,cloudy,low,medium,Diego,motorcycle,Ana,5.20.0
+DT00848,2026-04-27 23:56:01,classic_burger,36.29,-23.561684,-46.655981,-23.567817,-46.693933,Pinheiros,cloudy,low,low,Felipe,motorcycle,Mariana,5.19.1
+DT03440,2026-03-10 23:43:29,carbonara_pasta,40.04,-23.561684,-46.655981,-23.648581,-46.715553,Santo Amaro,cloudy,low,low,Igor,bike,Natalia,5.18.0
+DT02392,2026-03-03 18:44:07,acai_bowl,28.06,-23.561684,-46.655981,-23.566537,-46.650365,Bela Vista,clear,medium,low,Julia,bike,Rafael,5.22.0
+DT03804,2026-02-24 13:40:38,classic_burger,31.40,-23.561684,-46.655981,-23.571520,-46.678800,Jardins,clear,medium,medium,Nina,motorcycle,Helena,5.18.0
+DT03133,2026-04-20 12:59:55,margherita_pizza,45.71,-23.561684,-46.655981,-23.561321,-46.677448,Jardins,cloudy,medium,low,Julia,bike,Paula,5.20.0
+DT01047,2026-05-19 21:33:27,carbonara_pasta,46.41,-23.561684,-46.655981,-23.587664,-46.630010,Vila Mariana,clear,low,medium,Igor,motorcycle,Carla,5.22.0
+DT01242,2026-06-11 23:45:25,smash_burger,25.20,-23.561684,-46.655981,-23.577778,-46.677282,Itaim Bibi,clear,low,low,Carla,car,Paula,5.19.1
+DT04913,2026-05-24 16:35:25,margherita_pizza,48.93,-23.561684,-46.655981,-23.578042,-46.645798,Vila Mariana,clear,low,low,Elisa,motorcycle,Ana,6.0.0
+DT04656,2026-03-13 15:25:57,margherita_pizza,45.76,-23.561684,-46.655981,-23.592489,-46.672014,Itaim Bibi,clear,low,low,Marcos,motorcycle,Elisa,5.21.2
+DT00628,2026-02-20 11:47:33,mushroom_risotto,55.30,-23.561684,-46.655981,-23.554818,-46.660472,Consolacao,cloudy,medium,medium,Ana,motorcycle,Gabriela,5.21.2
+DT03399,2026-05-07 14:58:28,classic_burger,35.74,-23.561684,-46.655981,-23.540987,-46.672471,Perdizes,clear,low,low,Elisa,bike,Carla,5.20.0
+DT02478,2026-03-01 20:07:07,acai_bowl,23.58,-23.561684,-46.655981,-23.567525,-46.703416,Butanta,rain,medium,medium,Gabriel,motorcycle,Rafael,5.19.1
+DT00721,2026-01-01 12:23:47,feijoada,37.53,-23.561684,-46.655981,-23.561790,-46.636866,Liberdade,clear,high,medium,Gabriel,bike,Gabriela,5.20.0
+DT03126,2026-03-20 11:16:33,sushi_combo,60.38,-23.561684,-46.655981,-23.602066,-46.667108,Moema,storm,medium,medium,Bruno,motorcycle,Elisa,5.19.1
+DT00970,2026-05-21 19:32:48,margherita_pizza,45.17,-23.561684,-46.655981,-23.568282,-46.661723,Jardins,clear,medium,medium,Igor,motorcycle,Vanessa,5.20.0
+DT02631,2026-05-13 18:42:27,vegan_wrap,27.81,-23.561684,-46.655981,-23.564294,-46.634426,Liberdade,clear,medium,low,Ana,bike,Lucas,5.22.0
+DT02428,2026-05-13 15:41:35,smash_burger,30.82,-23.561684,-46.655981,-23.584899,-46.680307,Itaim Bibi,clear,low,low,Nina,car,Paula,6.0.0
+DT04708,2026-01-28 12:58:51,mushroom_risotto,50.99,-23.561684,-46.655981,-23.588595,-46.640124,Vila Mariana,clear,high,medium,Ana,car,Ana,5.22.0
+DT02406,2026-04-03 14:47:55,carbonara_pasta,39.70,-23.561684,-46.655981,-23.635218,-46.701564,Santo Amaro,clear,low,low,Marcos,motorcycle,Mariana,6.0.0
+DT01768,2026-04-18 10:38:56,grilled_chicken,35.43,-23.561684,-46.655981,-23.572622,-46.697463,Butanta,cloudy,low,low,Felipe,car,Carla,5.21.2
+DT03834,2026-01-27 10:24:20,classic_burger,28.66,-23.561684,-46.655981,-23.541956,-46.581794,Tatuape,rain,low,low,Diego,motorcycle,Helena,5.18.0
+DT00872,2026-04-23 13:01:08,vegan_wrap,27.30,-23.561684,-46.655981,-23.502601,-46.620355,Santana,clear,medium,medium,Elisa,motorcycle,Otavio,5.21.2
+DT04653,2026-03-31 12:13:16,classic_burger,32.46,-23.561684,-46.655981,-23.609606,-46.649524,Moema,clear,medium,medium,Carla,motorcycle,Mariana,5.22.0
+DT02047,2026-06-10 14:15:58,margherita_pizza,35.44,-23.561684,-46.655981,-23.554329,-46.651276,Consolacao,rain,medium,low,Felipe,bike,Lucas,5.21.2
+DT01067,2026-02-13 23:29:06,grilled_chicken,44.08,-23.561684,-46.655981,-23.524461,-46.702419,Lapa,storm,low,low,Bruno,motorcycle,Rafael,5.18.0
+DT04026,2026-03-22 19:45:35,carbonara_pasta,42.82,-23.561684,-46.655981,-23.578068,-46.692283,Itaim Bibi,clear,medium,medium,Carla,motorcycle,Lucas,6.0.0
+DT01475,2026-05-01 18:24:10,pepperoni_pizza,51.07,-23.561684,-46.655981,-23.568549,-46.638100,Liberdade,clear,medium,low,Ana,motorcycle,Diego,5.21.2
+DT03729,2026-04-24 22:49:40,feijoada,38.18,-23.561684,-46.655981,-23.508790,-46.625097,Santana,clear,low,medium,Ana,car,Thiago,5.21.2
+DT01367,2026-04-21 13:38:27,classic_burger,31.08,-23.561684,-46.655981,-23.555610,-46.632319,Liberdade,cloudy,medium,low,Nina,motorcycle,Natalia,5.18.0
+DT01497,2026-05-08 22:30:30,grilled_chicken,33.85,-23.561684,-46.655981,-23.586720,-46.635939,Vila Mariana,cloudy,low,medium,Helena,motorcycle,Diego,5.21.2
+DT03255,2026-04-22 12:38:06,classic_burger,34.24,-23.561684,-46.655981,-23.553710,-46.653952,Bela Vista,cloudy,medium,medium,Nina,walking,Otavio,5.18.0
+DT01567,2026-01-02 20:24:52,bbq_ribs,78.35,-23.561684,-46.655981,-23.557967,-46.638900,Liberdade,clear,medium,medium,Felipe,motorcycle,Elisa,5.22.0
+DT00907,2026-06-03 23:02:35,ramen,49.01,-23.561684,-46.655981,-23.561773,-46.686047,Pinheiros,clear,low,low,Marcos,motorcycle,Mariana,5.21.2
+DT02805,2026-03-03 11:17:12,grilled_chicken,37.12,-23.561684,-46.655981,-23.591280,-46.678318,Itaim Bibi,rain,medium,low,Marcos,motorcycle,Gabriela,5.18.0
+DT00062,2026-04-07 11:03:48,classic_burger,35.46,-23.561684,-46.655981,-23.578482,-46.701866,Pinheiros,cloudy,low,low,Igor,bike,Igor,5.22.0
+DT00239,2026-04-06 13:14:47,carbonara_pasta,46.10,-23.561684,-46.655981,-23.534803,-46.673422,Perdizes,cloudy,medium,medium,Elisa,motorcycle,Julia,5.18.0
+DT03517,2026-01-02 17:19:11,classic_burger,32.11,-23.561684,-46.655981,-23.564812,-46.651756,Bela Vista,clear,low,low,Carla,car,Mariana,5.22.0
+DT00865,2026-04-30 23:32:49,grilled_chicken,36.29,-23.561684,-46.655981,-23.567415,-46.662279,Jardins,rain,medium,low,Diego,motorcycle,Thiago,5.20.0
+DT04507,2026-01-29 20:38:10,vegan_wrap,30.11,-23.561684,-46.655981,-23.564928,-46.691509,Pinheiros,cloudy,medium,medium,Igor,bike,Bruno,5.22.0
+DT03427,2026-06-11 19:47:05,acai_bowl,23.26,-23.561684,-46.655981,-23.552105,-46.646122,Bela Vista,clear,medium,medium,Ana,motorcycle,Julia,6.0.0
+DT03968,2026-05-07 14:16:33,feijoada,41.98,-23.561684,-46.655981,-23.589103,-46.680945,Itaim Bibi,clear,low,low,Marcos,motorcycle,Lucas,5.22.0
+DT03434,2026-04-02 11:00:44,classic_burger,34.36,-23.561684,-46.655981,-23.522767,-46.719847,Lapa,cloudy,low,low,Helena,car,Rafael,5.19.1
+DT01366,2026-05-01 13:46:14,classic_burger,36.18,-23.561684,-46.655981,-23.493062,-46.621820,Santana,cloudy,medium,low,Marcos,motorcycle,Ana,5.20.0
+DT04752,2026-03-04 20:30:41,poke_bowl,43.54,-23.561684,-46.655981,-23.529183,-46.673910,Perdizes,clear,medium,medium,Helena,car,Felipe,5.19.1
+DT03352,2026-02-25 18:11:00,poke_bowl,44.03,-23.561684,-46.655981,-23.499310,-46.642862,Santana,clear,medium,medium,Marcos,motorcycle,Gabriela,6.0.0
+DT03981,2026-03-19 13:33:17,smash_burger,26.09,-23.561684,-46.655981,-23.654883,-46.700943,Santo Amaro,rain,high,medium,Felipe,car,Yasmin,5.19.1
+DT03003,2026-01-09 15:12:57,acai_bowl,24.80,-23.561684,-46.655981,-23.548581,-46.690594,Perdizes,rain,medium,low,Carla,car,Yasmin,6.0.0
+DT00830,2026-01-15 21:14:16,carbonara_pasta,44.27,-23.561684,-46.655981,-23.561369,-46.631029,Liberdade,clear,low,medium,Gabriel,car,Rafael,5.21.2
+DT03987,2026-02-13 11:32:49,bbq_ribs,62.21,-23.561684,-46.655981,-23.553341,-46.656711,Consolacao,cloudy,low,medium,Diego,motorcycle,Mariana,6.0.0
+DT04935,2026-06-03 16:32:34,margherita_pizza,47.00,-23.561684,-46.655981,-23.570295,-46.689905,Pinheiros,clear,low,low,Nina,car,Igor,5.21.2
+DT00570,2026-03-23 23:17:01,classic_burger,37.46,-23.561684,-46.655981,-23.613924,-46.692278,Brooklin,rain,low,low,Nina,car,Natalia,6.0.0
+DT04652,2026-04-04 19:13:13,feijoada,39.96,-23.561684,-46.655981,-23.589393,-46.691742,Itaim Bibi,clear,medium,high,Bruno,motorcycle,Bruno,5.22.0
+DT02961,2026-05-09 09:19:15,margherita_pizza,44.81,-23.561684,-46.655981,-23.654796,-46.720017,Santo Amaro,rain,medium,low,Carla,car,Sofia,5.18.0
+DT02862,2026-04-13 17:37:55,grilled_chicken,37.21,-23.561684,-46.655981,-23.586666,-46.673205,Itaim Bibi,clear,low,low,Bruno,motorcycle,Yasmin,5.20.0
+DT00140,2026-02-23 13:27:10,feijoada,40.47,-23.561684,-46.655981,-23.579361,-46.687947,Itaim Bibi,rain,high,medium,Diego,motorcycle,Bruno,5.19.1
+DT01105,2026-01-04 21:15:37,grilled_chicken,35.21,-23.561684,-46.655981,-23.568188,-46.689518,Pinheiros,clear,medium,medium,Elisa,motorcycle,Ana,5.21.2
+DT02825,2026-02-14 20:26:01,margherita_pizza,42.51,-23.561684,-46.655981,-23.572937,-46.668206,Jardins,rain,high,medium,Bruno,motorcycle,Yasmin,5.18.0
+DT03515,2026-02-04 18:58:15,caesar_salad,29.85,-23.561684,-46.655981,-23.522199,-46.711135,Lapa,clear,high,low,Carla,motorcycle,Mariana,5.18.0
+DT01654,2026-01-28 21:11:47,smash_burger,26.45,-23.561684,-46.655981,-23.594352,-46.626996,Vila Mariana,clear,low,low,Marcos,car,Elisa,5.22.0
+DT00528,2026-01-20 20:55:38,carbonara_pasta,39.37,-23.561684,-46.655981,-23.538436,-46.666356,Consolacao,clear,medium,medium,Igor,car,Carla,5.21.2
+DT00982,2026-02-10 09:43:12,grilled_chicken,42.45,-23.561684,-46.655981,-23.656995,-46.713518,Santo Amaro,rain,medium,low,Elisa,bike,Igor,5.19.1
+DT00599,2026-04-06 20:01:03,grilled_chicken,35.05,-23.561684,-46.655981,-23.590804,-46.691224,Itaim Bibi,cloudy,medium,medium,Ana,car,Mariana,5.19.1
+DT04961,2026-02-16 21:00:14,carbonara_pasta,48.62,-23.561684,-46.655981,-23.550764,-46.643075,Consolacao,clear,low,low,Elisa,car,Vanessa,5.20.0
+DT01636,2026-04-25 12:02:34,sushi_combo,66.78,-23.561684,-46.655981,-23.572788,-46.638038,Liberdade,clear,low,medium,Gabriel,bike,Gabriela,5.21.2
+DT02521,2026-04-15 15:33:31,feijoada,41.22,-23.561684,-46.655981,-23.621334,-46.670735,Brooklin,clear,low,medium,Marcos,motorcycle,Felipe,5.19.1
+DT03941,2026-05-19 18:33:29,sushi_combo,69.32,-23.561684,-46.655981,-23.529475,-46.699487,Lapa,clear,medium,medium,Felipe,bike,Yasmin,5.20.0
+DT00200,2026-02-21 11:41:59,acai_bowl,27.04,-23.561684,-46.655981,-23.570293,-46.698727,Pinheiros,cloudy,medium,low,Igor,car,Diego,5.20.0
+DT04827,2026-04-18 19:10:04,margherita_pizza,51.14,-23.561684,-46.655981,-23.570992,-46.684589,Pinheiros,clear,medium,medium,Igor,motorcycle,Rafael,5.19.1
+DT00189,2026-04-10 19:52:36,grilled_chicken,39.91,-23.561684,-46.655981,-23.553596,-46.658951,Consolacao,clear,high,medium,Elisa,bike,Helena,5.22.0
+DT03831,2026-03-19 13:23:36,margherita_pizza,47.77,-23.561684,-46.655981,-23.572727,-46.683399,Jardins,cloudy,medium,medium,Bruno,motorcycle,Vanessa,5.21.2
+DT02319,2026-01-15 13:04:31,margherita_pizza,48.87,-23.561684,-46.655981,-23.617951,-46.677857,Brooklin,clear,medium,medium,Nina,motorcycle,Yasmin,6.0.0
+DT00386,2026-02-28 09:21:23,smash_burger,29.12,-23.561684,-46.655981,-23.556052,-46.656962,Bela Vista,clear,low,low,Julia,motorcycle,Thiago,5.22.0
+DT01468,2026-02-01 11:09:49,carbonara_pasta,45.45,-23.561684,-46.655981,-23.567893,-46.671831,Jardins,clear,medium,low,Marcos,motorcycle,Igor,5.21.2
+DT01682,2026-06-08 22:41:05,margherita_pizza,46.95,-23.561684,-46.655981,-23.552912,-46.650313,Bela Vista,clear,low,medium,Ana,bike,Vanessa,5.22.0
+DT01826,2026-05-04 21:45:54,sushi_combo,62.81,-23.561684,-46.655981,-23.595871,-46.656333,Moema,rain,medium,medium,Elisa,motorcycle,Rafael,5.20.0
+DT00409,2026-03-08 21:51:52,ramen,49.07,-23.561684,-46.655981,-23.583443,-46.690242,Itaim Bibi,cloudy,medium,medium,Marcos,motorcycle,Sofia,5.22.0
+DT03633,2026-04-26 11:44:13,carbonara_pasta,42.69,-23.561684,-46.655981,-23.597458,-46.663109,Moema,clear,low,medium,Gabriel,car,Yasmin,6.0.0
+DT01596,2026-03-04 21:29:32,grilled_chicken,33.51,-23.561684,-46.655981,-23.584857,-46.677149,Itaim Bibi,cloudy,low,medium,Nina,motorcycle,Yasmin,6.0.0
+DT04649,2026-06-11 17:41:42,margherita_pizza,45.63,-23.561684,-46.655981,-23.544079,-46.590908,Tatuape,cloudy,low,low,Diego,motorcycle,Thiago,5.18.0
+DT02959,2026-01-14 18:35:35,pepperoni_pizza,55.76,-23.561684,-46.655981,-23.588777,-46.630642,Vila Mariana,cloudy,high,low,Felipe,motorcycle,Otavio,5.19.1
+DT00259,2026-01-13 18:31:34,pepperoni_pizza,48.43,-23.561684,-46.655981,-23.536982,-46.666808,Perdizes,cloudy,medium,low,Marcos,car,Mariana,5.18.0
+DT00083,2026-06-08 21:15:37,margherita_pizza,48.27,-23.561684,-46.655981,-23.586038,-46.694428,Itaim Bibi,cloudy,medium,medium,Helena,motorcycle,Felipe,5.22.0
+DT00410,2026-03-08 18:46:16,ramen,46.72,-23.561684,-46.655981,-23.536330,-46.587173,Tatuape,rain,medium,low,Nina,motorcycle,Rafael,6.0.0
+DT03707,2026-02-05 14:59:06,smash_burger,28.26,-23.561684,-46.655981,-23.601857,-46.725169,Morumbi,rain,low,low,Marcos,motorcycle,Ana,6.0.0
+DT01273,2026-06-09 20:41:35,ramen,47.73,-23.561684,-46.655981,-23.527466,-46.679705,Perdizes,clear,medium,medium,Felipe,car,Gabriela,5.22.0
+DT02167,2026-03-16 17:42:28,ramen,50.22,-23.561684,-46.655981,-23.573795,-46.650779,Jardins,cloudy,low,low,Diego,bike,Carla,5.18.0
+DT00170,2026-04-20 19:51:24,caesar_salad,29.78,-23.561684,-46.655981,-23.573730,-46.670105,Jardins,cloudy,medium,medium,Carla,motorcycle,Paula,5.21.2
+DT04129,2026-01-24 18:49:28,margherita_pizza,45.32,-23.561684,-46.655981,-23.566213,-46.648670,Bela Vista,clear,medium,low,Felipe,bike,Otavio,5.21.2
+DT04136,2026-05-18 19:17:57,margherita_pizza,54.22,-23.561684,-46.655981,-23.560115,-46.665665,Jardins,storm,high,medium,Carla,motorcycle,Gabriela,5.20.0
+DT04047,2026-05-26 13:42:22,pepperoni_pizza,53.08,-23.561684,-46.655981,-23.565609,-46.694427,Butanta,clear,medium,medium,Igor,car,Lucas,5.20.0
+DT04858,2026-01-25 21:47:41,classic_burger,34.58,-23.561684,-46.655981,-23.591095,-46.632306,Vila Mariana,cloudy,medium,high,Felipe,motorcycle,Ana,6.0.0
+DT02934,2026-02-19 09:05:06,margherita_pizza,52.55,-23.561684,-46.655981,-23.591140,-46.625532,Vila Mariana,clear,medium,low,Helena,car,Helena,5.19.1
+DT02660,2026-03-28 22:26:46,grilled_chicken,37.99,-23.561684,-46.655981,-23.583737,-46.680317,Itaim Bibi,clear,low,low,Gabriel,motorcycle,Ana,5.21.2
+DT02651,2026-03-09 18:38:59,smash_burger,28.58,-23.561684,-46.655981,-23.590729,-46.626971,Vila Mariana,cloudy,medium,medium,Helena,motorcycle,Sofia,5.22.0
+DT04086,2026-03-12 20:03:12,grilled_chicken,38.88,-23.561684,-46.655981,-23.605322,-46.675543,Moema,rain,high,medium,Helena,motorcycle,Otavio,5.21.2
+DT03574,2026-02-09 20:04:54,smash_burger,28.78,-23.561684,-46.655981,-23.604780,-46.657634,Moema,storm,high,medium,Elisa,motorcycle,Felipe,5.19.1
+DT02446,2026-01-22 21:01:53,smash_burger,28.22,-23.561684,-46.655981,-23.577833,-46.708574,Butanta,clear,medium,low,Ana,motorcycle,Rafael,5.20.0
+DT03301,2026-01-07 19:59:14,feijoada,43.29,-23.561684,-46.655981,-23.554036,-46.657397,Consolacao,clear,high,medium,Ana,motorcycle,Paula,6.0.0
+DT00362,2026-06-10 13:27:33,classic_burger,35.49,-23.561684,-46.655981,-23.627326,-46.693835,Brooklin,rain,high,low,Ana,car,Felipe,6.0.0
+DT03067,2026-01-08 19:55:36,acai_bowl,26.47,-23.561684,-46.655981,-23.563855,-46.635807,Liberdade,cloudy,high,low,Marcos,motorcycle,Otavio,5.18.0
+DT02838,2026-04-13 20:14:18,caesar_salad,29.15,-23.561684,-46.655981,-23.614500,-46.659050,Moema,clear,high,medium,Diego,motorcycle,Carla,5.22.0
+DT01998,2026-06-05 20:29:58,pepperoni_pizza,57.19,-23.561684,-46.655981,-23.576003,-46.674148,Jardins,clear,high,medium,Igor,bike,Otavio,6.0.0
+DT00366,2026-02-22 21:08:30,classic_burger,33.65,-23.561684,-46.655981,-23.551336,-46.660562,Consolacao,clear,medium,high,Elisa,bike,Bruno,5.18.0
+DT02888,2026-03-06 21:46:01,feijoada,39.05,-23.561684,-46.655981,-23.560422,-46.654681,Bela Vista,cloudy,low,medium,Gabriel,bike,Otavio,5.20.0
+DT03630,2026-05-14 09:47:31,smash_burger,28.89,-23.561684,-46.655981,-23.568285,-46.691055,Pinheiros,rain,medium,low,Igor,motorcycle,Helena,5.18.0
+DT02562,2026-01-12 23:48:29,grilled_chicken,40.28,-23.561684,-46.655981,-23.581497,-46.695722,Butanta,cloudy,low,low,Nina,motorcycle,Gabriela,5.22.0
+DT00297,2026-03-01 22:56:43,smash_burger,26.08,-23.561684,-46.655981,-23.568696,-46.680105,Jardins,clear,low,medium,Gabriel,car,Carla,5.22.0
+DT01737,2026-01-15 14:40:54,poke_bowl,45.02,-23.561684,-46.655981,-23.562879,-46.631063,Liberdade,rain,low,low,Carla,bike,Lucas,6.0.0
+DT04659,2026-01-15 19:30:16,vegan_wrap,25.88,-23.561684,-46.655981,-23.575508,-46.714247,Butanta,rain,high,medium,Nina,motorcycle,Otavio,5.20.0
+DT04959,2026-03-02 23:38:53,steak_plate,67.07,-23.561684,-46.655981,-23.564725,-46.665042,Jardins,clear,low,low,Nina,motorcycle,Julia,5.20.0
+DT02883,2026-05-23 20:22:28,caesar_salad,29.24,-23.561684,-46.655981,-23.613254,-46.657794,Moema,clear,medium,medium,Elisa,motorcycle,Mariana,5.21.2
+DT02985,2026-05-25 19:24:10,acai_bowl,22.97,-23.561684,-46.655981,-23.605901,-46.678861,Moema,clear,medium,medium,Nina,motorcycle,Helena,5.22.0
+DT03432,2026-01-16 15:08:34,steak_plate,56.04,-23.561684,-46.655981,-23.567986,-46.644465,Bela Vista,cloudy,low,low,Diego,bike,Thiago,5.21.2
+DT00180,2026-05-08 17:25:04,sushi_combo,71.63,-23.561684,-46.655981,-23.562216,-46.676318,Pinheiros,clear,low,low,Nina,motorcycle,Gabriela,5.19.1
+DT04482,2026-02-10 20:56:18,poke_bowl,52.13,-23.561684,-46.655981,-23.568516,-46.663432,Jardins,cloudy,medium,medium,Elisa,car,Rafael,5.20.0
+DT03114,2026-01-21 20:52:51,sushi_combo,74.12,-23.561684,-46.655981,-23.596876,-46.641774,Vila Mariana,clear,high,high,Elisa,car,Elisa,5.18.0
+DT04894,2026-05-16 18:00:14,smash_burger,29.05,-23.561684,-46.655981,-23.586443,-46.632016,Vila Mariana,clear,low,medium,Julia,motorcycle,Diego,6.0.0
+DT00191,2026-02-19 16:18:10,carbonara_pasta,42.16,-23.561684,-46.655981,-23.593028,-46.679895,Itaim Bibi,clear,low,low,Marcos,motorcycle,Bruno,5.21.2
+DT02916,2026-04-25 18:09:05,vegan_wrap,27.40,-23.561684,-46.655981,-23.541616,-46.583928,Tatuape,rain,medium,low,Diego,car,Helena,5.18.0
+DT02177,2026-04-14 11:13:18,acai_bowl,25.10,-23.561684,-46.655981,-23.555971,-46.657946,Bela Vista,clear,medium,low,Diego,motorcycle,Mariana,5.22.0
+DT02410,2026-04-14 13:19:25,sushi_combo,65.46,-23.561684,-46.655981,-23.520500,-46.701703,Lapa,cloudy,medium,medium,Igor,motorcycle,Sofia,6.0.0
+DT01871,2026-05-05 13:36:59,acai_bowl,22.77,-23.561684,-46.655981,-23.582834,-46.642852,Vila Mariana,clear,high,medium,Igor,motorcycle,Sofia,5.21.2
+DT03666,2026-05-07 14:03:59,smash_burger,27.12,-23.561684,-46.655981,-23.576742,-46.686282,Pinheiros,rain,medium,low,Nina,motorcycle,Elisa,5.18.0
+DT02072,2026-02-17 17:51:26,feijoada,40.20,-23.561684,-46.655981,-23.567098,-46.703174,Pinheiros,clear,low,medium,Gabriel,car,Felipe,6.0.0
+DT00994,2026-03-03 21:42:06,feijoada,47.12,-23.561684,-46.655981,-23.563627,-46.655251,Bela Vista,clear,medium,medium,Diego,bike,Gabriela,5.19.1
+DT04464,2026-02-04 18:28:28,classic_burger,33.92,-23.561684,-46.655981,-23.556119,-46.641859,Bela Vista,cloudy,medium,medium,Gabriel,motorcycle,Felipe,5.19.1
+DT02716,2026-04-03 21:30:06,grilled_chicken,44.66,-23.561684,-46.655981,-23.546598,-46.642018,Liberdade,clear,low,medium,Diego,motorcycle,Vanessa,5.18.0
+DT00699,2026-01-25 20:27:56,margherita_pizza,42.26,-23.561684,-46.655981,-23.591853,-46.681860,Itaim Bibi,cloudy,low,medium,Felipe,bike,Helena,5.22.0
+DT04740,2026-02-18 14:03:27,smash_burger,27.48,-23.561684,-46.655981,-23.554274,-46.677913,Pinheiros,cloudy,low,low,Elisa,car,Yasmin,5.20.0
+DT02028,2026-03-24 14:43:20,acai_bowl,28.26,-23.561684,-46.655981,-23.509004,-46.630151,Santana,cloudy,low,low,Elisa,motorcycle,Otavio,5.21.2
+DT04471,2026-03-27 19:40:03,margherita_pizza,42.35,-23.561684,-46.655981,-23.582008,-46.682605,Itaim Bibi,cloudy,medium,medium,Felipe,motorcycle,Helena,5.18.0
+DT02142,2026-02-03 10:14:38,margherita_pizza,47.44,-23.561684,-46.655981,-23.556608,-46.657606,Bela Vista,rain,low,low,Felipe,bike,Julia,5.20.0
+DT02215,2026-01-17 15:50:43,carbonara_pasta,42.23,-23.561684,-46.655981,-23.558829,-46.645017,Liberdade,clear,low,low,Gabriel,car,Bruno,5.18.0
+DT01748,2026-05-11 19:54:28,caesar_salad,26.31,-23.561684,-46.655981,-23.583418,-46.662023,Itaim Bibi,cloudy,medium,medium,Helena,motorcycle,Felipe,5.20.0
+DT01059,2026-03-19 20:01:42,feijoada,37.92,-23.561684,-46.655981,-23.596832,-46.657149,Moema,rain,medium,medium,Igor,motorcycle,Yasmin,6.0.0
+DT04476,2026-03-20 19:17:37,pepperoni_pizza,56.61,-23.561684,-46.655981,-23.583486,-46.671035,Jardins,clear,high,medium,Nina,motorcycle,Diego,6.0.0
+DT01638,2026-04-27 19:27:41,ramen,48.55,-23.561684,-46.655981,-23.569308,-46.714190,Butanta,rain,high,low,Elisa,motorcycle,Felipe,5.22.0
+DT03007,2026-05-21 20:17:19,acai_bowl,23.95,-23.561684,-46.655981,-23.536714,-46.697198,Lapa,cloudy,medium,low,Julia,motorcycle,Lucas,5.21.2
+DT03484,2026-04-11 22:18:45,classic_burger,31.71,-23.561684,-46.655981,-23.614076,-46.681856,Brooklin,clear,low,medium,Igor,motorcycle,Rafael,5.19.1
+DT04828,2026-05-22 14:52:31,classic_burger,29.04,-23.561684,-46.655981,-23.562605,-46.686752,Pinheiros,cloudy,low,low,Igor,motorcycle,Natalia,5.22.0
+DT03275,2026-02-16 12:43:15,pepperoni_pizza,51.98,-23.561684,-46.655981,-23.566702,-46.654987,Bela Vista,rain,high,medium,Helena,bike,Paula,6.0.0
+DT04478,2026-02-10 16:21:31,pepperoni_pizza,49.80,-23.561684,-46.655981,-23.530108,-46.672925,Perdizes,clear,low,low,Elisa,motorcycle,Yasmin,5.19.1
+DT04689,2026-04-05 21:46:01,margherita_pizza,44.44,-23.561684,-46.655981,-23.552725,-46.628092,Liberdade,clear,medium,medium,Julia,car,Elisa,6.0.0
+DT02773,2026-03-07 13:39:36,margherita_pizza,46.95,-23.561684,-46.655981,-23.588121,-46.634552,Vila Mariana,clear,low,medium,Diego,motorcycle,Sofia,5.18.0
+DT04588,2026-01-01 10:01:03,carbonara_pasta,42.40,-23.561684,-46.655981,-23.554929,-46.640388,Liberdade,rain,low,low,Igor,motorcycle,Diego,5.19.1
+DT04739,2026-01-31 08:52:13,feijoada,41.10,-23.561684,-46.655981,-23.567509,-46.713873,Butanta,clear,low,low,Elisa,motorcycle,Julia,5.19.1
+DT03550,2026-03-13 11:27:49,margherita_pizza,45.55,-23.561684,-46.655981,-23.589699,-46.692523,Itaim Bibi,clear,low,low,Marcos,car,Julia,5.21.2
+DT02469,2026-03-10 16:25:59,classic_burger,31.73,-23.561684,-46.655981,-23.540313,-46.681611,Perdizes,cloudy,low,low,Helena,motorcycle,Mariana,6.0.0
+DT02408,2026-03-01 19:46:58,smash_burger,30.40,-23.561684,-46.655981,-23.572118,-46.675571,Jardins,rain,high,medium,Helena,motorcycle,Rafael,5.20.0
+DT04442,2026-05-27 12:32:26,mushroom_risotto,50.79,-23.561684,-46.655981,-23.544646,-46.575364,Tatuape,clear,medium,medium,Nina,motorcycle,Igor,6.0.0
+DT01798,2026-01-12 11:13:19,smash_burger,27.63,-23.561684,-46.655981,-23.532719,-46.588161,Tatuape,storm,medium,low,Carla,bike,Thiago,5.19.1
+DT04360,2026-04-11 09:46:44,feijoada,45.51,-23.561684,-46.655981,-23.570890,-46.667873,Jardins,cloudy,low,low,Julia,motorcycle,Vanessa,6.0.0
+DT01337,2026-04-06 19:52:39,classic_burger,35.66,-23.561684,-46.655981,-23.562179,-46.646792,Bela Vista,clear,medium,medium,Ana,motorcycle,Otavio,5.20.0
+DT01631,2026-04-06 18:48:48,poke_bowl,51.57,-23.561684,-46.655981,-23.539819,-46.569756,Tatuape,cloudy,medium,low,Gabriel,car,Sofia,5.21.2
+DT03547,2026-02-27 17:18:53,classic_burger,33.81,-23.561684,-46.655981,-23.608542,-46.692231,Brooklin,clear,low,low,Carla,motorcycle,Lucas,5.18.0
+DT00334,2026-05-19 22:19:00,steak_plate,59.98,-23.561684,-46.655981,-23.574900,-46.680461,Itaim Bibi,clear,low,medium,Julia,bike,Elisa,6.0.0
+DT01714,2026-03-17 12:27:39,acai_bowl,25.30,-23.561684,-46.655981,-23.590389,-46.643623,Vila Mariana,cloudy,medium,medium,Diego,bike,Sofia,5.20.0
+DT00541,2026-03-23 19:34:43,classic_burger,34.36,-23.561684,-46.655981,-23.557653,-46.659910,Consolacao,clear,medium,low,Felipe,walking,Carla,5.19.1
+DT04222,2026-04-04 14:19:10,classic_burger,32.77,-23.561684,-46.655981,-23.551949,-46.645149,Consolacao,clear,low,low,Igor,bike,Gabriela,5.18.0
+DT03955,2026-03-07 19:19:08,pepperoni_pizza,45.99,-23.561684,-46.655981,-23.565279,-46.625644,Liberdade,clear,medium,medium,Marcos,motorcycle,Felipe,5.22.0
+DT04457,2026-06-10 15:42:39,pepperoni_pizza,51.21,-23.561684,-46.655981,-23.604833,-46.707979,Morumbi,clear,low,low,Elisa,car,Lucas,5.19.1
+DT02201,2026-05-23 09:55:03,vegan_wrap,21.75,-23.561684,-46.655981,-23.576064,-46.654633,Jardins,clear,low,low,Ana,motorcycle,Igor,5.20.0
+DT03216,2026-01-24 21:51:31,mushroom_risotto,57.00,-23.561684,-46.655981,-23.656012,-46.715886,Santo Amaro,clear,medium,high,Diego,bike,Diego,5.18.0
+DT00526,2026-04-17 11:38:08,classic_burger,38.17,-23.561684,-46.655981,-23.570563,-46.650824,Jardins,rain,medium,low,Ana,motorcycle,Gabriela,5.20.0
+DT03408,2026-04-18 21:02:33,pepperoni_pizza,60.71,-23.561684,-46.655981,-23.579502,-46.679834,Itaim Bibi,clear,medium,medium,Gabriel,motorcycle,Vanessa,5.21.2
+DT02785,2026-02-04 19:21:45,ramen,44.54,-23.561684,-46.655981,-23.496906,-46.627327,Santana,cloudy,medium,medium,Elisa,motorcycle,Thiago,5.21.2
+DT03219,2026-05-13 19:03:55,ramen,49.48,-23.561684,-46.655981,-23.531336,-46.680713,Perdizes,clear,medium,medium,Bruno,motorcycle,Natalia,5.18.0
+DT00511,2026-04-15 09:56:58,carbonara_pasta,39.48,-23.561684,-46.655981,-23.568982,-46.620828,Liberdade,rain,medium,low,Felipe,motorcycle,Felipe,5.21.2
+DT01327,2026-04-16 12:13:18,classic_burger,30.55,-23.561684,-46.655981,-23.575526,-46.692152,Pinheiros,clear,medium,medium,Felipe,motorcycle,Elisa,5.21.2
+DT02078,2026-01-17 23:05:27,classic_burger,32.94,-23.561684,-46.655981,-23.526328,-46.709486,Lapa,cloudy,low,low,Ana,motorcycle,Yasmin,5.22.0
+DT04164,2026-05-28 21:47:30,sushi_combo,64.99,-23.561684,-46.655981,-23.613958,-46.716928,Morumbi,clear,low,medium,Igor,bike,Paula,5.21.2
+DT01302,2026-02-20 14:40:14,feijoada,37.03,-23.561684,-46.655981,-23.562930,-46.656396,Bela Vista,cloudy,low,low,Julia,bike,Natalia,5.21.2
+DT00909,2026-03-11 23:48:59,carbonara_pasta,41.18,-23.561684,-46.655981,-23.497754,-46.622677,Santana,clear,low,low,Marcos,car,Paula,5.19.1
+DT03530,2026-06-13 18:12:51,carbonara_pasta,43.17,-23.561684,-46.655981,-23.565685,-46.687898,Jardins,clear,low,low,Igor,bike,Rafael,5.19.1
+DT04111,2026-03-31 14:37:34,sushi_combo,59.29,-23.561684,-46.655981,-23.581026,-46.685380,Itaim Bibi,cloudy,low,low,Felipe,motorcycle,Lucas,5.20.0
+DT00911,2026-03-31 19:29:14,carbonara_pasta,42.49,-23.561684,-46.655981,-23.570310,-46.705795,Butanta,clear,medium,medium,Gabriel,motorcycle,Rafael,5.20.0
+DT01535,2026-01-24 19:07:17,classic_burger,32.72,-23.561684,-46.655981,-23.558924,-46.645099,Bela Vista,clear,medium,medium,Diego,bike,Yasmin,5.20.0
+DT01441,2026-05-11 15:37:15,pepperoni_pizza,56.14,-23.561684,-46.655981,-23.547284,-46.646892,Consolacao,cloudy,low,low,Nina,car,Lucas,6.0.0
+DT02149,2026-02-28 09:51:19,steak_plate,67.23,-23.561684,-46.655981,-23.589415,-46.636289,Vila Mariana,cloudy,low,low,Helena,motorcycle,Vanessa,5.18.0
+DT00585,2026-03-21 20:17:21,poke_bowl,51.83,-23.561684,-46.655981,-23.596912,-46.677464,Itaim Bibi,cloudy,medium,medium,Diego,motorcycle,Diego,5.21.2
+DT03698,2026-04-27 12:17:29,acai_bowl,24.04,-23.561684,-46.655981,-23.600384,-46.669242,Moema,storm,high,medium,Carla,car,Diego,5.21.2
+DT03191,2026-01-07 19:43:38,sushi_combo,67.57,-23.561684,-46.655981,-23.583473,-46.673916,Itaim Bibi,rain,high,high,Helena,bike,Sofia,6.0.0
+DT01469,2026-03-19 19:00:04,poke_bowl,49.49,-23.561684,-46.655981,-23.588574,-46.623255,Vila Mariana,cloudy,medium,medium,Julia,motorcycle,Sofia,5.18.0
+DT03493,2026-05-23 19:11:05,poke_bowl,55.31,-23.561684,-46.655981,-23.555139,-46.655981,Consolacao,rain,medium,medium,Marcos,walking,Bruno,5.21.2
+DT01574,2026-05-27 12:07:20,margherita_pizza,49.00,-23.561684,-46.655981,-23.526269,-46.708481,Lapa,clear,medium,medium,Elisa,bike,Sofia,5.18.0
+DT04447,2026-04-06 14:00:57,pepperoni_pizza,56.49,-23.561684,-46.655981,-23.547719,-46.676252,Perdizes,cloudy,low,low,Igor,car,Sofia,5.21.2
+DT02821,2026-02-20 14:51:07,acai_bowl,24.71,-23.561684,-46.655981,-23.605026,-46.683723,Brooklin,rain,low,low,Carla,car,Felipe,5.22.0
+DT00756,2026-05-17 19:26:49,steak_plate,59.17,-23.561684,-46.655981,-23.576118,-46.687024,Jardins,clear,low,medium,Gabriel,motorcycle,Elisa,5.20.0
+DT03287,2026-01-14 13:23:04,smash_burger,30.71,-23.561684,-46.655981,-23.529125,-46.665245,Perdizes,clear,medium,medium,Elisa,motorcycle,Carla,6.0.0
+DT00076,2026-04-01 21:08:15,poke_bowl,54.87,-23.561684,-46.655981,-23.546124,-46.653468,Consolacao,storm,medium,medium,Felipe,motorcycle,Elisa,5.22.0
+DT04002,2026-02-20 15:54:56,mushroom_risotto,52.77,-23.561684,-46.655981,-23.550072,-46.589548,Tatuape,cloudy,low,low,Bruno,motorcycle,Vanessa,5.22.0
+DT02296,2026-03-15 22:36:47,vegan_wrap,31.41,-23.561684,-46.655981,-23.550433,-46.657936,Consolacao,storm,low,low,Marcos,bike,Julia,5.18.0
+DT01171,2026-03-12 11:50:36,acai_bowl,27.25,-23.561684,-46.655981,-23.536920,-46.683059,Perdizes,cloudy,low,low,Felipe,motorcycle,Bruno,6.0.0
+DT00620,2026-01-17 12:38:33,carbonara_pasta,48.91,-23.561684,-46.655981,-23.599742,-46.720946,Morumbi,rain,medium,medium,Diego,motorcycle,Sofia,5.22.0
+DT00406,2026-02-22 12:53:35,margherita_pizza,47.65,-23.561684,-46.655981,-23.582575,-46.636667,Vila Mariana,rain,medium,medium,Elisa,motorcycle,Natalia,5.18.0
+DT03441,2026-06-07 14:17:53,smash_burger,25.36,-23.561684,-46.655981,-23.566027,-46.718574,Butanta,rain,low,low,Marcos,motorcycle,Sofia,5.22.0
+DT01038,2026-04-14 20:45:16,ramen,50.29,-23.561684,-46.655981,-23.560988,-46.660835,Consolacao,cloudy,medium,medium,Julia,motorcycle,Mariana,5.20.0
+DT03378,2026-03-27 09:19:33,pepperoni_pizza,49.07,-23.561684,-46.655981,-23.544112,-46.683640,Perdizes,rain,high,low,Carla,motorcycle,Lucas,5.19.1
+DT03676,2026-01-13 21:39:04,margherita_pizza,45.88,-23.561684,-46.655981,-23.568162,-46.652919,Jardins,cloudy,low,medium,Gabriel,walking,Yasmin,6.0.0
+DT02181,2026-04-01 15:36:50,poke_bowl,52.97,-23.561684,-46.655981,-23.586596,-46.666577,Jardins,clear,low,low,Felipe,motorcycle,Lucas,6.0.0
+DT00657,2026-01-26 14:29:12,feijoada,45.40,-23.561684,-46.655981,-23.568174,-46.657397,Bela Vista,clear,low,low,Marcos,bike,Thiago,5.20.0
+DT01860,2026-06-04 13:40:50,mushroom_risotto,55.82,-23.561684,-46.655981,-23.591322,-46.698050,Itaim Bibi,cloudy,medium,medium,Gabriel,motorcycle,Vanessa,5.19.1
+DT01997,2026-05-06 21:37:42,carbonara_pasta,44.42,-23.561684,-46.655981,-23.552503,-46.636020,Liberdade,clear,low,medium,Helena,bike,Otavio,6.0.0
+DT04128,2026-02-10 20:23:33,caesar_salad,31.72,-23.561684,-46.655981,-23.537906,-46.665126,Perdizes,clear,medium,medium,Diego,car,Sofia,5.18.0
+DT00804,2026-01-22 18:37:56,sushi_combo,72.79,-23.561684,-46.655981,-23.543136,-46.563028,Tatuape,clear,medium,medium,Marcos,car,Natalia,5.21.2
+DT01349,2026-03-30 22:50:38,smash_burger,27.55,-23.561684,-46.655981,-23.584547,-46.682331,Itaim Bibi,clear,low,medium,Julia,bike,Paula,5.21.2
+DT00066,2026-01-20 19:06:10,mushroom_risotto,54.65,-23.561684,-46.655981,-23.559266,-46.671843,Jardins,rain,medium,medium,Helena,motorcycle,Vanessa,6.0.0
+DT01709,2026-05-23 19:45:47,poke_bowl,59.43,-23.561684,-46.655981,-23.551944,-46.662016,Consolacao,cloudy,medium,medium,Bruno,bike,Mariana,5.19.1
+DT03178,2026-03-01 11:19:53,sushi_combo,64.50,-23.561684,-46.655981,-23.613382,-46.689531,Brooklin,rain,medium,medium,Julia,motorcycle,Rafael,6.0.0
+DT00188,2026-05-08 20:35:20,feijoada,42.40,-23.561684,-46.655981,-23.552106,-46.647551,Consolacao,clear,medium,high,Ana,bike,Helena,5.21.2
+DT04167,2026-04-16 17:13:52,steak_plate,55.10,-23.561684,-46.655981,-23.566396,-46.646269,Bela Vista,cloudy,low,low,Bruno,car,Otavio,5.20.0
+DT01586,2026-01-19 14:57:19,mushroom_risotto,48.87,-23.561684,-46.655981,-23.562528,-46.652714,Consolacao,cloudy,low,low,Gabriel,motorcycle,Carla,5.19.1
+DT00576,2026-05-07 20:12:08,margherita_pizza,48.03,-23.561684,-46.655981,-23.560934,-46.618965,Liberdade,clear,medium,low,Nina,bike,Otavio,5.19.1
+DT03652,2026-04-15 11:14:37,margherita_pizza,52.77,-23.561684,-46.655981,-23.590879,-46.627559,Vila Mariana,clear,medium,low,Marcos,car,Elisa,5.21.2
+DT03327,2026-01-18 20:33:42,margherita_pizza,43.30,-23.561684,-46.655981,-23.644772,-46.708656,Santo Amaro,cloudy,medium,medium,Igor,motorcycle,Igor,6.0.0
+DT01009,2026-02-12 18:00:18,pepperoni_pizza,57.00,-23.561684,-46.655981,-23.606478,-46.685524,Brooklin,rain,medium,low,Gabriel,car,Otavio,5.20.0
+DT02095,2026-02-21 20:21:39,poke_bowl,50.77,-23.561684,-46.655981,-23.563299,-46.669550,Jardins,clear,medium,medium,Igor,bike,Helena,5.21.2
+DT02978,2026-02-26 22:14:20,carbonara_pasta,40.81,-23.561684,-46.655981,-23.559051,-46.697075,Pinheiros,rain,low,low,Julia,motorcycle,Elisa,5.20.0
+DT02970,2026-03-13 18:37:35,carbonara_pasta,41.51,-23.561684,-46.655981,-23.590090,-46.642180,Vila Mariana,clear,medium,medium,Elisa,motorcycle,Felipe,5.18.0
+DT00630,2026-02-26 20:45:03,smash_burger,29.89,-23.561684,-46.655981,-23.561589,-46.641989,Liberdade,clear,medium,low,Ana,bike,Carla,6.0.0
+DT04960,2026-04-15 13:03:00,sushi_combo,57.95,-23.561684,-46.655981,-23.553688,-46.632714,Liberdade,clear,medium,medium,Helena,car,Thiago,6.0.0
+DT02122,2026-02-24 11:57:31,steak_plate,70.08,-23.561684,-46.655981,-23.562898,-46.643555,Liberdade,cloudy,medium,medium,Julia,bike,Elisa,6.0.0
+DT02204,2026-03-22 22:36:54,acai_bowl,24.53,-23.561684,-46.655981,-23.612648,-46.685699,Brooklin,cloudy,low,medium,Helena,motorcycle,Igor,5.19.1
+DT03049,2026-06-08 22:01:02,grilled_chicken,40.76,-23.561684,-46.655981,-23.559134,-46.675614,Jardins,clear,low,low,Ana,motorcycle,Mariana,6.0.0
+DT01359,2026-05-25 20:23:21,acai_bowl,24.94,-23.561684,-46.655981,-23.609180,-46.675524,Moema,rain,medium,medium,Diego,motorcycle,Natalia,5.20.0
+DT01758,2026-06-05 13:15:46,mushroom_risotto,62.55,-23.561684,-46.655981,-23.570446,-46.670975,Jardins,cloudy,medium,high,Ana,car,Helena,5.19.1
+DT04007,2026-03-02 18:51:16,margherita_pizza,49.24,-23.561684,-46.655981,-23.580021,-46.687638,Pinheiros,cloudy,medium,low,Bruno,motorcycle,Otavio,6.0.0
+DT04658,2026-03-06 11:14:56,grilled_chicken,36.82,-23.561684,-46.655981,-23.554680,-46.644745,Liberdade,rain,medium,medium,Carla,bike,Vanessa,5.22.0
+DT03747,2026-05-22 20:12:26,carbonara_pasta,45.01,-23.561684,-46.655981,-23.578570,-46.624284,Vila Mariana,clear,medium,medium,Gabriel,car,Paula,5.22.0
+DT00056,2026-04-07 08:29:51,feijoada,42.01,-23.561684,-46.655981,-23.545289,-46.570384,Tatuape,clear,low,low,Marcos,motorcycle,Bruno,5.20.0
+DT02874,2026-03-06 20:11:57,poke_bowl,47.64,-23.561684,-46.655981,-23.559845,-46.645729,Bela Vista,cloudy,medium,medium,Helena,bike,Bruno,5.21.2
+DT00483,2026-03-11 11:08:30,sushi_combo,63.47,-23.561684,-46.655981,-23.595502,-46.639148,Vila Mariana,clear,low,low,Diego,car,Otavio,5.21.2
+DT00652,2026-03-03 11:58:10,mushroom_risotto,53.00,-23.561684,-46.655981,-23.605802,-46.663677,Moema,clear,medium,medium,Marcos,motorcycle,Igor,5.18.0
+DT03090,2026-04-10 18:35:40,classic_burger,34.93,-23.561684,-46.655981,-23.562209,-46.635906,Bela Vista,clear,medium,medium,Gabriel,motorcycle,Helena,5.19.1
+DT00698,2026-02-01 22:03:54,classic_burger,31.56,-23.561684,-46.655981,-23.656593,-46.716124,Santo Amaro,rain,low,medium,Carla,motorcycle,Lucas,5.18.0
+DT01722,2026-06-05 14:33:48,poke_bowl,45.91,-23.561684,-46.655981,-23.584798,-46.691995,Itaim Bibi,clear,low,low,Carla,motorcycle,Igor,5.21.2
+DT01460,2026-04-07 14:09:45,mushroom_risotto,57.43,-23.561684,-46.655981,-23.573222,-46.662134,Jardins,clear,low,low,Gabriel,bike,Mariana,5.22.0
+DT01088,2026-05-29 13:38:59,vegan_wrap,28.99,-23.561684,-46.655981,-23.581134,-46.709516,Butanta,clear,high,low,Ana,bike,Helena,5.20.0
+DT02740,2026-03-05 09:19:40,mushroom_risotto,57.24,-23.561684,-46.655981,-23.568487,-46.660304,Jardins,clear,medium,medium,Helena,bike,Lucas,5.18.0
+DT02999,2026-01-05 13:54:59,bbq_ribs,70.17,-23.561684,-46.655981,-23.519025,-46.700565,Lapa,clear,medium,high,Gabriel,motorcycle,Diego,5.20.0
+DT01778,2026-02-25 20:30:41,smash_burger,29.38,-23.561684,-46.655981,-23.515488,-46.621677,Santana,clear,high,medium,Felipe,motorcycle,Otavio,6.0.0
+DT01566,2026-03-26 13:12:21,sushi_combo,73.59,-23.561684,-46.655981,-23.534429,-46.669000,Perdizes,cloudy,medium,high,Elisa,car,Diego,5.19.1
+DT04196,2026-03-02 21:52:18,pepperoni_pizza,51.77,-23.561684,-46.655981,-23.583594,-46.675607,Itaim Bibi,cloudy,medium,medium,Carla,bike,Natalia,5.20.0
+DT04041,2026-05-12 13:19:01,smash_burger,30.43,-23.561684,-46.655981,-23.567767,-46.676141,Jardins,clear,high,medium,Bruno,bike,Igor,5.21.2
+DT04259,2026-06-05 10:04:45,vegan_wrap,31.39,-23.561684,-46.655981,-23.612788,-46.648502,Moema,cloudy,low,low,Julia,motorcycle,Sofia,5.20.0
+DT02602,2026-06-02 23:40:32,feijoada,37.31,-23.561684,-46.655981,-23.560409,-46.706468,Pinheiros,clear,low,low,Gabriel,motorcycle,Carla,5.19.1
+DT02312,2026-04-28 13:46:47,feijoada,37.64,-23.561684,-46.655981,-23.564745,-46.623962,Liberdade,cloudy,medium,medium,Julia,motorcycle,Gabriela,5.21.2
+DT04485,2026-04-29 21:10:49,vegan_wrap,29.58,-23.561684,-46.655981,-23.607120,-46.705263,Brooklin,cloudy,low,low,Gabriel,motorcycle,Carla,5.21.2
+DT03344,2026-02-06 21:39:19,smash_burger,29.13,-23.561684,-46.655981,-23.563390,-46.684387,Pinheiros,clear,low,medium,Ana,bike,Felipe,5.21.2
+DT00798,2026-04-08 16:17:22,poke_bowl,46.72,-23.561684,-46.655981,-23.602174,-46.675329,Moema,cloudy,low,low,Ana,motorcycle,Thiago,6.0.0
+DT02906,2026-05-23 14:16:39,smash_burger,26.57,-23.561684,-46.655981,-23.560572,-46.636216,Liberdade,cloudy,low,low,Marcos,bike,Felipe,5.20.0
+DT02079,2026-03-06 13:34:59,margherita_pizza,46.48,-23.561684,-46.655981,-23.548029,-46.652231,Consolacao,cloudy,medium,medium,Marcos,motorcycle,Otavio,5.20.0
+DT02704,2026-06-14 19:23:39,caesar_salad,32.83,-23.561684,-46.655981,-23.590183,-46.712191,Butanta,cloudy,low,medium,Felipe,motorcycle,Vanessa,5.21.2
+DT04020,2026-01-25 18:58:09,margherita_pizza,43.11,-23.561684,-46.655981,-23.563726,-46.702913,Butanta,cloudy,low,medium,Julia,motorcycle,Yasmin,5.20.0
+DT02618,2026-05-16 17:18:56,classic_burger,33.79,-23.561684,-46.655981,-23.568886,-46.654498,Bela Vista,clear,low,low,Carla,walking,Sofia,5.21.2
+DT04561,2026-06-05 19:38:38,caesar_salad,27.22,-23.561684,-46.655981,-23.568902,-46.664403,Jardins,rain,high,medium,Elisa,bike,Paula,6.0.0
+DT03867,2026-06-15 19:25:14,mushroom_risotto,63.80,-23.561684,-46.655981,-23.529346,-46.585936,Tatuape,cloudy,medium,medium,Elisa,motorcycle,Vanessa,5.18.0
+DT02291,2026-02-28 17:33:38,sushi_combo,71.22,-23.561684,-46.655981,-23.554794,-46.631690,Liberdade,rain,low,low,Diego,motorcycle,Lucas,5.21.2
+DT03028,2026-01-16 22:50:48,feijoada,46.08,-23.561684,-46.655981,-23.554061,-46.646528,Consolacao,cloudy,low,medium,Helena,motorcycle,Natalia,5.20.0
+DT00937,2026-04-14 21:50:44,steak_plate,68.21,-23.561684,-46.655981,-23.586359,-46.677127,Itaim Bibi,rain,low,medium,Nina,motorcycle,Igor,5.20.0
+DT02903,2026-04-23 19:22:57,feijoada,41.61,-23.561684,-46.655981,-23.593466,-46.668898,Moema,clear,medium,medium,Julia,car,Yasmin,5.18.0
+DT00638,2026-05-26 11:40:08,classic_burger,34.08,-23.561684,-46.655981,-23.623697,-46.684859,Brooklin,clear,low,medium,Julia,motorcycle,Thiago,5.20.0
+DT04958,2026-05-13 08:46:40,steak_plate,61.41,-23.561684,-46.655981,-23.548274,-46.639041,Liberdade,cloudy,medium,low,Bruno,bike,Ana,5.18.0
+DT03997,2026-02-08 20:10:57,ramen,48.16,-23.561684,-46.655981,-23.545663,-46.638786,Consolacao,rain,medium,medium,Bruno,bike,Elisa,6.0.0
+DT01320,2026-01-12 12:16:19,carbonara_pasta,42.16,-23.561684,-46.655981,-23.607805,-46.720315,Morumbi,cloudy,medium,medium,Carla,motorcycle,Bruno,5.21.2
+DT00574,2026-04-24 19:57:17,vegan_wrap,29.72,-23.561684,-46.655981,-23.556570,-46.628726,Liberdade,clear,high,medium,Diego,motorcycle,Igor,5.19.1
+DT02424,2026-02-21 14:13:18,smash_burger,27.81,-23.561684,-46.655981,-23.575697,-46.698690,Butanta,rain,low,low,Elisa,motorcycle,Yasmin,5.19.1
+DT00977,2026-04-26 13:48:08,sushi_combo,61.17,-23.561684,-46.655981,-23.563157,-46.678706,Jardins,cloudy,medium,high,Diego,bike,Igor,5.18.0
+DT02518,2026-02-14 18:13:40,margherita_pizza,49.04,-23.561684,-46.655981,-23.573972,-46.676845,Jardins,rain,medium,medium,Bruno,bike,Otavio,5.20.0
+DT01407,2026-04-19 19:40:22,bbq_ribs,74.16,-23.561684,-46.655981,-23.558326,-46.632354,Liberdade,clear,medium,high,Ana,motorcycle,Felipe,5.22.0
+DT01070,2026-04-07 23:28:04,caesar_salad,30.97,-23.561684,-46.655981,-23.553808,-46.641501,Bela Vista,clear,low,low,Marcos,bike,Sofia,5.18.0
+DT04859,2026-01-19 11:00:32,acai_bowl,26.62,-23.561684,-46.655981,-23.587912,-46.628682,Vila Mariana,rain,low,medium,Julia,car,Natalia,6.0.0
+DT01421,2026-02-09 19:28:12,grilled_chicken,36.99,-23.561684,-46.655981,-23.574443,-46.716872,Butanta,storm,high,medium,Julia,bike,Diego,5.22.0
+DT01200,2026-03-18 22:03:16,sushi_combo,70.82,-23.561684,-46.655981,-23.510722,-46.676108,Perdizes,cloudy,low,medium,Nina,motorcycle,Gabriela,6.0.0
+DT02709,2026-02-27 23:15:59,mushroom_risotto,55.95,-23.561684,-46.655981,-23.550768,-46.662146,Consolacao,clear,low,low,Nina,car,Yasmin,5.21.2
+DT02933,2026-04-06 13:50:12,mushroom_risotto,42.25,-23.561684,-46.655981,-23.562068,-46.647662,Liberdade,cloudy,high,high,Felipe,motorcycle,Bruno,5.20.0
+DT02030,2026-03-31 11:44:29,vegan_wrap,27.58,-23.561684,-46.655981,-23.543206,-46.629135,Liberdade,rain,medium,low,Nina,motorcycle,Julia,5.21.2
+DT04778,2026-06-11 17:14:11,pepperoni_pizza,60.03,-23.561684,-46.655981,-23.513298,-46.708294,Lapa,clear,low,low,Julia,motorcycle,Natalia,5.22.0
+DT03927,2026-02-14 16:23:25,grilled_chicken,34.61,-23.561684,-46.655981,-23.566606,-46.705235,Butanta,cloudy,low,low,Elisa,motorcycle,Julia,5.22.0
+DT00679,2026-03-06 14:27:27,bbq_ribs,64.96,-23.561684,-46.655981,-23.604799,-46.662103,Moema,cloudy,low,low,Diego,motorcycle,Rafael,5.21.2
+DT02929,2026-06-14 22:33:43,acai_bowl,26.06,-23.561684,-46.655981,-23.568322,-46.667882,Jardins,clear,low,medium,Ana,bike,Gabriela,5.22.0
+DT04868,2026-01-31 14:33:30,margherita_pizza,46.84,-23.561684,-46.655981,-23.653281,-46.714199,Santo Amaro,clear,low,low,Carla,motorcycle,Helena,5.18.0
+DT03309,2026-05-26 20:28:23,sushi_combo,69.06,-23.561684,-46.655981,-23.567505,-46.701355,Pinheiros,clear,medium,medium,Felipe,motorcycle,Carla,5.19.1
+DT02894,2026-05-06 20:05:49,bbq_ribs,72.08,-23.561684,-46.655981,-23.561877,-46.664796,Jardins,clear,medium,medium,Diego,motorcycle,Sofia,5.18.0
+DT01939,2026-02-05 21:03:59,smash_burger,25.90,-23.561684,-46.655981,-23.545997,-46.644047,Consolacao,rain,medium,medium,Gabriel,motorcycle,Carla,6.0.0
+DT03360,2026-05-24 14:17:36,margherita_pizza,49.44,-23.561684,-46.655981,-23.546187,-46.643954,Consolacao,clear,low,low,Elisa,motorcycle,Bruno,5.21.2
+DT04059,2026-01-03 21:16:08,smash_burger,27.70,-23.561684,-46.655981,-23.572197,-46.695857,Pinheiros,clear,medium,high,Felipe,bike,Natalia,6.0.0
+DT04628,2026-06-13 19:17:48,smash_burger,27.75,-23.561684,-46.655981,-23.585997,-46.678566,Itaim Bibi,clear,medium,medium,Gabriel,car,Gabriela,5.22.0
+DT02032,2026-03-26 20:00:46,margherita_pizza,48.75,-23.561684,-46.655981,-23.610999,-46.664948,Moema,clear,medium,low,Felipe,bike,Helena,5.19.1
+DT04594,2026-06-03 14:07:01,pepperoni_pizza,52.54,-23.561684,-46.655981,-23.546873,-46.650448,Consolacao,rain,medium,low,Ana,car,Ana,5.21.2
+DT04157,2026-04-06 08:03:33,classic_burger,31.30,-23.561684,-46.655981,-23.541477,-46.683124,Perdizes,cloudy,medium,low,Ana,motorcycle,Felipe,6.0.0
+DT00294,2026-05-13 08:30:39,smash_burger,29.00,-23.561684,-46.655981,-23.594343,-46.717303,Morumbi,clear,low,low,Carla,car,Diego,5.21.2
+DT04806,2026-03-09 19:59:23,smash_burger,24.56,-23.561684,-46.655981,-23.657517,-46.708236,Santo Amaro,clear,medium,medium,Carla,motorcycle,Paula,5.21.2
+DT02636,2026-04-22 20:33:11,margherita_pizza,42.89,-23.561684,-46.655981,-23.543314,-46.670718,Perdizes,rain,high,low,Bruno,motorcycle,Diego,5.20.0
+DT01925,2026-01-20 19:51:36,margherita_pizza,52.75,-23.561684,-46.655981,-23.567218,-46.647874,Bela Vista,cloudy,medium,medium,Diego,bike,Rafael,5.19.1
+DT01514,2026-01-28 16:38:02,vegan_wrap,25.88,-23.561684,-46.655981,-23.561022,-46.637698,Bela Vista,cloudy,low,low,Elisa,walking,Natalia,5.22.0
+DT02898,2026-04-16 11:23:41,margherita_pizza,45.64,-23.561684,-46.655981,-23.559252,-46.635845,Liberdade,clear,low,low,Igor,car,Ana,5.22.0
+DT01791,2026-04-26 18:28:18,steak_plate,76.68,-23.561684,-46.655981,-23.581921,-46.678993,Itaim Bibi,storm,medium,medium,Marcos,car,Natalia,5.20.0
+DT02162,2026-02-28 09:31:50,margherita_pizza,45.69,-23.561684,-46.655981,-23.572704,-46.661598,Jardins,rain,low,low,Helena,bike,Helena,5.18.0
+DT04123,2026-05-20 14:52:00,caesar_salad,31.87,-23.561684,-46.655981,-23.655182,-46.702161,Santo Amaro,clear,low,low,Julia,motorcycle,Rafael,6.0.0
+DT04325,2026-02-18 15:46:31,grilled_chicken,34.71,-23.561684,-46.655981,-23.578092,-46.686007,Itaim Bibi,clear,low,low,Nina,motorcycle,Helena,5.21.2
+DT00543,2026-03-03 15:54:52,pepperoni_pizza,50.79,-23.561684,-46.655981,-23.544308,-46.653046,Consolacao,clear,low,low,Diego,bike,Julia,5.21.2
+DT01888,2026-05-12 12:00:04,classic_burger,35.01,-23.561684,-46.655981,-23.557390,-46.659761,Consolacao,clear,high,medium,Gabriel,motorcycle,Otavio,5.22.0
