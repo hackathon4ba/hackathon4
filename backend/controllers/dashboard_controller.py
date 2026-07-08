@@ -24,6 +24,8 @@ class DashboardChartPoint(BaseModel):
     date: str | None = None
     period: str | None = None
     valueCents: int | None = None
+    kind: str | None = None
+    isForecast: bool | None = None
 
 
 class AIInsightResponse(BaseModel):

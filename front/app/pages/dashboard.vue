@@ -15,6 +15,8 @@ type DashboardMetric = {
 type ChartDatum = {
   label: string
   value: number
+  kind?: 'historical' | 'current' | 'forecast'
+  isForecast?: boolean
 }
 
 type DashboardInsight = {
@@ -39,6 +41,8 @@ type DashboardPayload = {
     label: string
     value: number
     valueCents: number
+    kind?: 'historical' | 'current' | 'forecast'
+    isForecast?: boolean
   }>
   ordersByPeriod: Array<{
     period: string
@@ -92,7 +96,11 @@ function applyFallbackDashboard(message = 'API indisponivel. Exibindo dados mock
   errorMessage.value = message
   referenceDate.value = 'mock'
   metrics.value = fallbackMetrics.slice(0, 4)
-  revenueByDay.value = fallbackRevenueByDay
+  revenueByDay.value = fallbackRevenueByDay.map((item) => ({
+    ...item,
+    kind: 'historical',
+    isForecast: false
+  }))
   ordersByPeriod.value = fallbackOrdersByPeriod
   bestDishes.value = fallbackBestDishes
   insight.value = {
@@ -187,7 +195,9 @@ async function fetchDashboard() {
     metrics.value = buildMetrics(payload)
     revenueByDay.value = payload.revenueByDay.map((item) => ({
       label: item.label,
-      value: item.value
+      value: item.value,
+      kind: item.kind,
+      isForecast: item.isForecast
     }))
     ordersByPeriod.value = payload.ordersByPeriod.map((item) => ({
       label: item.label,
@@ -295,7 +305,14 @@ await fetchDashboard()
             class="column-item"
           >
             <div class="column-track">
-              <span :style="{ height: chartHeight(item.value, revenueByDay) }" />
+              <span
+                :class="[
+                  'column-bar',
+                  item.kind === 'forecast' ? 'forecast-bar' : '',
+                  item.kind === 'current' ? 'current-bar' : ''
+                ]"
+                :style="{ height: chartHeight(item.value, revenueByDay) }"
+              />
             </div>
             <small>{{ item.label }}</small>
           </div>
@@ -381,5 +398,24 @@ await fetchDashboard()
   color: var(--color-gray-500);
   font-size: 12px;
   font-weight: 700;
+}
+
+.column-bar {
+  background: var(--color-red);
+}
+
+.forecast-bar {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(214, 62, 62, 0.16) 0,
+    rgba(214, 62, 62, 0.16) 6px,
+    rgba(214, 62, 62, 0.52) 6px,
+    rgba(214, 62, 62, 0.52) 12px
+  );
+  border: 1px dashed rgba(214, 62, 62, 0.9);
+}
+
+.current-bar {
+  background: #7f1d1d;
 }
 </style>

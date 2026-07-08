@@ -25,6 +25,12 @@ type OrderItem = {
 type OrdersResponse = {
   data: OrderItem[]
   msg: string
+  meta: {
+    page: number
+    pageSize: number
+    total: number
+    totalPages: number
+  }
 }
 
 type OrderPayload = {
@@ -43,12 +49,15 @@ const loading = ref(true)
 const saving = ref(false)
 const deletingId = ref<number | null>(null)
 const editingOrderId = ref<number | null>(null)
+const showOrderModal = ref(false)
 const errorMessage = ref('')
 const successMessage = ref('')
 
 const filters = reactive({
   status: '',
-  search: ''
+  search: '',
+  page: 1,
+  pageSize: 10
 })
 
 const form = reactive({
@@ -69,23 +78,17 @@ const statusOptions: Array<{ value: OrderStatus, label: string }> = [
   { value: 'cancelled', label: 'Cancelado' }
 ]
 
+const pagination = reactive({
+  total: 0,
+  totalPages: 1
+})
+
 const filteredOrders = computed(() => {
-  const search = filters.search.trim().toLowerCase()
-  const status = filters.status
-
-  return orders.value.filter((order) => {
-    const matchesStatus = !status || order.status === status
-    const matchesSearch = !search
-      || order.customer_name.toLowerCase().includes(search)
-      || order.main_dish.toLowerCase().includes(search)
-      || String(order.id).includes(search)
-
-    return matchesStatus && matchesSearch
-  })
+  return orders.value
 })
 
 const queueSummary = computed(() => {
-  const total = orders.value.length
+  const total = pagination.total
   const preparing = orders.value.filter((order) => order.status === 'preparing').length
   const attention = orders.value.filter((order) => {
     return order.status === 'cancelled' || order.status === 'pending'
@@ -113,13 +116,17 @@ function resetFeedback() {
   successMessage.value = ''
 }
 
-function resetForm() {
+function clearFormFields() {
   form.customer_name = ''
   form.main_dish = ''
   form.price = '49,90'
   form.status = 'pending'
   form.notes = ''
   editingOrderId.value = null
+}
+
+function resetForm() {
+  clearFormFields()
   resetFeedback()
 }
 
@@ -131,6 +138,21 @@ function fillForm(order: OrderItem) {
   form.notes = order.notes || ''
   editingOrderId.value = order.id
   resetFeedback()
+}
+
+function openCreateModal() {
+  resetForm()
+  showOrderModal.value = true
+}
+
+function openEditModal(order: OrderItem) {
+  fillForm(order)
+  showOrderModal.value = true
+}
+
+function closeOrderModal() {
+  showOrderModal.value = false
+  resetForm()
 }
 
 function getRequestErrorMessage(error: unknown, fallback: string) {
@@ -168,6 +190,24 @@ function toneForStatus(status: OrderStatus) {
   return 'green'
 }
 
+const isFirstPage = computed(() => filters.page <= 1)
+
+const isLastPage = computed(() => filters.page >= pagination.totalPages)
+
+function applyFilters() {
+  filters.page = 1
+  void fetchOrders()
+}
+
+function changePage(nextPage: number) {
+  if (nextPage < 1 || nextPage > pagination.totalPages || nextPage === filters.page) {
+    return
+  }
+
+  filters.page = nextPage
+  void fetchOrders()
+}
+
 async function fetchOrders() {
   if (!auth.token.value) {
     return
@@ -184,6 +224,8 @@ async function fetchOrders() {
     if (filters.search.trim()) {
       query.q = filters.search.trim()
     }
+    query.page = String(filters.page)
+    query.pageSize = String(filters.pageSize)
 
     const response = await $fetch<OrdersResponse>('/restaurants/orders', {
       baseURL: config.public.apiBase,
@@ -192,6 +234,10 @@ async function fetchOrders() {
     })
 
     orders.value = response.data
+    pagination.total = response.meta.total
+    pagination.totalPages = response.meta.totalPages
+    filters.page = response.meta.page
+    filters.pageSize = response.meta.pageSize
   } catch (error) {
     errorMessage.value = getRequestErrorMessage(error, 'Nao foi possivel carregar os pedidos.')
   } finally {
@@ -204,11 +250,13 @@ async function submitForm() {
 
   if (!form.customer_name.trim() || !form.main_dish.trim()) {
     errorMessage.value = 'Informe cliente e prato.'
+    successMessage.value = ''
     return
   }
 
   if (!Number.isFinite(price) || price <= 0) {
     errorMessage.value = 'Informe um valor valido.'
+    successMessage.value = ''
     return
   }
 
@@ -240,18 +288,20 @@ async function submitForm() {
       })
       successMessage.value = 'Pedido atualizado com sucesso.'
     } else {
-      const createdOrder = await $fetch<OrderItem>('/restaurants/orders', {
+      await $fetch<OrderItem>('/restaurants/orders', {
         method: 'POST',
         baseURL: config.public.apiBase,
         headers: getAuthHeaders(),
         body: payload
       })
 
-      orders.value = [createdOrder, ...orders.value]
+      filters.page = 1
+      await fetchOrders()
       successMessage.value = 'Pedido criado com sucesso.'
     }
 
-    resetForm()
+    showOrderModal.value = false
+    clearFormFields()
   } catch (error) {
     errorMessage.value = getRequestErrorMessage(error, 'Nao foi possivel salvar o pedido.')
   } finally {
@@ -270,9 +320,15 @@ async function removeOrder(orderId: number) {
       headers: getAuthHeaders()
     })
 
-    orders.value = orders.value.filter((order) => order.id !== orderId)
+    const shouldGoToPreviousPage = orders.value.length === 1 && filters.page > 1
+    if (shouldGoToPreviousPage) {
+      filters.page -= 1
+    }
+
+    await fetchOrders()
     if (editingOrderId.value === orderId) {
       resetForm()
+      showOrderModal.value = false
     }
     successMessage.value = 'Pedido removido com sucesso.'
   } catch (error) {
@@ -294,14 +350,9 @@ await fetchOrders()
         <h1>Pedidos</h1>
         <p>Crie, atualize e remova pedidos reais do restaurante autenticado.</p>
       </div>
-
-      <button class="secondary-button" type="button" @click="resetForm">
-        <Icon :name="isEditing ? 'lucide:plus' : 'lucide:eraser'" aria-hidden="true" />
-        {{ isEditing ? 'Novo pedido' : 'Limpar formulario' }}
-      </button>
     </header>
 
-    <section class="filters">
+    <section class="filters orders-filters">
       <label>
         <span>Status</span>
         <select v-model="filters.status">
@@ -316,7 +367,7 @@ await fetchOrders()
         <input v-model="filters.search" type="search" placeholder="ID, cliente ou prato">
       </label>
       <div class="orders-filter-actions">
-        <button class="primary-button filter-button" type="button" @click="fetchOrders">
+        <button class="primary-button filter-button" type="button" @click="applyFilters">
           <Icon name="lucide:search" aria-hidden="true" />
           Consultar
         </button>
@@ -324,92 +375,45 @@ await fetchOrders()
           <Icon name="lucide:refresh-cw" aria-hidden="true" />
           Atualizar
         </button>
+        <button class="primary-button filter-button" type="button" @click="openCreateModal">
+          <Icon name="lucide:plus" aria-hidden="true" />
+          Novo pedido
+        </button>
       </div>
     </section>
 
-    <section class="two-column-grid">
-      <article class="panel">
-        <div class="panel-header">
-          <div>
-            <h2>{{ isEditing ? 'Editar pedido' : 'Adicionar novo pedido' }}</h2>
-            <p>Cadastro real conectado ao backend do restaurante.</p>
-          </div>
+    <p v-if="!showOrderModal && errorMessage" class="orders-feedback danger-feedback">
+      {{ errorMessage }}
+    </p>
+    <p v-if="!showOrderModal && successMessage" class="orders-feedback success-feedback">
+      {{ successMessage }}
+    </p>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Resumo da fila</h2>
+          <p>Indicadores em cima dos pedidos atuais carregados da API.</p>
         </div>
-
-        <p v-if="errorMessage" class="orders-feedback danger-feedback">
-          {{ errorMessage }}
-        </p>
-        <p v-if="successMessage" class="orders-feedback success-feedback">
-          {{ successMessage }}
-        </p>
-
-        <form class="orders-form" @submit.prevent="submitForm">
-          <div class="form-grid orders-form-grid">
-            <label class="form-field">
-              <span>Cliente</span>
-              <input v-model="form.customer_name" type="text" placeholder="Nome do cliente" required>
-            </label>
-            <label class="form-field">
-              <span>Prato</span>
-              <input v-model="form.main_dish" type="text" placeholder="Ex: Parmegiana" required>
-            </label>
-            <label class="form-field">
-              <span>Valor</span>
-              <input v-model="form.price" type="text" inputmode="decimal" placeholder="54,90" required>
-            </label>
-            <label class="form-field">
-              <span>Status</span>
-              <select v-model="form.status">
-                <option v-for="option in statusOptions" :key="option.value" :value="option.value">
-                  {{ option.label }}
-                </option>
-              </select>
-            </label>
-          </div>
-
-          <label class="form-field">
-            <span>Observacoes</span>
-            <textarea v-model="form.notes" placeholder="Sem cebola, entregar na portaria..." />
-          </label>
-
-          <div class="form-actions orders-form-actions">
-            <button v-if="isEditing" class="secondary-button" type="button" @click="resetForm">
-              Cancelar edicao
-            </button>
-            <button class="primary-button" type="submit" :disabled="saving">
-              <Icon :name="isEditing ? 'lucide:save' : 'lucide:plus'" aria-hidden="true" />
-              {{ saving ? 'Salvando...' : isEditing ? 'Salvar pedido' : 'Adicionar pedido' }}
-            </button>
-          </div>
-        </form>
-      </article>
-
-      <article class="panel">
-        <div class="panel-header">
-          <div>
-            <h2>Resumo da fila</h2>
-            <p>Indicadores em cima dos pedidos atuais carregados da API.</p>
-          </div>
+      </div>
+      <div class="stack-list">
+        <div class="summary-line">
+          <span>Pedidos na lista</span>
+          <strong>{{ queueSummary.total }}</strong>
         </div>
-        <div class="stack-list">
-          <div class="summary-line">
-            <span>Pedidos na lista</span>
-            <strong>{{ queueSummary.total }}</strong>
-          </div>
-          <div class="summary-line">
-            <span>Em preparo</span>
-            <strong>{{ queueSummary.preparing }}</strong>
-          </div>
-          <div class="summary-line">
-            <span>Ticket medio</span>
-            <strong>{{ formatBRL(queueSummary.averageTicket) }}</strong>
-          </div>
-          <div class="summary-line">
-            <span>Pedidos com atencao</span>
-            <strong class="danger">{{ queueSummary.attention }}</strong>
-          </div>
+        <div class="summary-line">
+          <span>Em preparo</span>
+          <strong>{{ queueSummary.preparing }}</strong>
         </div>
-      </article>
+        <div class="summary-line">
+          <span>Ticket medio</span>
+          <strong>{{ formatBRL(queueSummary.averageTicket) }}</strong>
+        </div>
+        <div class="summary-line">
+          <span>Pedidos com atencao</span>
+          <strong class="danger">{{ queueSummary.attention }}</strong>
+        </div>
+      </div>
     </section>
 
     <section class="panel table-panel">
@@ -455,7 +459,7 @@ await fetchOrders()
               <td>{{ new Date(order.updated_at).toLocaleDateString('pt-BR') }}</td>
               <td>
                 <div class="table-actions">
-                  <button class="secondary-button action-button" type="button" @click="fillForm(order)">
+                  <button class="secondary-button action-button" type="button" @click="openEditModal(order)">
                     <Icon name="lucide:pencil-line" aria-hidden="true" />
                     Editar
                   </button>
@@ -473,8 +477,99 @@ await fetchOrders()
             </tr>
           </tbody>
         </table>
+
+        <div class="pagination-bar">
+          <div class="pagination-summary">
+            <span>{{ pagination.total }} pedidos encontrados</span>
+            <strong>Pagina {{ filters.page }} de {{ pagination.totalPages }}</strong>
+          </div>
+          <div class="pagination-actions">
+            <button
+              class="secondary-button action-button"
+              type="button"
+              :disabled="loading || isFirstPage"
+              @click="changePage(filters.page - 1)"
+            >
+              <Icon name="lucide:chevron-left" aria-hidden="true" />
+              Anterior
+            </button>
+            <button
+              class="secondary-button action-button"
+              type="button"
+              :disabled="loading || isLastPage"
+              @click="changePage(filters.page + 1)"
+            >
+              Proxima
+              <Icon name="lucide:chevron-right" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
+
+    <div v-if="showOrderModal" class="modal-overlay" @click.self="closeOrderModal">
+      <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+        <div class="panel-header modal-header">
+          <div>
+            <h2 id="order-modal-title">
+              {{ isEditing ? 'Editar pedido' : 'Adicionar novo pedido' }}
+            </h2>
+            <p>Cadastro real conectado ao backend do restaurante.</p>
+          </div>
+
+          <button class="secondary-button modal-close-button" type="button" aria-label="Fechar modal" @click="closeOrderModal">
+            <Icon name="lucide:x" aria-hidden="true" />
+          </button>
+        </div>
+
+        <p v-if="errorMessage" class="orders-feedback danger-feedback">
+          {{ errorMessage }}
+        </p>
+        <p v-if="successMessage" class="orders-feedback success-feedback">
+          {{ successMessage }}
+        </p>
+
+        <form class="orders-form" @submit.prevent="submitForm">
+          <div class="form-grid orders-form-grid">
+            <label class="form-field">
+              <span>Cliente</span>
+              <input v-model="form.customer_name" type="text" placeholder="Nome do cliente" required>
+            </label>
+            <label class="form-field">
+              <span>Prato</span>
+              <input v-model="form.main_dish" type="text" placeholder="Ex: Parmegiana" required>
+            </label>
+            <label class="form-field">
+              <span>Valor</span>
+              <input v-model="form.price" type="text" inputmode="decimal" placeholder="54,90" required>
+            </label>
+            <label class="form-field">
+              <span>Status</span>
+              <select v-model="form.status">
+                <option v-for="option in statusOptions" :key="option.value" :value="option.value">
+                  {{ option.label }}
+                </option>
+              </select>
+            </label>
+          </div>
+
+          <label class="form-field">
+            <span>Observacoes</span>
+            <textarea v-model="form.notes" placeholder="Sem cebola, entregar na portaria..." />
+          </label>
+
+          <div class="form-actions orders-form-actions">
+            <button class="secondary-button" type="button" @click="closeOrderModal">
+              Cancelar
+            </button>
+            <button class="primary-button" type="submit" :disabled="saving">
+              <Icon :name="isEditing ? 'lucide:save' : 'lucide:plus'" aria-hidden="true" />
+              {{ saving ? 'Salvando...' : isEditing ? 'Salvar pedido' : 'Adicionar pedido' }}
+            </button>
+          </div>
+        </form>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -512,9 +607,48 @@ await fetchOrders()
   color: #166534;
 }
 
-.orders-filter-actions {
+.filters.orders-filters {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: end;
+  overflow: hidden;
+}
+
+.filters.orders-filters label {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.filters.orders-filters input,
+.filters.orders-filters select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.filters.orders-filters .orders-filter-actions {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.filters.orders-filters .orders-filter-actions .filter-button {
+  flex: 0 1 auto;
+  max-width: 100%;
+  min-width: max-content;
+  white-space: nowrap;
 }
 
 .orders-empty {
@@ -533,9 +667,72 @@ await fetchOrders()
   padding: 0 12px;
 }
 
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.pagination-summary {
+  display: grid;
+  gap: 4px;
+  color: var(--color-gray-500);
+}
+
+.pagination-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .danger-button {
   color: var(--color-red);
   border-color: #fecaca;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.28);
+}
+
+.modal-header {
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.modal-close-button {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .filters.orders-filters {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 980px) {
@@ -543,18 +740,43 @@ await fetchOrders()
     grid-template-columns: 1fr;
   }
 
-  .orders-filter-actions {
+  .filters.orders-filters .orders-filter-actions {
     flex-direction: column;
   }
 
-  .orders-filter-actions .filter-button,
+  .filters.orders-filters .orders-filter-actions .filter-button,
   .orders-form-actions .primary-button,
-  .orders-form-actions .secondary-button {
+  .orders-form-actions .secondary-button,
+  .pagination-actions .action-button {
     width: 100%;
   }
 
   .orders-form-actions {
     flex-direction: column;
+  }
+
+  .pagination-bar,
+  .pagination-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters.orders-filters .orders-filter-actions .filter-button {
+    min-width: 0;
+  }
+
+  .modal-overlay {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .modal-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .modal-header {
+    gap: 12px;
   }
 }
 </style>

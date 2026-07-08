@@ -15,6 +15,7 @@ order_controller = Blueprint("order_controller", __name__, url_prefix="/restaura
 class OrdersResponse(BaseModel):
     data: list[OrderResponse]
     msg: str
+    meta: dict[str, int]
 
 
 def get_authenticated_restaurant():
@@ -67,6 +68,13 @@ def list_orders():
         query = query.filter_by(status=normalized_status)
 
     search = request.args.get("q", "").strip()
+    page = request.args.get("page", default=1, type=int) or 1
+    page_size = request.args.get("pageSize", default=10, type=int) or 10
+
+    if page < 1 or page_size < 1:
+        return {"msg": "Invalid pagination parameters."}, 400
+
+    page_size = min(page_size, 100)
     orders = db.session.scalars(query.order_by(Order.created_at.desc())).all()
 
     if search:
@@ -79,8 +87,26 @@ def list_orders():
             or lowered_search in str(order.id)
         ]
 
-    data = [OrderResponse.model_validate(order).to_response_dict() for order in orders]
-    return {"msg": "Orders fetched successfully.", "data": data}, 200
+    total = len(orders)
+    total_pages = max(1, (total + page_size - 1) // page_size)
+    start = (page - 1) * page_size
+    end = start + page_size
+    paginated_orders = orders[start:end]
+
+    data = [
+        OrderResponse.model_validate(order).to_response_dict()
+        for order in paginated_orders
+    ]
+    return {
+        "msg": "Orders fetched successfully.",
+        "data": data,
+        "meta": {
+            "page": page,
+            "pageSize": page_size,
+            "total": total,
+            "totalPages": total_pages,
+        },
+    }, 200
 
 
 @order_controller.post("")
