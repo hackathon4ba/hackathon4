@@ -83,6 +83,7 @@ def get_dashboard(restaurant_id: int):
         return access_error
 
     payload = dashboard_ai_service.get_dashboard(
+        restaurant_id=restaurant_id,
         period=request.args.get("period"),
         start_date=request.args.get("startDate"),
         end_date=request.args.get("endDate"),
@@ -113,6 +114,7 @@ def get_ai_insights(restaurant_id: int):
 
     return (
         dashboard_ai_service.get_ai_insights(
+            restaurant_id=restaurant_id,
             period=request.args.get("period"),
             start_date=request.args.get("startDate"),
             end_date=request.args.get("endDate"),

@@ -5,6 +5,11 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from statistics import median
 
+from sqlalchemy import select
+
+from factory import db
+from models import Order
+
 
 DAY_LABELS = {
     0: "Seg",
@@ -100,12 +105,14 @@ class DashboardAIService:
 
     def _resolve_range(
         self,
+        reference_date: date | None = None,
         period: str | None = None,
         start_date: str | None = None,
         end_date: str | None = None,
     ) -> tuple[date, date, date]:
-        records = self._load_records()
-        reference_date = max(record.order_date for record in records)
+        if reference_date is None:
+            records = self._load_records()
+            reference_date = max(record.order_date for record in records)
 
         if start_date and end_date:
             return (
@@ -127,6 +134,30 @@ class DashboardAIService:
         records = self._load_records()
         return [record for record in records if start <= record.order_date <= end]
 
+    def _load_restaurant_orders(
+        self,
+        restaurant_id: int,
+        start: date | None = None,
+        end: date | None = None,
+    ) -> list[Order]:
+        query = select(Order).filter_by(restaurant_id=restaurant_id)
+        orders = db.session.scalars(query.order_by(Order.created_at.asc())).all()
+        if start is None or end is None:
+            return orders
+
+        return [
+            order
+            for order in orders
+            if start <= order.created_at.date() <= end
+        ]
+
+    def _get_orders_reference_date(self, restaurant_id: int) -> date | None:
+        orders = self._load_restaurant_orders(restaurant_id)
+        if not orders:
+            return None
+
+        return max(order.created_at.date() for order in orders)
+
     def _build_revenue_by_day(self, records: list[DeliveryRecord]) -> list[dict]:
         revenue_by_day: dict[date, float] = defaultdict(float)
         for record in records:
@@ -145,8 +176,54 @@ class DashboardAIService:
 
         return chart
 
+    def _build_revenue_by_day_from_orders(self, orders: list[Order]) -> list[dict]:
+        revenue_by_day: dict[date, float] = defaultdict(float)
+        for order in orders:
+            revenue_by_day[order.created_at.date()] += order.order_price_cents / 100
+
+        chart = []
+        for current_date in sorted(revenue_by_day):
+            value = revenue_by_day[current_date]
+            chart.append(
+                {
+                    "date": current_date.isoformat(),
+                    "label": DAY_LABELS[current_date.weekday()],
+                    "value": round(value, 2),
+                    "valueCents": int(round(value * 100)),
+                }
+            )
+
+        return chart
+
     def _build_orders_by_period(self, records: list[DeliveryRecord]) -> list[dict]:
         counter: Counter[str] = Counter(record.order_period for record in records)
+        ordered_periods = ["morning", "lunch", "afternoon", "dinner", "late_night"]
+        return [
+            {
+                "period": period,
+                "label": PERIOD_LABELS[period],
+                "value": counter.get(period, 0),
+            }
+            for period in ordered_periods
+            if counter.get(period, 0) > 0
+        ]
+
+    def _build_orders_by_period_from_orders(self, orders: list[Order]) -> list[dict]:
+        counter: Counter[str] = Counter()
+        for order in orders:
+            hour = order.created_at.hour
+            if 5 <= hour <= 10:
+                period = "morning"
+            elif 11 <= hour <= 14:
+                period = "lunch"
+            elif 15 <= hour <= 17:
+                period = "afternoon"
+            elif 18 <= hour <= 22:
+                period = "dinner"
+            else:
+                period = "late_night"
+            counter[period] += 1
+
         ordered_periods = ["morning", "lunch", "afternoon", "dinner", "late_night"]
         return [
             {
@@ -164,6 +241,17 @@ class DashboardAIService:
         return [
             {
                 "label": dish.replace("_", " ").title(),
+                "value": count,
+            }
+            for dish, count in top_items
+        ]
+
+    def _build_top_dishes_from_orders(self, orders: list[Order], limit: int = 4) -> list[dict]:
+        counter: Counter[str] = Counter(order.main_dish for order in orders)
+        top_items = counter.most_common(limit)
+        return [
+            {
+                "label": dish,
                 "value": count,
             }
             for dish, count in top_items
@@ -249,19 +337,67 @@ class DashboardAIService:
         insights.sort(key=lambda item: item["confidence"], reverse=True)
         return insights
 
-    def get_dashboard(self, period: str | None = None, start_date: str | None = None, end_date: str | None = None) -> dict:
-        start, end, reference_date = self._resolve_range(period, start_date, end_date)
+    def get_dashboard(
+        self,
+        restaurant_id: int | None = None,
+        period: str | None = None,
+        start_date: str | None = None,
+        end_date: str | None = None,
+    ) -> dict:
+        orders_reference_date = (
+            self._get_orders_reference_date(restaurant_id) if restaurant_id is not None else None
+        )
+        start, end, reference_date = self._resolve_range(
+            reference_date=orders_reference_date,
+            period=period,
+            start_date=start_date,
+            end_date=end_date,
+        )
         all_records = self._load_records()
         filtered_records = self._filter_records(start, end)
         reference_records = [record for record in all_records if record.order_date == reference_date]
 
+        restaurant_orders = (
+            self._load_restaurant_orders(restaurant_id, start, end)
+            if restaurant_id is not None
+            else []
+        )
+        restaurant_reference_orders = (
+            [
+                order
+                for order in restaurant_orders
+                if order.created_at.date() == reference_date
+            ]
+            if restaurant_orders
+            else []
+        )
+
         if not reference_records:
             reference_records = filtered_records
 
-        total_orders_today = len(reference_records)
-        revenue_today = sum(record.order_price for record in reference_records)
-        top_dish_counter = Counter(record.main_dish for record in reference_records)
-        top_dish_name, top_dish_orders = top_dish_counter.most_common(1)[0]
+        if restaurant_orders:
+            if not restaurant_reference_orders:
+                restaurant_reference_orders = restaurant_orders
+
+            total_orders_today = len(restaurant_reference_orders)
+            revenue_today = sum(
+                order.order_price_cents / 100 for order in restaurant_reference_orders
+            )
+            top_dish_counter = Counter(
+                order.main_dish for order in restaurant_reference_orders
+            )
+            top_dish_name, top_dish_orders = top_dish_counter.most_common(1)[0]
+            revenue_by_day = self._build_revenue_by_day_from_orders(restaurant_orders)
+            orders_by_period = self._build_orders_by_period_from_orders(restaurant_orders)
+            best_dishes = self._build_top_dishes_from_orders(restaurant_orders)
+        else:
+            total_orders_today = len(reference_records)
+            revenue_today = sum(record.order_price for record in reference_records)
+            top_dish_counter = Counter(record.main_dish for record in reference_records)
+            top_dish_name, top_dish_orders = top_dish_counter.most_common(1)[0]
+            revenue_by_day = self._build_revenue_by_day(filtered_records)
+            orders_by_period = self._build_orders_by_period(filtered_records)
+            best_dishes = self._build_top_dishes(filtered_records)
 
         insights = self._generate_insights(all_records, filtered_records, reference_records)
 
@@ -275,15 +411,26 @@ class DashboardAIService:
                 "name": top_dish_name.replace("_", " ").title(),
                 "orders": top_dish_orders,
             },
-            "revenueByDay": self._build_revenue_by_day(filtered_records),
-            "ordersByPeriod": self._build_orders_by_period(filtered_records),
-            "bestDishes": self._build_top_dishes(filtered_records),
+            "revenueByDay": revenue_by_day,
+            "ordersByPeriod": orders_by_period,
+            "bestDishes": best_dishes,
             "aiInsight": insights[0],
             "generatedInsights": insights,
         }
 
-    def get_ai_insights(self, period: str | None = None, start_date: str | None = None, end_date: str | None = None) -> dict:
-        dashboard = self.get_dashboard(period=period, start_date=start_date, end_date=end_date)
+    def get_ai_insights(
+        self,
+        restaurant_id: int | None = None,
+        period: str | None = None,
+        start_date: str | None = None,
+        end_date: str | None = None,
+    ) -> dict:
+        dashboard = self.get_dashboard(
+            restaurant_id=restaurant_id,
+            period=period,
+            start_date=start_date,
+            end_date=end_date,
+        )
         return {
             "referenceDate": dashboard["referenceDate"],
             "data": dashboard["generatedInsights"],

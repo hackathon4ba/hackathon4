@@ -66,6 +66,12 @@ O script tambem cria a empresa seed usada na demo do dashboard:
 - email: `admin@empresa-demo.com`
 - senha: `admin123`
 
+Para popular os pedidos dessa empresa com `deliveries_train.csv`:
+
+```powershell
+python seed_admin_orders.py
+```
+
 ## Autenticação de restaurantes
 
 Cadastrar restaurante:
