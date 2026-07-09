@@ -530,5 +530,29 @@ class DashboardAIService:
             "data": dashboard["generatedInsights"],
         }
 
+    def get_revenue_history(
+        self,
+        restaurant_id: int,
+        page: int = 1,
+        page_size: int = 10,
+    ) -> dict:
+        all_orders = self._load_restaurant_orders(restaurant_id)
+        revenue_history = list(reversed(self._build_revenue_by_day(all_orders)))
+
+        total = len(revenue_history)
+        total_pages = max(1, (total + page_size - 1) // page_size)
+        start = (page - 1) * page_size
+        end = start + page_size
+
+        return {
+            "data": revenue_history[start:end],
+            "meta": {
+                "page": page,
+                "pageSize": page_size,
+                "total": total,
+                "totalPages": total_pages,
+            },
+        }
+
 
 dashboard_ai_service = DashboardAIService()

@@ -59,14 +59,34 @@ type DashboardPayload = {
   aiInsight: DashboardInsight
 }
 
+type RevenueHistoryItem = {
+  date: string
+  label: string
+  value: number
+  valueCents: number
+}
+
+type RevenueHistoryResponse = {
+  data: RevenueHistoryItem[]
+  msg: string
+  meta: {
+    page: number
+    pageSize: number
+    total: number
+    totalPages: number
+  }
+}
+
 const config = useRuntimeConfig()
 const auth = useRestaurantAuth()
 
 const pending = ref(true)
+const revenueHistoryLoading = ref(false)
 const usingFallback = ref(false)
 const errorMessage = ref('')
 const referenceDate = ref('')
 const hoveredRevenueIndex = ref<number | null>(null)
+const showRevenueHistoryModal = ref(false)
 
 const filters = reactive({
   period: 'last_7_days',
@@ -76,6 +96,7 @@ const filters = reactive({
 
 const metrics = ref<DashboardMetric[]>([])
 const revenueByDay = ref<ChartDatum[]>([])
+const revenueHistory = ref<RevenueHistoryItem[]>([])
 const ordersByPeriod = ref<ChartDatum[]>([])
 const bestDishes = ref<ChartDatum[]>([])
 const insight = ref<DashboardInsight>({
@@ -83,6 +104,13 @@ const insight = ref<DashboardInsight>({
   text: '',
   severity: 'neutral',
   confidence: 0
+})
+
+const revenueHistoryPagination = reactive({
+  page: 1,
+  pageSize: 10,
+  total: 0,
+  totalPages: 1
 })
 
 function getFallbackTopDish(index = 0) {
@@ -298,6 +326,60 @@ async function fetchDashboard() {
   }
 }
 
+async function fetchRevenueHistory(page = 1) {
+  if (!auth.restaurant.value?.id || !auth.token.value) {
+    return
+  }
+
+  revenueHistoryLoading.value = true
+
+  try {
+    const response = await $fetch<RevenueHistoryResponse>(
+      `/api/v1/restaurants/${auth.restaurant.value.id}/dashboard/revenue-history`,
+      {
+        baseURL: config.public.apiBase,
+        headers: getAuthHeaders(),
+        query: {
+          page,
+          pageSize: revenueHistoryPagination.pageSize
+        }
+      }
+    )
+
+    revenueHistory.value = response.data
+    revenueHistoryPagination.page = response.meta.page
+    revenueHistoryPagination.pageSize = response.meta.pageSize
+    revenueHistoryPagination.total = response.meta.total
+    revenueHistoryPagination.totalPages = response.meta.totalPages
+  } catch (error) {
+    errorMessage.value = getRequestErrorMessage(error, 'Nao foi possivel carregar o historico de faturamento.')
+  } finally {
+    revenueHistoryLoading.value = false
+  }
+}
+
+async function openRevenueHistoryModal() {
+  showRevenueHistoryModal.value = true
+  revenueHistoryPagination.page = 1
+  await fetchRevenueHistory(1)
+}
+
+function closeRevenueHistoryModal() {
+  showRevenueHistoryModal.value = false
+}
+
+async function changeRevenueHistoryPage(nextPage: number) {
+  if (
+    nextPage < 1
+    || nextPage > revenueHistoryPagination.totalPages
+    || nextPage === revenueHistoryPagination.page
+  ) {
+    return
+  }
+
+  await fetchRevenueHistory(nextPage)
+}
+
 await auth.initialize()
 await fetchDashboard()
 </script>
@@ -382,6 +464,10 @@ await fetchDashboard()
             <h2>Faturamento por dia</h2>
             <p>Receita bruta do recorte atual</p>
           </div>
+          <button class="secondary-button action-button" type="button" @click="openRevenueHistoryModal">
+            <Icon name="lucide:history" aria-hidden="true" />
+            Historico completo
+          </button>
         </div>
 
         <div class="column-chart">
@@ -469,6 +555,74 @@ await fetchDashboard()
         </div>
       </div>
     </section>
+
+    <div v-if="showRevenueHistoryModal" class="modal-overlay" @click.self="closeRevenueHistoryModal">
+      <article class="modal-card revenue-history-modal" role="dialog" aria-modal="true" aria-labelledby="revenue-history-title">
+        <div class="panel-header modal-header">
+          <div>
+            <h2 id="revenue-history-title">Historico completo de faturamento</h2>
+            <p>Todos os dias com faturamento registrado, em ordem do mais recente para o mais antigo.</p>
+          </div>
+          <button class="secondary-button modal-close-button" type="button" aria-label="Fechar modal" @click="closeRevenueHistoryModal">
+            <Icon name="lucide:x" aria-hidden="true" />
+          </button>
+        </div>
+
+        <div v-if="revenueHistoryLoading" class="history-empty">
+          Carregando historico...
+        </div>
+
+        <div v-else-if="revenueHistory.length === 0" class="history-empty">
+          Nenhum faturamento historico encontrado.
+        </div>
+
+        <div v-else class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Dia</th>
+                <th>Faturamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in revenueHistory" :key="item.date">
+                <td>{{ new Date(`${item.date}T00:00:00`).toLocaleDateString('pt-BR') }}</td>
+                <td>{{ item.label }}</td>
+                <td><strong>{{ formatBRL(item.value) }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination-bar modal-pagination">
+          <div class="pagination-summary">
+            <span>{{ revenueHistoryPagination.total }} registros encontrados</span>
+            <strong>Pagina {{ revenueHistoryPagination.page }} de {{ revenueHistoryPagination.totalPages }}</strong>
+          </div>
+          <div class="pagination-actions">
+            <button
+              class="secondary-button action-button"
+              type="button"
+              :disabled="revenueHistoryLoading || revenueHistoryPagination.page <= 1"
+              @click="changeRevenueHistoryPage(revenueHistoryPagination.page - 1)"
+            >
+              <Icon name="lucide:chevron-left" aria-hidden="true" />
+              Anterior
+            </button>
+            <button
+              class="secondary-button action-button"
+              type="button"
+              :disabled="revenueHistoryLoading || revenueHistoryPagination.page >= revenueHistoryPagination.totalPages"
+              @click="changeRevenueHistoryPage(revenueHistoryPagination.page + 1)"
+            >
+              Proxima
+              <Icon name="lucide:chevron-right" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -569,5 +723,76 @@ await fetchDashboard()
 
 .current-bar {
   background: #7f1d1d;
+}
+
+.history-empty {
+  padding: 18px 0 8px;
+  color: var(--color-gray-500);
+}
+
+.action-button {
+  min-height: 36px;
+  padding: 0 12px;
+}
+
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.pagination-summary {
+  display: grid;
+  gap: 4px;
+  color: var(--color-gray-500);
+}
+
+.pagination-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.28);
+}
+
+.modal-header {
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.modal-close-button {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-pagination {
+  margin-top: 8px;
 }
 </style>
