@@ -72,6 +72,12 @@ Para popular os pedidos dessa empresa com `deliveries_train.csv`:
 python seed_admin_orders.py
 ```
 
+Para recriar cardapio, estoque, receitas e faturamento historico do restaurante admin com base em `deliveries_train.csv`:
+
+```powershell
+python seed_admin_revenue_and_menu.py
+```
+
 ## Autenticação de restaurantes
 
 Cadastrar restaurante:

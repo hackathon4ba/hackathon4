@@ -483,6 +483,7 @@ class DashboardAIService:
             top_dish_counter.most_common(1)[0] if top_dish_counter else ("Sem pedidos", 0)
         )
 
+        revenue_history = self._build_revenue_by_day(filtered_orders)
         revenue_projection = self._build_revenue_forecast_chart(
             restaurant_id=restaurant_id,
             orders=all_orders,
@@ -505,7 +506,7 @@ class DashboardAIService:
                 "name": top_dish_name,
                 "orders": top_dish_orders,
             },
-            "revenueByDay": revenue_projection,
+            "revenueByDay": revenue_history,
             "ordersByPeriod": self._build_orders_by_period(filtered_orders),
             "bestDishes": self._build_top_dishes(filtered_orders),
             "aiInsight": insights[0],
