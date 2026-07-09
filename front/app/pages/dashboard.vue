@@ -812,12 +812,13 @@ await fetchDashboard()
 .forecast-bar {
   background: repeating-linear-gradient(
     135deg,
-    rgba(214, 62, 62, 0.16) 0,
-    rgba(214, 62, 62, 0.16) 6px,
-    rgba(214, 62, 62, 0.52) 6px,
-    rgba(214, 62, 62, 0.52) 12px
+    rgba(214, 62, 62, 0.08) 0,
+    rgba(214, 62, 62, 0.08) 6px,
+    rgba(214, 62, 62, 0.32) 6px,
+    rgba(214, 62, 62, 0.32) 12px
   );
-  border: 1px dashed rgba(214, 62, 62, 0.9);
+  border: 1px dashed rgba(214, 62, 62, 0.5);
+  opacity: 0.58;
 }
 
 .current-bar {
