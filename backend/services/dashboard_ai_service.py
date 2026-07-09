@@ -11,7 +11,8 @@ from sqlalchemy import select
 from torch.utils.data import DataLoader, TensorDataset
 
 from factory import db
-from models import Order
+from models import Order, RevenueDaily
+from services.revenue_daily_service import ensure_revenue_daily_for_restaurant
 
 
 DAY_LABELS = {
@@ -113,6 +114,20 @@ class DashboardAIService:
     def _filter_orders(self, orders: list[Order], start: date, end: date) -> list[Order]:
         return [order for order in orders if start <= order.created_at.date() <= end]
 
+    def _load_revenue_rows(
+        self,
+        restaurant_id: int,
+        start: date | None = None,
+        end: date | None = None,
+    ) -> list[RevenueDaily]:
+        query = select(RevenueDaily).filter_by(restaurant_id=restaurant_id)
+        if start is not None:
+            query = query.where(RevenueDaily.revenue_date >= start)
+        if end is not None:
+            query = query.where(RevenueDaily.revenue_date <= end)
+
+        return db.session.scalars(query.order_by(RevenueDaily.revenue_date.asc())).all()
+
     def _get_order_period(self, order: Order) -> str:
         hour = order.created_at.hour
         if 5 <= hour <= 10:
@@ -125,23 +140,74 @@ class DashboardAIService:
             return "dinner"
         return "late_night"
 
-    def _build_revenue_by_day(self, orders: list[Order]) -> list[dict]:
-        revenue_by_day: dict[date, float] = defaultdict(float)
-        for order in orders:
-            revenue_by_day[order.created_at.date()] += order.order_price_cents / 100
-
+    def _build_revenue_by_day(self, revenue_rows: list[RevenueDaily]) -> list[dict]:
         chart = []
-        for current_date in sorted(revenue_by_day):
-            value = revenue_by_day[current_date]
+        for revenue_row in revenue_rows:
+            current_date = revenue_row.revenue_date
+            value = revenue_row.revenue_cents / 100
             chart.append(
                 {
                     "date": current_date.isoformat(),
                     "label": f"{DAY_LABELS[current_date.weekday()]} {current_date.day:02d}",
                     "value": round(value, 2),
-                    "valueCents": int(round(value * 100)),
+                    "valueCents": revenue_row.revenue_cents,
                     "kind": "historical",
                     "isForecast": False,
                 }
+            )
+
+        return chart
+
+    def _combine_revenue_history_and_forecast(
+        self,
+        revenue_history: list[dict],
+        revenue_projection: list[dict],
+        reference_date: date,
+    ) -> list[dict]:
+        history_by_date = {
+            item["date"]: {**item}
+            for item in revenue_history
+        }
+        forecast_by_date = {
+            item["date"]: item
+            for item in revenue_projection
+            if item["kind"] == "forecast"
+        }
+
+        chart: list[dict] = []
+        for offset in range(-2, 1):
+            current_date = reference_date + timedelta(days=offset)
+            current_date_iso = current_date.isoformat()
+            history_item = history_by_date.get(current_date_iso)
+            if history_item is None:
+                history_item = {
+                    "date": current_date_iso,
+                    "label": f"{DAY_LABELS[current_date.weekday()]} {current_date.day:02d}",
+                    "value": 0.0,
+                    "valueCents": 0,
+                    "kind": "historical",
+                    "isForecast": False,
+                }
+
+            history_item["kind"] = "current" if offset == 0 else "historical"
+            history_item["isForecast"] = False
+            chart.append(history_item)
+
+        for step in range(1, FORECAST_HORIZON + 1):
+            current_date = reference_date + timedelta(days=step)
+            current_date_iso = current_date.isoformat()
+            chart.append(
+                forecast_by_date.get(
+                    current_date_iso,
+                    {
+                        "date": current_date_iso,
+                        "label": f"{DAY_LABELS[current_date.weekday()]} {current_date.day:02d}",
+                        "value": 0.0,
+                        "valueCents": 0,
+                        "kind": "forecast",
+                        "isForecast": True,
+                    },
+                )
             )
 
         return chart
@@ -461,6 +527,7 @@ class DashboardAIService:
                 "generatedInsights": [empty_insight],
             }
 
+        ensure_revenue_daily_for_restaurant(restaurant_id)
         reference_date = max(order.created_at.date() for order in all_orders)
         start, end, resolved_reference_date = self._resolve_range(
             reference_date=reference_date,
@@ -483,6 +550,9 @@ class DashboardAIService:
             top_dish_counter.most_common(1)[0] if top_dish_counter else ("Sem pedidos", 0)
         )
 
+        revenue_history = self._build_revenue_by_day(
+            self._load_revenue_rows(restaurant_id, start=start, end=end)
+        )
         revenue_projection = self._build_revenue_forecast_chart(
             restaurant_id=restaurant_id,
             orders=all_orders,
@@ -493,6 +563,11 @@ class DashboardAIService:
             filtered_orders,
             reference_orders,
             revenue_projection,
+        )
+        revenue_chart = self._combine_revenue_history_and_forecast(
+            revenue_history,
+            revenue_projection,
+            resolved_reference_date,
         )
 
         return {
@@ -505,7 +580,7 @@ class DashboardAIService:
                 "name": top_dish_name,
                 "orders": top_dish_orders,
             },
-            "revenueByDay": revenue_projection,
+            "revenueByDay": revenue_chart,
             "ordersByPeriod": self._build_orders_by_period(filtered_orders),
             "bestDishes": self._build_top_dishes(filtered_orders),
             "aiInsight": insights[0],
@@ -528,6 +603,32 @@ class DashboardAIService:
         return {
             "referenceDate": dashboard["referenceDate"],
             "data": dashboard["generatedInsights"],
+        }
+
+    def get_revenue_history(
+        self,
+        restaurant_id: int,
+        page: int = 1,
+        page_size: int = 10,
+    ) -> dict:
+        ensure_revenue_daily_for_restaurant(restaurant_id)
+        revenue_history = list(
+            reversed(self._build_revenue_by_day(self._load_revenue_rows(restaurant_id)))
+        )
+
+        total = len(revenue_history)
+        total_pages = max(1, (total + page_size - 1) // page_size)
+        start = (page - 1) * page_size
+        end = start + page_size
+
+        return {
+            "data": revenue_history[start:end],
+            "meta": {
+                "page": page,
+                "pageSize": page_size,
+                "total": total,
+                "totalPages": total_pages,
+            },
         }
 
 

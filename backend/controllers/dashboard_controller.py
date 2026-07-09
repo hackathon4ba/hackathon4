@@ -54,6 +54,19 @@ class AIInsightsEnvelope(BaseModel):
     data: list[AIInsightResponse]
 
 
+class PaginatedMeta(BaseModel):
+    page: int
+    pageSize: int
+    total: int
+    totalPages: int
+
+
+class RevenueHistoryResponse(BaseModel):
+    data: list[DashboardChartPoint]
+    msg: str
+    meta: PaginatedMeta
+
+
 def _validate_restaurant_access(restaurant_id: int):
     if get_jwt().get("account_type") != "restaurant" or not isinstance(
         current_user, Restaurant
@@ -123,3 +136,38 @@ def get_ai_insights(restaurant_id: int):
         ),
         200,
     )
+
+
+@dashboard_controller.get("/<int:restaurant_id>/dashboard/revenue-history")
+@api.validate(
+    resp=Response(
+        HTTP_200=RevenueHistoryResponse,
+        HTTP_400=GenericResponse,
+        HTTP_403=GenericResponse,
+    ),
+    tags=["dashboard"],
+)
+@jwt_required()
+def get_revenue_history(restaurant_id: int):
+    access_error = _validate_restaurant_access(restaurant_id)
+    if access_error is not None:
+        return access_error
+
+    page = request.args.get("page", default=1, type=int) or 1
+    page_size = request.args.get("pageSize", default=10, type=int) or 10
+
+    if page < 1 or page_size < 1:
+        return {"msg": "Invalid pagination parameters."}, 400
+
+    page_size = min(page_size, 100)
+    payload = dashboard_ai_service.get_revenue_history(
+        restaurant_id=restaurant_id,
+        page=page,
+        page_size=page_size,
+    )
+
+    return {
+        "msg": "Revenue history fetched successfully.",
+        "data": payload["data"],
+        "meta": payload["meta"],
+    }, 200

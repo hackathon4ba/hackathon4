@@ -51,6 +51,7 @@ def create_app():
     from controllers import (
         auth_controller,
         dashboard_controller,
+        inventory_controller,
         menu_controller,
         order_controller,
         restaurant_controller,
@@ -60,6 +61,7 @@ def create_app():
     app.register_blueprint(user_controller)
     app.register_blueprint(auth_controller)
     app.register_blueprint(restaurant_controller)
+    app.register_blueprint(inventory_controller)
     app.register_blueprint(menu_controller)
     app.register_blueprint(order_controller)
     app.register_blueprint(dashboard_controller)

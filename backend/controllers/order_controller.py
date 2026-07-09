@@ -7,6 +7,14 @@ from sqlalchemy import select
 from factory import api, db
 from models import Order, Restaurant
 from models.order import ORDER_STATUSES, OrderCreate, OrderResponse, OrderUpdate
+from services.inventory_service import (
+    InventoryError,
+    consume_menu_item_stock,
+    get_menu_item_for_restaurant,
+    restore_menu_item_stock,
+    status_requires_stock,
+)
+from services.revenue_daily_service import sync_revenue_daily_for_dates
 from utils.response_schema import GenericResponse
 
 order_controller = Blueprint("order_controller", __name__, url_prefix="/restaurants/orders")
@@ -140,16 +148,35 @@ def create_order():
     if status is None:
         return {"msg": "Invalid order status."}, 400
 
+    menu_item = get_menu_item_for_restaurant(restaurant.id, main_dish)
+    if menu_item is None:
+        return {"msg": "Menu item not found for this restaurant."}, 400
+
     order = Order(
         restaurant_id=restaurant.id,
+        menu_item_id=menu_item.id,
         customer_name=customer_name,
-        main_dish=main_dish,
+        main_dish=menu_item.name,
         order_price_cents=round(data["price"] * 100),
         status=status,
+        stock_deducted=False,
         notes=data.get("notes"),
     )
-    db.session.add(order)
-    db.session.commit()
+
+    try:
+        if status_requires_stock(status):
+            consume_menu_item_stock(menu_item)
+            order.stock_deducted = True
+
+        db.session.add(order)
+        db.session.commit()
+        sync_revenue_daily_for_dates(
+            restaurant.id,
+            [order.created_at.date()],
+        )
+    except InventoryError as error:
+        db.session.rollback()
+        return {"msg": str(error)}, 400
 
     return OrderResponse.model_validate(order).to_response_dict(), 201
 
@@ -206,6 +233,7 @@ def update_order(order_id: int):
         return {"msg": "Order not found."}, 404
 
     data = request.json
+    affected_revenue_dates = {order.created_at.date()}
 
     if "customer_name" in data and data["customer_name"] is not None:
         customer_name = data["customer_name"].strip()
@@ -213,11 +241,14 @@ def update_order(order_id: int):
             return {"msg": "Customer name cannot be empty."}, 400
         order.customer_name = customer_name
 
+    requested_main_dish = None
     if "main_dish" in data and data["main_dish"] is not None:
         main_dish = data["main_dish"].strip()
         if not main_dish:
             return {"msg": "Main dish cannot be empty."}, 400
-        order.main_dish = main_dish
+        requested_main_dish = main_dish
+    else:
+        main_dish = order.main_dish
 
     if "price" in data and data["price"] is not None:
         order.order_price_cents = round(data["price"] * 100)
@@ -226,12 +257,56 @@ def update_order(order_id: int):
         status = validate_status(data["status"])
         if status is None:
             return {"msg": "Invalid order status."}, 400
-        order.status = status
+    else:
+        status = order.status
 
     if "notes" in data:
         order.notes = data["notes"]
 
-    db.session.commit()
+    next_menu_item = None
+    if requested_main_dish is not None or order.menu_item_id is not None or (
+        not order.stock_deducted and status_requires_stock(status)
+    ):
+        next_menu_item = get_menu_item_for_restaurant(order.restaurant_id, main_dish)
+        if next_menu_item is None:
+            return {"msg": "Menu item not found for this restaurant."}, 400
+
+    try:
+        if order.stock_deducted:
+            if next_menu_item is None and status_requires_stock(status):
+                return {"msg": "Menu item not found for stock adjustment."}, 400
+
+            if (
+                next_menu_item is not None
+                and order.menu_item_id != next_menu_item.id
+            ) or not status_requires_stock(status):
+                if order.menu_item is None:
+                    return {"msg": "Original menu item not found for stock adjustment."}, 400
+                restore_menu_item_stock(order.menu_item)
+                order.stock_deducted = False
+
+        if status_requires_stock(status) and not order.stock_deducted:
+            if next_menu_item is None:
+                return {"msg": "Menu item not found for stock adjustment."}, 400
+            consume_menu_item_stock(next_menu_item)
+            order.stock_deducted = True
+
+        if next_menu_item is not None:
+            order.menu_item_id = next_menu_item.id
+            order.main_dish = next_menu_item.name
+        elif requested_main_dish is not None:
+            order.main_dish = requested_main_dish
+        order.status = status
+
+        db.session.commit()
+        sync_revenue_daily_for_dates(
+            restaurant.id,
+            affected_revenue_dates,
+        )
+    except InventoryError as error:
+        db.session.rollback()
+        return {"msg": str(error)}, 400
+
     return OrderResponse.model_validate(order).to_response_dict(), 200
 
 
@@ -258,7 +333,12 @@ def delete_order(order_id: int):
     if order is None or order.restaurant_id != restaurant.id:
         return {"msg": "Order not found."}, 404
 
+    affected_revenue_dates = {order.created_at.date()}
     db.session.delete(order)
     db.session.commit()
+    sync_revenue_daily_for_dates(
+        restaurant.id,
+        affected_revenue_dates,
+    )
 
     return {"msg": "Order deleted successfully."}, 200
