@@ -24,6 +24,12 @@ class Restaurant(db.Model):
     menu_items = db.relationship(
         "MenuItem", back_populates="restaurant", cascade="all, delete-orphan"
     )
+    inventory_items = db.relationship(
+        "InventoryItem", back_populates="restaurant", cascade="all, delete-orphan"
+    )
+    daily_revenues = db.relationship(
+        "RevenueDaily", back_populates="restaurant", cascade="all, delete-orphan"
+    )
     orders = db.relationship(
         "Order", back_populates="restaurant", cascade="all, delete-orphan"
     )

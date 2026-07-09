@@ -17,9 +17,11 @@ class Order(db.Model):
         db.Integer, db.ForeignKey("restaurant.id"), nullable=False, index=True
     )
     customer_name = db.Column(db.String(128), nullable=False)
+    menu_item_id = db.Column(db.Integer, db.ForeignKey("menu_item.id"), nullable=True)
     main_dish = db.Column(db.String(128), nullable=False)
     order_price_cents = db.Column(db.Integer, nullable=False)
     status = db.Column(db.String(32), nullable=False, default="pending")
+    stock_deducted = db.Column(db.Boolean, nullable=False, default=False)
     notes = db.Column(db.Text, nullable=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(
@@ -29,6 +31,7 @@ class Order(db.Model):
     )
 
     restaurant = db.relationship("Restaurant", back_populates="orders")
+    menu_item = db.relationship("MenuItem")
 
     def __repr__(self) -> str:
         return f"<Order {self.id} {self.main_dish}>"
@@ -53,9 +56,11 @@ class OrderUpdate(BaseModel):
 class OrderResponse(OrmBase):
     restaurant_id: int
     customer_name: str
+    menu_item_id: int | None = None
     main_dish: str
     order_price_cents: int
     status: str
+    stock_deducted: bool
     notes: str | None = None
     created_at: datetime
     updated_at: datetime

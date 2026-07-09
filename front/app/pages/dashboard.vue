@@ -59,14 +59,34 @@ type DashboardPayload = {
   aiInsight: DashboardInsight
 }
 
+type RevenueHistoryItem = {
+  date: string
+  label: string
+  value: number
+  valueCents: number
+}
+
+type RevenueHistoryResponse = {
+  data: RevenueHistoryItem[]
+  msg: string
+  meta: {
+    page: number
+    pageSize: number
+    total: number
+    totalPages: number
+  }
+}
+
 const config = useRuntimeConfig()
 const auth = useRestaurantAuth()
 
 const pending = ref(true)
+const revenueHistoryLoading = ref(false)
 const usingFallback = ref(false)
 const errorMessage = ref('')
 const referenceDate = ref('')
 const hoveredRevenueIndex = ref<number | null>(null)
+const showRevenueHistoryModal = ref(false)
 
 const filters = reactive({
   period: 'last_7_days',
@@ -76,6 +96,7 @@ const filters = reactive({
 
 const metrics = ref<DashboardMetric[]>([])
 const revenueByDay = ref<ChartDatum[]>([])
+const revenueHistory = ref<RevenueHistoryItem[]>([])
 const ordersByPeriod = ref<ChartDatum[]>([])
 const bestDishes = ref<ChartDatum[]>([])
 const insight = ref<DashboardInsight>({
@@ -83,6 +104,25 @@ const insight = ref<DashboardInsight>({
   text: '',
   severity: 'neutral',
   confidence: 0
+})
+
+const revenueHistoryPagination = reactive({
+  page: 1,
+  pageSize: 10,
+  total: 0,
+  totalPages: 1
+})
+
+const revenueChartColumns = computed(() => {
+  return `repeat(${Math.max(revenueByDay.value.length, 1)}, minmax(58px, 1fr))`
+})
+
+const hasRevenueForecast = computed(() => {
+  return revenueByDay.value.some((item) => item.kind === 'forecast')
+})
+
+const forecastStartIndex = computed(() => {
+  return revenueByDay.value.findIndex((item) => item.kind === 'forecast')
 })
 
 function getFallbackTopDish(index = 0) {
@@ -223,8 +263,26 @@ function getAuthHeaders() {
   }
 }
 
+async function ensureRestaurantSession() {
+  if (!auth.token.value) {
+    return false
+  }
+
+  if (auth.restaurant.value?.id) {
+    return true
+  }
+
+  let profile = await auth.fetchProfile()
+  if (!profile?.id) {
+    await new Promise((resolve) => setTimeout(resolve, 250))
+    profile = await auth.fetchProfile()
+  }
+
+  return Boolean(profile?.id)
+}
+
 async function fetchDashboard() {
-  if (!auth.restaurant.value?.id || !auth.token.value) {
+  if (!auth.token.value) {
     applyFallbackDashboard('Sessao do restaurante indisponivel. Exibindo mock.')
     pending.value = false
     return
@@ -236,6 +294,12 @@ async function fetchDashboard() {
   hoveredRevenueIndex.value = null
 
   try {
+    const hasRestaurantSession = await ensureRestaurantSession()
+    if (!hasRestaurantSession || !auth.restaurant.value?.id) {
+      applyFallbackDashboard('Nao foi possivel confirmar a sessao do restaurante. Exibindo mock.')
+      return
+    }
+
     const query: Record<string, string> = {
       period: filters.period
     }
@@ -272,6 +336,60 @@ async function fetchDashboard() {
   } finally {
     pending.value = false
   }
+}
+
+async function fetchRevenueHistory(page = 1) {
+  if (!auth.restaurant.value?.id || !auth.token.value) {
+    return
+  }
+
+  revenueHistoryLoading.value = true
+
+  try {
+    const response = await $fetch<RevenueHistoryResponse>(
+      `/api/v1/restaurants/${auth.restaurant.value.id}/dashboard/revenue-history`,
+      {
+        baseURL: config.public.apiBase,
+        headers: getAuthHeaders(),
+        query: {
+          page,
+          pageSize: revenueHistoryPagination.pageSize
+        }
+      }
+    )
+
+    revenueHistory.value = response.data
+    revenueHistoryPagination.page = response.meta.page
+    revenueHistoryPagination.pageSize = response.meta.pageSize
+    revenueHistoryPagination.total = response.meta.total
+    revenueHistoryPagination.totalPages = response.meta.totalPages
+  } catch (error) {
+    errorMessage.value = getRequestErrorMessage(error, 'Nao foi possivel carregar o historico de faturamento.')
+  } finally {
+    revenueHistoryLoading.value = false
+  }
+}
+
+async function openRevenueHistoryModal() {
+  showRevenueHistoryModal.value = true
+  revenueHistoryPagination.page = 1
+  await fetchRevenueHistory(1)
+}
+
+function closeRevenueHistoryModal() {
+  showRevenueHistoryModal.value = false
+}
+
+async function changeRevenueHistoryPage(nextPage: number) {
+  if (
+    nextPage < 1
+    || nextPage > revenueHistoryPagination.totalPages
+    || nextPage === revenueHistoryPagination.page
+  ) {
+    return
+  }
+
+  await fetchRevenueHistory(nextPage)
 }
 
 await auth.initialize()
@@ -358,9 +476,29 @@ await fetchDashboard()
             <h2>Faturamento por dia</h2>
             <p>Receita bruta do recorte atual</p>
           </div>
+          <button class="secondary-button action-button" type="button" @click="openRevenueHistoryModal">
+            <Icon name="lucide:history" aria-hidden="true" />
+            Historico completo
+          </button>
         </div>
 
-        <div class="column-chart">
+        <div v-if="hasRevenueForecast" class="chart-legend">
+          <span class="legend-item">
+            <span class="legend-swatch legend-swatch-historical" />
+            Real
+          </span>
+          <span class="legend-item">
+            <span class="legend-swatch legend-swatch-current" />
+            Dia atual
+          </span>
+          <span class="legend-item">
+            <span class="legend-swatch legend-swatch-forecast" />
+            Previsao
+          </span>
+        </div>
+
+        <div class="column-chart-wrap">
+          <div class="column-chart" :style="{ gridTemplateColumns: revenueChartColumns }">
           <div
             v-for="(item, index) in revenueByDay"
             :key="item.label"
@@ -385,13 +523,23 @@ await fetchDashboard()
                 role="status"
               >
                 <strong>{{ formatRevenueDate(item) }}</strong>
+                <span v-if="item.kind === 'forecast'" class="tooltip-tag">Previsao</span>
+                <span v-else-if="item.kind === 'current'" class="tooltip-tag">Dia atual</span>
                 <span>Faturamento: {{ formatBRL(item.value) }}</span>
                 <span>Produto mais vendido: {{ item.topDishLabel }}</span>
                 <span v-if="item.topDishOrders">Pedidos do destaque: {{ item.topDishOrders }}</span>
               </div>
             </div>
-            <small>{{ item.label }}</small>
+            <small :class="item.kind === 'forecast' ? 'forecast-label' : ''">
+              {{ item.label }}
+            </small>
+            <span
+              v-if="forecastStartIndex === index"
+              class="forecast-divider"
+              aria-hidden="true"
+            />
           </div>
+        </div>
         </div>
       </article>
 
@@ -445,6 +593,74 @@ await fetchDashboard()
         </div>
       </div>
     </section>
+
+    <div v-if="showRevenueHistoryModal" class="modal-overlay" @click.self="closeRevenueHistoryModal">
+      <article class="modal-card revenue-history-modal" role="dialog" aria-modal="true" aria-labelledby="revenue-history-title">
+        <div class="panel-header modal-header">
+          <div>
+            <h2 id="revenue-history-title">Historico completo de faturamento</h2>
+            <p>Todos os dias com faturamento registrado, em ordem do mais recente para o mais antigo.</p>
+          </div>
+          <button class="secondary-button modal-close-button" type="button" aria-label="Fechar modal" @click="closeRevenueHistoryModal">
+            <Icon name="lucide:x" aria-hidden="true" />
+          </button>
+        </div>
+
+        <div v-if="revenueHistoryLoading" class="history-empty">
+          Carregando historico...
+        </div>
+
+        <div v-else-if="revenueHistory.length === 0" class="history-empty">
+          Nenhum faturamento historico encontrado.
+        </div>
+
+        <div v-else class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Dia</th>
+                <th>Faturamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in revenueHistory" :key="item.date">
+                <td>{{ new Date(`${item.date}T00:00:00`).toLocaleDateString('pt-BR') }}</td>
+                <td>{{ item.label }}</td>
+                <td><strong>{{ formatBRL(item.value) }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination-bar modal-pagination">
+          <div class="pagination-summary">
+            <span>{{ revenueHistoryPagination.total }} registros encontrados</span>
+            <strong>Pagina {{ revenueHistoryPagination.page }} de {{ revenueHistoryPagination.totalPages }}</strong>
+          </div>
+          <div class="pagination-actions">
+            <button
+              class="secondary-button action-button"
+              type="button"
+              :disabled="revenueHistoryLoading || revenueHistoryPagination.page <= 1"
+              @click="changeRevenueHistoryPage(revenueHistoryPagination.page - 1)"
+            >
+              <Icon name="lucide:chevron-left" aria-hidden="true" />
+              Anterior
+            </button>
+            <button
+              class="secondary-button action-button"
+              type="button"
+              :disabled="revenueHistoryLoading || revenueHistoryPagination.page >= revenueHistoryPagination.totalPages"
+              @click="changeRevenueHistoryPage(revenueHistoryPagination.page + 1)"
+            >
+              Proxima
+              <Icon name="lucide:chevron-right" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -474,6 +690,56 @@ await fetchDashboard()
   color: var(--color-gray-500);
   font-size: 12px;
   font-weight: 700;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  color: var(--color-gray-600);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-swatch {
+  width: 18px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.legend-swatch-historical {
+  background: var(--color-red);
+}
+
+.legend-swatch-current {
+  background: #7f1d1d;
+}
+
+.legend-swatch-forecast {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(214, 62, 62, 0.16) 0,
+    rgba(214, 62, 62, 0.16) 6px,
+    rgba(214, 62, 62, 0.52) 6px,
+    rgba(214, 62, 62, 0.52) 12px
+  );
+  border: 1px dashed rgba(214, 62, 62, 0.9);
+}
+
+.column-chart-wrap {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.column-chart {
+  min-width: max-content;
 }
 
 .column-bar {
@@ -532,18 +798,114 @@ await fetchDashboard()
   line-height: 1.4;
 }
 
+.tooltip-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 11px;
+  font-weight: 800;
+}
+
 .forecast-bar {
   background: repeating-linear-gradient(
     135deg,
-    rgba(214, 62, 62, 0.16) 0,
-    rgba(214, 62, 62, 0.16) 6px,
-    rgba(214, 62, 62, 0.52) 6px,
-    rgba(214, 62, 62, 0.52) 12px
+    rgba(214, 62, 62, 0.08) 0,
+    rgba(214, 62, 62, 0.08) 6px,
+    rgba(214, 62, 62, 0.32) 6px,
+    rgba(214, 62, 62, 0.32) 12px
   );
-  border: 1px dashed rgba(214, 62, 62, 0.9);
+  border: 1px dashed rgba(214, 62, 62, 0.5);
+  opacity: 0.58;
 }
 
 .current-bar {
   background: #7f1d1d;
+}
+
+.forecast-label {
+  color: #b45309;
+}
+
+.forecast-divider {
+  position: absolute;
+  left: -7px;
+  top: 0;
+  bottom: 22px;
+  width: 0;
+  border-left: 2px dashed rgba(180, 83, 9, 0.45);
+}
+
+.history-empty {
+  padding: 18px 0 8px;
+  color: var(--color-gray-500);
+}
+
+.action-button {
+  min-height: 36px;
+  padding: 0 12px;
+}
+
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.pagination-summary {
+  display: grid;
+  gap: 4px;
+  color: var(--color-gray-500);
+}
+
+.pagination-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.28);
+}
+
+.modal-header {
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.modal-close-button {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-pagination {
+  margin-top: 8px;
 }
 </style>

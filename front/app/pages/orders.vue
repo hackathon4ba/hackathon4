@@ -14,12 +14,30 @@ type OrderItem = {
   id: number
   restaurant_id: number
   customer_name: string
+  menu_item_id?: number | null
   main_dish: string
   order_price_cents: number
   status: OrderStatus
+  stock_deducted?: boolean
   notes?: string | null
   created_at: string
   updated_at: string
+}
+
+type MenuItem = {
+  id: number
+  restaurant_id: number
+  name: string
+  price_cents: number
+  recipe: Array<{
+    id: number
+    quantity_required: number
+  }>
+}
+
+type MenuItemsResponse = {
+  data: MenuItem[]
+  msg: string
 }
 
 type OrdersResponse = {
@@ -43,10 +61,13 @@ type OrderPayload = {
 
 const config = useRuntimeConfig()
 const auth = useRestaurantAuth()
+const router = useRouter()
 
 const orders = ref<OrderItem[]>([])
+const menuItems = ref<MenuItem[]>([])
 const loading = ref(true)
 const saving = ref(false)
+const menuLoading = ref(false)
 const deletingId = ref<number | null>(null)
 const editingOrderId = ref<number | null>(null)
 const showOrderModal = ref(false)
@@ -63,12 +84,14 @@ const filters = reactive({
 const form = reactive({
   customer_name: '',
   main_dish: '',
+  selected_dish: '',
   price: '49,90',
   status: 'pending' as OrderStatus,
   notes: ''
 })
 
 const isEditing = computed(() => editingOrderId.value !== null)
+const ADD_MENU_ITEM_VALUE = '__add_menu_item__'
 
 const statusOptions: Array<{ value: OrderStatus, label: string }> = [
   { value: 'pending', label: 'Pendente' },
@@ -85,6 +108,34 @@ const pagination = reactive({
 
 const filteredOrders = computed(() => {
   return orders.value
+})
+
+const orderableMenuItems = computed(() => {
+  return menuItems.value.filter((item) => item.recipe.length > 0)
+})
+
+const dishOptions = computed(() => {
+  const options = orderableMenuItems.value.map((item) => ({
+    value: item.name,
+    label: `${item.name} • ${formatBRL(item.price_cents / 100)}`
+  }))
+
+  if (
+    form.main_dish
+    && !orderableMenuItems.value.some((item) => item.name === form.main_dish)
+  ) {
+    options.unshift({
+      value: form.main_dish,
+      label: `${form.main_dish} • item nao encontrado ou sem receita`
+    })
+  }
+
+  options.push({
+    value: ADD_MENU_ITEM_VALUE,
+    label: '+ Adicionar item no cardapio'
+  })
+
+  return options
 })
 
 const queueSummary = computed(() => {
@@ -119,6 +170,7 @@ function resetFeedback() {
 function clearFormFields() {
   form.customer_name = ''
   form.main_dish = ''
+  form.selected_dish = ''
   form.price = '49,90'
   form.status = 'pending'
   form.notes = ''
@@ -133,6 +185,7 @@ function resetForm() {
 function fillForm(order: OrderItem) {
   form.customer_name = order.customer_name
   form.main_dish = order.main_dish
+  form.selected_dish = order.main_dish
   form.price = (order.order_price_cents / 100).toFixed(2).replace('.', ',')
   form.status = order.status
   form.notes = order.notes || ''
@@ -140,13 +193,18 @@ function fillForm(order: OrderItem) {
   resetFeedback()
 }
 
-function openCreateModal() {
+async function openCreateModal() {
   resetForm()
+  await fetchMenuItems()
+  if (orderableMenuItems.value.length === 0) {
+    errorMessage.value = 'Cadastre um prato com receita de estoque antes de criar pedidos.'
+  }
   showOrderModal.value = true
 }
 
-function openEditModal(order: OrderItem) {
+async function openEditModal(order: OrderItem) {
   fillForm(order)
+  await fetchMenuItems()
   showOrderModal.value = true
 }
 
@@ -164,6 +222,27 @@ function getRequestErrorMessage(error: unknown, fallback: string) {
   }
 
   return fallback
+}
+
+function syncDishPrice(selectedDish: string) {
+  const selectedItem = orderableMenuItems.value.find((item) => item.name === selectedDish)
+  if (!selectedItem) {
+    return
+  }
+
+  form.main_dish = selectedItem.name
+  form.price = (selectedItem.price_cents / 100).toFixed(2).replace('.', ',')
+}
+
+async function handleDishSelection() {
+  if (form.selected_dish === ADD_MENU_ITEM_VALUE) {
+    closeOrderModal()
+    await router.push('/menu')
+    return
+  }
+
+  form.main_dish = form.selected_dish
+  syncDishPrice(form.selected_dish)
 }
 
 function formatOrderStatus(status: OrderStatus) {
@@ -245,11 +324,40 @@ async function fetchOrders() {
   }
 }
 
+async function fetchMenuItems() {
+  if (!auth.token.value) {
+    return
+  }
+
+  menuLoading.value = true
+
+  try {
+    const response = await $fetch<MenuItemsResponse>('/restaurants/menu/items', {
+      baseURL: config.public.apiBase,
+      headers: getAuthHeaders()
+    })
+
+    menuItems.value = response.data
+      .slice()
+      .sort((left, right) => left.name.localeCompare(right.name))
+  } catch (error) {
+    errorMessage.value = getRequestErrorMessage(error, 'Nao foi possivel carregar o cardapio.')
+  } finally {
+    menuLoading.value = false
+  }
+}
+
 async function submitForm() {
   const price = Number(form.price.replace(',', '.'))
 
   if (!form.customer_name.trim() || !form.main_dish.trim()) {
     errorMessage.value = 'Informe cliente e prato.'
+    successMessage.value = ''
+    return
+  }
+
+  if (!orderableMenuItems.value.some((item) => item.name === form.main_dish)) {
+    errorMessage.value = 'Selecione um prato com receita de estoque configurada.'
     successMessage.value = ''
     return
   }
@@ -339,7 +447,7 @@ async function removeOrder(orderId: number) {
 }
 
 await auth.initialize()
-await fetchOrders()
+await Promise.all([fetchOrders(), fetchMenuItems()])
 </script>
 
 <template>
@@ -537,7 +645,14 @@ await fetchOrders()
             </label>
             <label class="form-field">
               <span>Prato</span>
-              <input v-model="form.main_dish" type="text" placeholder="Ex: Parmegiana" required>
+              <select v-model="form.selected_dish" :disabled="menuLoading" required @change="handleDishSelection">
+                <option value="" disabled>
+                  {{ menuLoading ? 'Carregando cardapio...' : 'Selecione um item do cardapio' }}
+                </option>
+                <option v-for="option in dishOptions" :key="option.value" :value="option.value">
+                  {{ option.label }}
+                </option>
+              </select>
             </label>
             <label class="form-field">
               <span>Valor</span>
@@ -552,6 +667,10 @@ await fetchOrders()
               </select>
             </label>
           </div>
+
+          <p class="dish-helper-text">
+            So aparecem pratos com receita de estoque configurada. O valor pode ser ajustado antes de salvar, e a ultima opcao leva para o cadastro de itens.
+          </p>
 
           <label class="form-field">
             <span>Observacoes</span>
@@ -654,6 +773,12 @@ await fetchOrders()
 .orders-empty {
   padding: 18px 0 8px;
   color: var(--color-gray-500);
+}
+
+.dish-helper-text {
+  margin-top: -6px;
+  color: var(--color-gray-500);
+  font-size: 13px;
 }
 
 .table-actions {

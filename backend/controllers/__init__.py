@@ -1,5 +1,6 @@
 from .auth_controller import auth_controller
 from .dashboard_controller import dashboard_controller
+from .inventory_controller import inventory_controller
 from .menu_controller import menu_controller
 from .order_controller import order_controller
 from .restaurant_controller import restaurant_controller
