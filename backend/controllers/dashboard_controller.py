@@ -26,6 +26,8 @@ class DashboardChartPoint(BaseModel):
     valueCents: int | None = None
     kind: str | None = None
     isForecast: bool | None = None
+    topDishLabel: str | None = None
+    topDishOrders: int | None = None
 
 
 class AIInsightResponse(BaseModel):

@@ -46,6 +46,8 @@ type DashboardPayload = {
     valueCents: number
     kind?: 'historical' | 'current' | 'forecast'
     isForecast?: boolean
+    topDishLabel?: string
+    topDishOrders?: number
   }>
   ordersByPeriod: Array<{
     period: string
@@ -141,6 +143,8 @@ function buildRevenueDetails(
     value: number
     kind?: 'historical' | 'current' | 'forecast'
     isForecast?: boolean
+    topDishLabel?: string
+    topDishOrders?: number
   }>,
   topDishes: Array<{ label: string, value: number }>,
   topDishToday?: { name: string, orders: number }
@@ -160,8 +164,8 @@ function buildRevenueDetails(
       date: item.date,
       kind: item.kind,
       isForecast: item.isForecast,
-      topDishLabel: selectedDish.label,
-      topDishOrders: selectedDish.orders
+      topDishLabel: item.topDishLabel ?? selectedDish.label,
+      topDishOrders: item.topDishOrders ?? selectedDish.orders
     }
   })
 }
@@ -545,7 +549,7 @@ onBeforeUnmount(() => {
                   <span v-if="item.kind === 'forecast'" class="tooltip-tag">Previsao</span>
                   <span v-else-if="item.kind === 'current'" class="tooltip-tag">Dia atual</span>
                   <span>Faturamento: {{ formatBRL(item.value) }}</span>
-                  <span>Produto mais vendido: {{ item.topDishLabel }}</span>
+                  <span v-if="item.topDishLabel">Produto mais vendido: {{ item.topDishLabel }}</span>
                   <span v-if="item.topDishOrders">Pedidos do destaque: {{ item.topDishOrders }}</span>
                 </div>
               </div>
