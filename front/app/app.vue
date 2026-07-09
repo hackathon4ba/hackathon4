@@ -59,14 +59,6 @@ async function handleLogout() {
         </div>
       </div>
 
-      <div class="store-status">
-        <Icon name="lucide:check-circle-2" aria-hidden="true" />
-        <div>
-          <strong>{{ restaurant?.is_active ? 'Conta ativa' : 'Conta inativa' }}</strong>
-          <span>{{ restaurant?.cuisine_type || 'Restaurante autenticado' }}</span>
-        </div>
-      </div>
-
       <nav class="menu">
         <NuxtLink
           v-for="item in menuItems"

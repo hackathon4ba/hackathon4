@@ -9,7 +9,8 @@ from sqlalchemy import delete, select, text
 
 from factory import db
 from main import app
-from models import InventoryItem, MenuItem, MenuItemRecipe, Order, Restaurant
+from models import InventoryItem, MenuItem, MenuItemRecipe, Order, Restaurant, RevenueDaily
+from services.revenue_daily_service import rebuild_revenue_daily_for_restaurant
 
 
 DEFAULT_RESTAURANT_EMAIL = "admin@empresa-demo.com"
@@ -191,6 +192,7 @@ def seed_admin_revenue_and_menu():
         text("DELETE FROM restaurant_order WHERE restaurant_id = :restaurant_id"),
         {"restaurant_id": restaurant.id},
     )
+    db.session.execute(delete(RevenueDaily).where(RevenueDaily.restaurant_id == restaurant.id))
 
     if menu_item_ids:
         db.session.execute(
@@ -285,6 +287,7 @@ def seed_admin_revenue_and_menu():
         imported_orders += 1
 
     db.session.commit()
+    rebuild_revenue_daily_for_restaurant(restaurant.id)
 
     print(
         f"Seeded {len(menu_items_by_name)} menu items, "

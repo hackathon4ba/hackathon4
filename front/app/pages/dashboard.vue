@@ -113,6 +113,18 @@ const revenueHistoryPagination = reactive({
   totalPages: 1
 })
 
+const revenueChartColumns = computed(() => {
+  return `repeat(${Math.max(revenueByDay.value.length, 1)}, minmax(58px, 1fr))`
+})
+
+const hasRevenueForecast = computed(() => {
+  return revenueByDay.value.some((item) => item.kind === 'forecast')
+})
+
+const forecastStartIndex = computed(() => {
+  return revenueByDay.value.findIndex((item) => item.kind === 'forecast')
+})
+
 function getFallbackTopDish(index = 0) {
   const fallbackDish = fallbackBestDishes[index % fallbackBestDishes.length]
   return {
@@ -470,7 +482,23 @@ await fetchDashboard()
           </button>
         </div>
 
-        <div class="column-chart">
+        <div v-if="hasRevenueForecast" class="chart-legend">
+          <span class="legend-item">
+            <span class="legend-swatch legend-swatch-historical" />
+            Real
+          </span>
+          <span class="legend-item">
+            <span class="legend-swatch legend-swatch-current" />
+            Dia atual
+          </span>
+          <span class="legend-item">
+            <span class="legend-swatch legend-swatch-forecast" />
+            Previsao
+          </span>
+        </div>
+
+        <div class="column-chart-wrap">
+          <div class="column-chart" :style="{ gridTemplateColumns: revenueChartColumns }">
           <div
             v-for="(item, index) in revenueByDay"
             :key="item.label"
@@ -495,13 +523,23 @@ await fetchDashboard()
                 role="status"
               >
                 <strong>{{ formatRevenueDate(item) }}</strong>
+                <span v-if="item.kind === 'forecast'" class="tooltip-tag">Previsao</span>
+                <span v-else-if="item.kind === 'current'" class="tooltip-tag">Dia atual</span>
                 <span>Faturamento: {{ formatBRL(item.value) }}</span>
                 <span>Produto mais vendido: {{ item.topDishLabel }}</span>
                 <span v-if="item.topDishOrders">Pedidos do destaque: {{ item.topDishOrders }}</span>
               </div>
             </div>
-            <small>{{ item.label }}</small>
+            <small :class="item.kind === 'forecast' ? 'forecast-label' : ''">
+              {{ item.label }}
+            </small>
+            <span
+              v-if="forecastStartIndex === index"
+              class="forecast-divider"
+              aria-hidden="true"
+            />
           </div>
+        </div>
         </div>
       </article>
 
@@ -654,6 +692,56 @@ await fetchDashboard()
   font-weight: 700;
 }
 
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  color: var(--color-gray-600);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-swatch {
+  width: 18px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.legend-swatch-historical {
+  background: var(--color-red);
+}
+
+.legend-swatch-current {
+  background: #7f1d1d;
+}
+
+.legend-swatch-forecast {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(214, 62, 62, 0.16) 0,
+    rgba(214, 62, 62, 0.16) 6px,
+    rgba(214, 62, 62, 0.52) 6px,
+    rgba(214, 62, 62, 0.52) 12px
+  );
+  border: 1px dashed rgba(214, 62, 62, 0.9);
+}
+
+.column-chart-wrap {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.column-chart {
+  min-width: max-content;
+}
+
 .column-bar {
   background: var(--color-red);
   transition:
@@ -710,6 +798,17 @@ await fetchDashboard()
   line-height: 1.4;
 }
 
+.tooltip-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 11px;
+  font-weight: 800;
+}
+
 .forecast-bar {
   background: repeating-linear-gradient(
     135deg,
@@ -723,6 +822,19 @@ await fetchDashboard()
 
 .current-bar {
   background: #7f1d1d;
+}
+
+.forecast-label {
+  color: #b45309;
+}
+
+.forecast-divider {
+  position: absolute;
+  left: -7px;
+  top: 0;
+  bottom: 22px;
+  width: 0;
+  border-left: 2px dashed rgba(180, 83, 9, 0.45);
 }
 
 .history-empty {

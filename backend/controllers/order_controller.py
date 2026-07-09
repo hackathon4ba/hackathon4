@@ -14,6 +14,7 @@ from services.inventory_service import (
     restore_menu_item_stock,
     status_requires_stock,
 )
+from services.revenue_daily_service import sync_revenue_daily_for_dates
 from utils.response_schema import GenericResponse
 
 order_controller = Blueprint("order_controller", __name__, url_prefix="/restaurants/orders")
@@ -169,6 +170,10 @@ def create_order():
 
         db.session.add(order)
         db.session.commit()
+        sync_revenue_daily_for_dates(
+            restaurant.id,
+            [order.created_at.date()],
+        )
     except InventoryError as error:
         db.session.rollback()
         return {"msg": str(error)}, 400
@@ -228,6 +233,7 @@ def update_order(order_id: int):
         return {"msg": "Order not found."}, 404
 
     data = request.json
+    affected_revenue_dates = {order.created_at.date()}
 
     if "customer_name" in data and data["customer_name"] is not None:
         customer_name = data["customer_name"].strip()
@@ -293,6 +299,10 @@ def update_order(order_id: int):
         order.status = status
 
         db.session.commit()
+        sync_revenue_daily_for_dates(
+            restaurant.id,
+            affected_revenue_dates,
+        )
     except InventoryError as error:
         db.session.rollback()
         return {"msg": str(error)}, 400
@@ -323,7 +333,12 @@ def delete_order(order_id: int):
     if order is None or order.restaurant_id != restaurant.id:
         return {"msg": "Order not found."}, 404
 
+    affected_revenue_dates = {order.created_at.date()}
     db.session.delete(order)
     db.session.commit()
+    sync_revenue_daily_for_dates(
+        restaurant.id,
+        affected_revenue_dates,
+    )
 
     return {"msg": "Order deleted successfully."}, 200
