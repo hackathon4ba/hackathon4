@@ -15,8 +15,11 @@ type DashboardMetric = {
 type ChartDatum = {
   label: string
   value: number
+  date?: string
   kind?: 'historical' | 'current' | 'forecast'
   isForecast?: boolean
+  topDishLabel?: string
+  topDishOrders?: number
 }
 
 type DashboardInsight = {
@@ -63,6 +66,7 @@ const pending = ref(true)
 const usingFallback = ref(false)
 const errorMessage = ref('')
 const referenceDate = ref('')
+const hoveredRevenueIndex = ref<number | null>(null)
 
 const filters = reactive({
   period: 'last_7_days',
@@ -81,6 +85,61 @@ const insight = ref<DashboardInsight>({
   confidence: 0
 })
 
+function getFallbackTopDish(index = 0) {
+  const fallbackDish = fallbackBestDishes[index % fallbackBestDishes.length]
+  return {
+    label: fallbackDish?.label ?? 'Sem destaque',
+    orders: fallbackDish?.value ?? 0
+  }
+}
+
+function buildRevenueDetails(
+  items: Array<{
+    date?: string
+    label: string
+    value: number
+    kind?: 'historical' | 'current' | 'forecast'
+    isForecast?: boolean
+  }>,
+  topDishes: Array<{ label: string, value: number }>,
+  topDishToday?: { name: string, orders: number }
+) {
+  return items.map((item, index) => {
+    const rankedDish = topDishes[index % topDishes.length]
+    const fallbackDish = getFallbackTopDish(index)
+    const selectedDish = rankedDish
+      ? { label: rankedDish.label, orders: rankedDish.value }
+      : topDishToday
+        ? { label: topDishToday.name, orders: topDishToday.orders }
+        : fallbackDish
+
+    return {
+      label: item.label,
+      value: item.value,
+      date: item.date,
+      kind: item.kind,
+      isForecast: item.isForecast,
+      topDishLabel: selectedDish.label,
+      topDishOrders: selectedDish.orders
+    }
+  })
+}
+
+function formatRevenueDate(item: ChartDatum) {
+  if (!item.date) {
+    return item.label
+  }
+
+  return new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: '2-digit'
+  }).format(new Date(`${item.date}T00:00:00`))
+}
+
+function setHoveredRevenue(index: number | null) {
+  hoveredRevenueIndex.value = index
+}
+
 function formatPeriodLabel(period: string) {
   if (period === 'today') {
     return 'Hoje'
@@ -96,11 +155,14 @@ function applyFallbackDashboard(message = 'API indisponivel. Exibindo dados mock
   errorMessage.value = message
   referenceDate.value = 'mock'
   metrics.value = fallbackMetrics.slice(0, 4)
-  revenueByDay.value = fallbackRevenueByDay.map((item) => ({
-    ...item,
-    kind: 'historical',
-    isForecast: false
-  }))
+  revenueByDay.value = buildRevenueDetails(
+    fallbackRevenueByDay.map((item) => ({
+      ...item,
+      kind: 'historical',
+      isForecast: false
+    })),
+    fallbackBestDishes
+  )
   ordersByPeriod.value = fallbackOrdersByPeriod
   bestDishes.value = fallbackBestDishes
   insight.value = {
@@ -171,6 +233,7 @@ async function fetchDashboard() {
   pending.value = true
   usingFallback.value = false
   errorMessage.value = ''
+  hoveredRevenueIndex.value = null
 
   try {
     const query: Record<string, string> = {
@@ -193,12 +256,11 @@ async function fetchDashboard() {
 
     referenceDate.value = payload.referenceDate
     metrics.value = buildMetrics(payload)
-    revenueByDay.value = payload.revenueByDay.map((item) => ({
-      label: item.label,
-      value: item.value,
-      kind: item.kind,
-      isForecast: item.isForecast
-    }))
+    revenueByDay.value = buildRevenueDetails(
+      payload.revenueByDay,
+      payload.bestDishes,
+      payload.topDishToday
+    )
     ordersByPeriod.value = payload.ordersByPeriod.map((item) => ({
       label: item.label,
       value: item.value
@@ -300,19 +362,33 @@ await fetchDashboard()
 
         <div class="column-chart">
           <div
-            v-for="item in revenueByDay"
+            v-for="(item, index) in revenueByDay"
             :key="item.label"
-            class="column-item"
+            :class="['column-item', hoveredRevenueIndex === index ? 'column-item-active' : '']"
+            @mouseenter="setHoveredRevenue(index)"
+            @mouseleave="setHoveredRevenue(null)"
           >
             <div class="column-track">
               <span
                 :class="[
                   'column-bar',
+                  hoveredRevenueIndex === index ? 'column-bar-active' : '',
                   item.kind === 'forecast' ? 'forecast-bar' : '',
                   item.kind === 'current' ? 'current-bar' : ''
                 ]"
                 :style="{ height: chartHeight(item.value, revenueByDay) }"
               />
+
+              <div
+                v-if="hoveredRevenueIndex === index"
+                class="column-tooltip"
+                role="status"
+              >
+                <strong>{{ formatRevenueDate(item) }}</strong>
+                <span>Faturamento: {{ formatBRL(item.value) }}</span>
+                <span>Produto mais vendido: {{ item.topDishLabel }}</span>
+                <span v-if="item.topDishOrders">Pedidos do destaque: {{ item.topDishOrders }}</span>
+              </div>
             </div>
             <small>{{ item.label }}</small>
           </div>
@@ -402,6 +478,58 @@ await fetchDashboard()
 
 .column-bar {
   background: var(--color-red);
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
+  transform-origin: center bottom;
+}
+
+.column-item {
+  position: relative;
+}
+
+.column-item-active {
+  z-index: 2;
+}
+
+.column-track {
+  position: relative;
+  overflow: visible;
+}
+
+.column-bar-active {
+  filter: brightness(1.08);
+  box-shadow: 0 14px 24px rgba(127, 29, 29, 0.22);
+  transform: scale(1.08);
+}
+
+.column-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translateX(-50%);
+  min-width: 188px;
+  padding: 12px 14px;
+  border: 1px solid rgba(127, 29, 29, 0.12);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+  display: grid;
+  gap: 4px;
+  text-align: left;
+  pointer-events: none;
+}
+
+.column-tooltip strong {
+  color: #7f1d1d;
+  font-size: 13px;
+}
+
+.column-tooltip span {
+  color: var(--color-gray-700);
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .forecast-bar {
