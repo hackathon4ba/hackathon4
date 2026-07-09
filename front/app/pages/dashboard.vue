@@ -79,6 +79,7 @@ type RevenueHistoryResponse = {
 
 const config = useRuntimeConfig()
 const auth = useRestaurantAuth()
+let dashboardRequestToken = 0
 
 const pending = ref(true)
 const revenueHistoryLoading = ref(false)
@@ -282,6 +283,8 @@ async function ensureRestaurantSession() {
 }
 
 async function fetchDashboard() {
+  const requestToken = ++dashboardRequestToken
+
   if (!auth.token.value) {
     applyFallbackDashboard('Sessao do restaurante indisponivel. Exibindo mock.')
     pending.value = false
@@ -318,6 +321,10 @@ async function fetchDashboard() {
       }
     )
 
+    if (requestToken !== dashboardRequestToken) {
+      return
+    }
+
     referenceDate.value = payload.referenceDate
     metrics.value = buildMetrics(payload)
     revenueByDay.value = buildRevenueDetails(
@@ -332,9 +339,15 @@ async function fetchDashboard() {
     bestDishes.value = payload.bestDishes
     insight.value = payload.aiInsight
   } catch (error) {
+    if (requestToken !== dashboardRequestToken) {
+      return
+    }
+
     applyFallbackDashboard(getRequestErrorMessage(error, 'API indisponivel. Exibindo dados mockados para a demo.'))
   } finally {
-    pending.value = false
+    if (requestToken === dashboardRequestToken) {
+      pending.value = false
+    }
   }
 }
 
@@ -392,8 +405,14 @@ async function changeRevenueHistoryPage(nextPage: number) {
   await fetchRevenueHistory(nextPage)
 }
 
-await auth.initialize()
-await fetchDashboard()
+onMounted(async () => {
+  await auth.initialize()
+  await fetchDashboard()
+})
+
+onBeforeUnmount(() => {
+  dashboardRequestToken += 1
+})
 </script>
 
 <template>
