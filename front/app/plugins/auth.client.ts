@@ -1,4 +1,4 @@
-export default defineNuxtPlugin(async () => {
+export default defineNuxtPlugin(() => {
   const auth = useRestaurantAuth()
-  await auth.initialize()
+  void auth.initialize()
 })

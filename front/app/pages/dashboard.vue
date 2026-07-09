@@ -46,6 +46,8 @@ type DashboardPayload = {
     valueCents: number
     kind?: 'historical' | 'current' | 'forecast'
     isForecast?: boolean
+    topDishLabel?: string
+    topDishOrders?: number
   }>
   ordersByPeriod: Array<{
     period: string
@@ -79,6 +81,7 @@ type RevenueHistoryResponse = {
 
 const config = useRuntimeConfig()
 const auth = useRestaurantAuth()
+let dashboardRequestToken = 0
 
 const pending = ref(true)
 const revenueHistoryLoading = ref(false)
@@ -140,6 +143,8 @@ function buildRevenueDetails(
     value: number
     kind?: 'historical' | 'current' | 'forecast'
     isForecast?: boolean
+    topDishLabel?: string
+    topDishOrders?: number
   }>,
   topDishes: Array<{ label: string, value: number }>,
   topDishToday?: { name: string, orders: number }
@@ -159,8 +164,8 @@ function buildRevenueDetails(
       date: item.date,
       kind: item.kind,
       isForecast: item.isForecast,
-      topDishLabel: selectedDish.label,
-      topDishOrders: selectedDish.orders
+      topDishLabel: item.topDishLabel ?? selectedDish.label,
+      topDishOrders: item.topDishOrders ?? selectedDish.orders
     }
   })
 }
@@ -282,6 +287,8 @@ async function ensureRestaurantSession() {
 }
 
 async function fetchDashboard() {
+  const requestToken = ++dashboardRequestToken
+
   if (!auth.token.value) {
     applyFallbackDashboard('Sessao do restaurante indisponivel. Exibindo mock.')
     pending.value = false
@@ -318,6 +325,10 @@ async function fetchDashboard() {
       }
     )
 
+    if (requestToken !== dashboardRequestToken) {
+      return
+    }
+
     referenceDate.value = payload.referenceDate
     metrics.value = buildMetrics(payload)
     revenueByDay.value = buildRevenueDetails(
@@ -332,9 +343,15 @@ async function fetchDashboard() {
     bestDishes.value = payload.bestDishes
     insight.value = payload.aiInsight
   } catch (error) {
+    if (requestToken !== dashboardRequestToken) {
+      return
+    }
+
     applyFallbackDashboard(getRequestErrorMessage(error, 'API indisponivel. Exibindo dados mockados para a demo.'))
   } finally {
-    pending.value = false
+    if (requestToken === dashboardRequestToken) {
+      pending.value = false
+    }
   }
 }
 
@@ -392,8 +409,14 @@ async function changeRevenueHistoryPage(nextPage: number) {
   await fetchRevenueHistory(nextPage)
 }
 
-await auth.initialize()
-await fetchDashboard()
+onMounted(async () => {
+  await auth.initialize()
+  await fetchDashboard()
+})
+
+onBeforeUnmount(() => {
+  dashboardRequestToken += 1
+})
 </script>
 
 <template>
@@ -526,7 +549,7 @@ await fetchDashboard()
                   <span v-if="item.kind === 'forecast'" class="tooltip-tag">Previsao</span>
                   <span v-else-if="item.kind === 'current'" class="tooltip-tag">Dia atual</span>
                   <span>Faturamento: {{ formatBRL(item.value) }}</span>
-                  <span>Produto mais vendido: {{ item.topDishLabel }}</span>
+                  <span v-if="item.topDishLabel">Produto mais vendido: {{ item.topDishLabel }}</span>
                   <span v-if="item.topDishOrders">Pedidos do destaque: {{ item.topDishOrders }}</span>
                 </div>
               </div>

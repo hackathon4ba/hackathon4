@@ -92,6 +92,27 @@ class DashboardAIService:
         query = select(Order).filter_by(restaurant_id=restaurant_id)
         return db.session.scalars(query.order_by(Order.created_at.asc())).all()
 
+    def _resolve_reference_date_from_orders(self, orders: list[Order]) -> date:
+        order_counts_by_date: Counter[date] = Counter(
+            order.created_at.date() for order in orders
+        )
+        ordered_dates = sorted(order_counts_by_date)
+        latest_date = ordered_dates[-1]
+
+        if len(ordered_dates) == 1:
+            return latest_date
+
+        previous_date = ordered_dates[-2]
+        gap_days = (latest_date - previous_date).days
+        latest_date_orders = order_counts_by_date[latest_date]
+
+        # Ignore isolated outlier days so the forecast stays anchored
+        # to the last consistent operating period.
+        if gap_days > FORECAST_HORIZON and latest_date_orders <= 1:
+            return previous_date
+
+        return latest_date
+
     def _resolve_range(
         self,
         reference_date: date,
@@ -158,11 +179,27 @@ class DashboardAIService:
 
         return chart
 
+    def _build_top_dishes_by_date(self, orders: list[Order]) -> dict[date, dict[str, int | str]]:
+        counter_by_date: dict[date, Counter[str]] = defaultdict(Counter)
+        for order in orders:
+            counter_by_date[order.created_at.date()][order.main_dish] += 1
+
+        result: dict[date, dict[str, int | str]] = {}
+        for current_date, counter in counter_by_date.items():
+            top_dish_name, top_dish_orders = counter.most_common(1)[0]
+            result[current_date] = {
+                "topDishLabel": top_dish_name,
+                "topDishOrders": top_dish_orders,
+            }
+
+        return result
+
     def _combine_revenue_history_and_forecast(
         self,
         revenue_history: list[dict],
         revenue_projection: list[dict],
         reference_date: date,
+        reference_top_dish: dict[str, int | str],
     ) -> list[dict]:
         history_by_date = {
             item["date"]: {**item}
@@ -185,6 +222,8 @@ class DashboardAIService:
                     "label": f"{DAY_LABELS[current_date.weekday()]} {current_date.day:02d}",
                     "value": 0.0,
                     "valueCents": 0,
+                    "topDishLabel": "Sem pedidos",
+                    "topDishOrders": 0,
                     "kind": "historical",
                     "isForecast": False,
                 }
@@ -196,19 +235,20 @@ class DashboardAIService:
         for step in range(1, FORECAST_HORIZON + 1):
             current_date = reference_date + timedelta(days=step)
             current_date_iso = current_date.isoformat()
-            chart.append(
-                forecast_by_date.get(
-                    current_date_iso,
-                    {
-                        "date": current_date_iso,
-                        "label": f"{DAY_LABELS[current_date.weekday()]} {current_date.day:02d}",
-                        "value": 0.0,
-                        "valueCents": 0,
-                        "kind": "forecast",
-                        "isForecast": True,
-                    },
-                )
+            forecast_item = forecast_by_date.get(
+                current_date_iso,
+                {
+                    "date": current_date_iso,
+                    "label": f"{DAY_LABELS[current_date.weekday()]} {current_date.day:02d}",
+                    "value": 0.0,
+                    "valueCents": 0,
+                    "kind": "forecast",
+                    "isForecast": True,
+                },
             )
+            forecast_item.setdefault("topDishLabel", str(reference_top_dish["topDishLabel"]))
+            forecast_item.setdefault("topDishOrders", int(reference_top_dish["topDishOrders"]))
+            chart.append(forecast_item)
 
         return chart
 
@@ -528,7 +568,7 @@ class DashboardAIService:
             }
 
         ensure_revenue_daily_for_restaurant(restaurant_id)
-        reference_date = max(order.created_at.date() for order in all_orders)
+        reference_date = self._resolve_reference_date_from_orders(all_orders)
         start, end, resolved_reference_date = self._resolve_range(
             reference_date=reference_date,
             period=period,
@@ -549,10 +589,22 @@ class DashboardAIService:
         top_dish_name, top_dish_orders = (
             top_dish_counter.most_common(1)[0] if top_dish_counter else ("Sem pedidos", 0)
         )
+        top_dishes_by_date = self._build_top_dishes_by_date(all_orders)
 
         revenue_history = self._build_revenue_by_day(
             self._load_revenue_rows(restaurant_id, start=start, end=end)
         )
+        for point in revenue_history:
+            point_date = date.fromisoformat(point["date"])
+            point.update(
+                top_dishes_by_date.get(
+                    point_date,
+                    {
+                        "topDishLabel": "Sem pedidos",
+                        "topDishOrders": 0,
+                    },
+                )
+            )
         revenue_projection = self._build_revenue_forecast_chart(
             restaurant_id=restaurant_id,
             orders=all_orders,
@@ -568,6 +620,10 @@ class DashboardAIService:
             revenue_history,
             revenue_projection,
             resolved_reference_date,
+            {
+                "topDishLabel": top_dish_name,
+                "topDishOrders": top_dish_orders,
+            },
         )
 
         return {
