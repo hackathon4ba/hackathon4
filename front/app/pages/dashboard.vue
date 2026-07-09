@@ -499,47 +499,47 @@ await fetchDashboard()
 
         <div class="column-chart-wrap">
           <div class="column-chart" :style="{ gridTemplateColumns: revenueChartColumns }">
-          <div
-            v-for="(item, index) in revenueByDay"
-            :key="item.label"
-            :class="['column-item', hoveredRevenueIndex === index ? 'column-item-active' : '']"
-            @mouseenter="setHoveredRevenue(index)"
-            @mouseleave="setHoveredRevenue(null)"
-          >
-            <div class="column-track">
-              <span
-                :class="[
-                  'column-bar',
-                  hoveredRevenueIndex === index ? 'column-bar-active' : '',
-                  item.kind === 'forecast' ? 'forecast-bar' : '',
-                  item.kind === 'current' ? 'current-bar' : ''
-                ]"
-                :style="{ height: chartHeight(item.value, revenueByDay) }"
-              />
+            <div
+              v-for="(item, index) in revenueByDay"
+              :key="item.label"
+              :class="['column-item', hoveredRevenueIndex === index ? 'column-item-active' : '']"
+              @mouseenter="setHoveredRevenue(index)"
+              @mouseleave="setHoveredRevenue(null)"
+            >
+              <div class="column-track">
+                <span
+                  :class="[
+                    'column-bar',
+                    hoveredRevenueIndex === index ? 'column-bar-active' : '',
+                    item.kind === 'forecast' ? 'forecast-bar' : '',
+                    item.kind === 'current' ? 'current-bar' : ''
+                  ]"
+                  :style="{ height: chartHeight(item.value, revenueByDay) }"
+                />
 
-              <div
-                v-if="hoveredRevenueIndex === index"
-                class="column-tooltip"
-                role="status"
-              >
-                <strong>{{ formatRevenueDate(item) }}</strong>
-                <span v-if="item.kind === 'forecast'" class="tooltip-tag">Previsao</span>
-                <span v-else-if="item.kind === 'current'" class="tooltip-tag">Dia atual</span>
-                <span>Faturamento: {{ formatBRL(item.value) }}</span>
-                <span>Produto mais vendido: {{ item.topDishLabel }}</span>
-                <span v-if="item.topDishOrders">Pedidos do destaque: {{ item.topDishOrders }}</span>
+                <div
+                  v-if="hoveredRevenueIndex === index"
+                  class="column-tooltip"
+                  role="status"
+                >
+                  <strong>{{ formatRevenueDate(item) }}</strong>
+                  <span v-if="item.kind === 'forecast'" class="tooltip-tag">Previsao</span>
+                  <span v-else-if="item.kind === 'current'" class="tooltip-tag">Dia atual</span>
+                  <span>Faturamento: {{ formatBRL(item.value) }}</span>
+                  <span>Produto mais vendido: {{ item.topDishLabel }}</span>
+                  <span v-if="item.topDishOrders">Pedidos do destaque: {{ item.topDishOrders }}</span>
+                </div>
               </div>
+              <small :class="item.kind === 'forecast' ? 'forecast-label' : ''">
+                {{ item.label }}
+              </small>
+              <span
+                v-if="forecastStartIndex === index"
+                class="forecast-divider"
+                aria-hidden="true"
+              />
             </div>
-            <small :class="item.kind === 'forecast' ? 'forecast-label' : ''">
-              {{ item.label }}
-            </small>
-            <span
-              v-if="forecastStartIndex === index"
-              class="forecast-divider"
-              aria-hidden="true"
-            />
           </div>
-        </div>
         </div>
       </article>
 
@@ -747,7 +747,8 @@ await fetchDashboard()
   transition:
     transform 0.18s ease,
     filter 0.18s ease,
-    box-shadow 0.18s ease;
+    box-shadow 0.18s ease,
+    opacity 0.18s ease;
   transform-origin: center bottom;
 }
 
@@ -819,6 +820,10 @@ await fetchDashboard()
   );
   border: 1px dashed rgba(214, 62, 62, 0.5);
   opacity: 0.58;
+}
+
+.forecast-bar.column-bar-active {
+  opacity: 0.8;
 }
 
 .current-bar {
