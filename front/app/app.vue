@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logo from '..
+/assets/logo.png'
 useHead({
   titleTemplate: (title) => title ? `${title} | iFood Copilot` : 'iFood Copilot',
   meta: [
@@ -48,7 +50,9 @@ async function handleLogout() {
 
     <aside v-if="auth.isAuthenticated.value" class="sidebar" aria-label="Navegação principal">
       <div class="brand">
-        <div class="brand-mark">if</div>
+        <div class="brand-mark">
+         <img :src="logo" alt="iFood">
+        </div>
         <div>
           <strong>iFood Copilot</strong>
           <span>{{ restaurant?.name || 'Restaurante' }}</span>
@@ -191,6 +195,12 @@ p {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand strong,

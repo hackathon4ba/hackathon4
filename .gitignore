@@ -4,5 +4,5 @@ __pycache__/
 backend/venv
 backend/migrations/versions
 
-venv
+.venv
 versions
