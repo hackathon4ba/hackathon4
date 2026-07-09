@@ -147,6 +147,68 @@ DELETE /restaurants/menu/items/{item_id}
 Authorization: Bearer <access_token>
 ```
 
+Consultar a receita de estoque de um prato:
+
+```http
+GET /restaurants/menu/items/{item_id}/recipe
+Authorization: Bearer <access_token>
+```
+
+Substituir a receita de estoque de um prato:
+
+```http
+PUT /restaurants/menu/items/{item_id}/recipe
+Authorization: Bearer <access_token>
+```
+
+```json
+{
+  "entries": [
+    { "inventory_item_id": 1, "quantity_required": 1 },
+    { "inventory_item_id": 2, "quantity_required": 0.15 }
+  ]
+}
+```
+
+## Estoque do restaurante
+
+Listar estoque:
+
+```http
+GET /restaurants/inventory/items
+Authorization: Bearer <access_token>
+```
+
+Criar item de estoque:
+
+```http
+POST /restaurants/inventory/items
+Authorization: Bearer <access_token>
+```
+
+```json
+{
+  "name": "FilÃ© de frango",
+  "unit": "kg",
+  "quantity_available": 12,
+  "minimum_quantity": 2
+}
+```
+
+Atualizar item de estoque:
+
+```http
+PATCH /restaurants/inventory/items/{item_id}
+Authorization: Bearer <access_token>
+```
+
+Excluir item de estoque:
+
+```http
+DELETE /restaurants/inventory/items/{item_id}
+Authorization: Bearer <access_token>
+```
+
 ## Pedidos do restaurante
 
 Listar pedidos:
@@ -172,6 +234,8 @@ Authorization: Bearer <access_token>
   "notes": "Sem cebola"
 }
 ```
+
+Agora o backend valida se `main_dish` existe no cardÃ¡pio do restaurante, exige que a receita de estoque do prato esteja cadastrada e debita automaticamente os itens do estoque ao criar o pedido. Se o pedido for cancelado depois, o estoque Ã© devolvido.
 
 Buscar pedido:
 

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import logo from '..
-/assets/logo.png'
+import logo from '../assets/logo.png'
 useHead({
   titleTemplate: (title) => title ? `${title} | iFood Copilot` : 'iFood Copilot',
   meta: [
@@ -21,6 +20,7 @@ const menuItems = [
   { label: 'Pedidos', icon: 'lucide:receipt-text', to: '/orders' },
   { label: 'Financeiro', icon: 'lucide:dollar-sign', to: '/finance' },
   { label: 'Cardápio', icon: 'lucide:book-open', to: '/menu' },
+  { label: 'Estoque', icon: 'lucide:boxes', to: '/inventory' },
   { label: 'Entregas', icon: 'lucide:bike', to: '/deliveries' },
   { label: 'Clientes', icon: 'lucide:users', to: '/customers' },
   { label: 'Fidelidade', icon: 'lucide:badge-check', to: '/loyalty' },

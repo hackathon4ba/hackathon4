@@ -28,6 +28,8 @@ type LoginRestaurantPayload = {
   password: string
 }
 
+let initializePromise: Promise<void> | null = null
+
 export function useRestaurantAuth() {
   const config = useRuntimeConfig()
   const tokenCookie = useCookie<string | null>('restaurant_token', {
@@ -74,9 +76,17 @@ export function useRestaurantAuth() {
       restaurant.value = profile
       syncStorage()
       return profile
-    } catch {
-      clearSession()
-      return null
+    } catch (error) {
+      const statusCode = typeof error === 'object' && error && 'statusCode' in error
+        ? Number((error as { statusCode?: number }).statusCode)
+        : undefined
+
+      if (statusCode === 401 || statusCode === 403) {
+        clearSession()
+        return null
+      }
+
+      return restaurant.value
     }
   }
 
@@ -113,13 +123,26 @@ export function useRestaurantAuth() {
       return
     }
 
-    if (token.value && !restaurant.value) {
-      await fetchProfile()
-    } else {
-      syncStorage()
+    if (initializePromise) {
+      await initializePromise
+      return
     }
 
-    initialized.value = true
+    initializePromise = (async () => {
+      if (token.value && !restaurant.value) {
+        await fetchProfile()
+      } else {
+        syncStorage()
+      }
+
+      initialized.value = true
+    })()
+
+    try {
+      await initializePromise
+    } finally {
+      initializePromise = null
+    }
   }
 
   function logout() {

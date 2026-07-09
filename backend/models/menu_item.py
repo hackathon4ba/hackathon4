@@ -24,6 +24,9 @@ class MenuItem(db.Model):
     )
 
     restaurant = db.relationship("Restaurant", back_populates="menu_items")
+    recipe_entries = db.relationship(
+        "MenuItemRecipe", back_populates="menu_item", cascade="all, delete-orphan"
+    )
 
     def __repr__(self) -> str:
         return f"<MenuItem {self.name}>"

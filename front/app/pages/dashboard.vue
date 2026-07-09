@@ -223,8 +223,26 @@ function getAuthHeaders() {
   }
 }
 
+async function ensureRestaurantSession() {
+  if (!auth.token.value) {
+    return false
+  }
+
+  if (auth.restaurant.value?.id) {
+    return true
+  }
+
+  let profile = await auth.fetchProfile()
+  if (!profile?.id) {
+    await new Promise((resolve) => setTimeout(resolve, 250))
+    profile = await auth.fetchProfile()
+  }
+
+  return Boolean(profile?.id)
+}
+
 async function fetchDashboard() {
-  if (!auth.restaurant.value?.id || !auth.token.value) {
+  if (!auth.token.value) {
     applyFallbackDashboard('Sessao do restaurante indisponivel. Exibindo mock.')
     pending.value = false
     return
@@ -236,6 +254,12 @@ async function fetchDashboard() {
   hoveredRevenueIndex.value = null
 
   try {
+    const hasRestaurantSession = await ensureRestaurantSession()
+    if (!hasRestaurantSession || !auth.restaurant.value?.id) {
+      applyFallbackDashboard('Nao foi possivel confirmar a sessao do restaurante. Exibindo mock.')
+      return
+    }
+
     const query: Record<string, string> = {
       period: filters.period
     }
